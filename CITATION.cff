@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Cite this software version when referring to the code. Manuscript citation metadata will be added when available."
+title: "BRAN patient representation and reproducibility tools"
+type: software
+version: 0.2.0
+date-released: 2026-10-01
+authors:
+  - given-names: Ethan
+    family-names: Wu
+repository-code: "https://github.com/ethanwu2011/BRAN"
+url: "https://github.com/ethanwu2011/BRAN"
+license: MIT

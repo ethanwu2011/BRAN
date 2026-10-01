@@ -1,5 +1,5 @@
 # Rights status
 
-No license file or license grant was found in the tracked project files inspected for this release. This package does not assign a license and does not grant rights to redistribute the source or any separately held model weights. Confirm ownership and licensing with the project owner before publication.
+The project owner confirmed ownership of the BRAN code on 1 October 2026 and explicitly approved the MIT license. The license is in `LICENSE`. Model weights and clinical data are outside the code-release scope.
 
-No third-party source code is copied into this directory. PyTorch is an external runtime dependency and remains subject to its own distribution terms.
+Third-party packages remain external dependencies and retain their own distribution terms. The code license must not be read as a license to clinical datasets, retinal models or separately obtained research artifacts.

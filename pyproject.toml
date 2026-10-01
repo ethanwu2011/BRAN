@@ -4,11 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bran-r7-source"
-version = "0.1.0"
-description = "Source-only BRAN reusable representation with retained R7 implementation"
+version = "0.2.0"
+description = "BRAN patient representation and reproducibility tools"
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
-dependencies = ["torch>=2.0"]
+dependencies = ["torch>=2.6"]
+
+[project.optional-dependencies]
+test = ["numpy>=1.26", "matplotlib>=3.8", "scikit-learn>=1.4"]
+figures = ["matplotlib>=3.8"]
+
+[project.urls]
+Repository = "https://github.com/ethanwu2011/BRAN"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

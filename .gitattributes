@@ -1,0 +1,3 @@
+* text=auto eol=lf
+research/*.py -text whitespace=-blank-at-eof
+src/bran_*.py -text
