@@ -1,0 +1,66 @@
+{
+  "schema": "bran-source-only-release-manifest-v1",
+  "release": "BRAN_CODE_RELEASE_2026-10-01_v1",
+  "source_snapshot": "core architecture files copied without modification; import facade authored for this release",
+  "implementation_provenance": {
+    "variant": "retained R7 model implementation",
+    "parent_architecture": "BRANMultisourceAnchoredModelV3",
+    "clinical_input_map": "3 * asinh(x / 3) after sanitization and before both inherited clinical encoder paths",
+    "unchanged_contracts": [
+      "observation masks",
+      "typed-age input",
+      "target heads",
+      "192-dimensional state interface"
+    ],
+    "weights_included": false,
+    "synthetic_index_maps_are_clinical_mappings": false
+  },
+  "files": [
+    {
+      "path": "src/bran_multisource_age_v2.py",
+      "source_basename": "bran_multisource_age_v2.py",
+      "sha256": "0221006f9ef9b6fbd72edf0b5b2cb331a963706e6c875adf2dab360057a7aa1b"
+    },
+    {
+      "path": "src/bran_multisource_anchored_model_v3.py",
+      "source_basename": "bran_multisource_anchored_model_v3.py",
+      "sha256": "da041f5215c2a80aee83bb1e0b8024cafaf184740bbedd68899ae9a091e0b922"
+    },
+    {
+      "path": "src/bran_multisource_model_v2.py",
+      "source_basename": "bran_multisource_model_v2.py",
+      "sha256": "db76078a61430aed30cfb1c15690d00a76d3962027a8e5f951bf2b9639d1216b"
+    },
+    {
+      "path": "src/bran_patient_state_anchor_v2.py",
+      "source_basename": "bran_patient_state_anchor_v2.py",
+      "sha256": "cefecee998d9ead36d103bdc3a0bf58690b278d1104e1a6d401f28dde5cd4847"
+    },
+    {
+      "path": "src/bran_patient_state_prototype_v1.py",
+      "source_basename": "bran_patient_state_prototype_v1.py",
+      "sha256": "4ed4177b25283ce64106c4249c60bbf33b7e6002cf3d23e72ff89768b3fe66d0"
+    },
+    {
+      "path": "src/bran_robust_clinical_r7.py",
+      "source_basename": "bran_robust_clinical_r7.py",
+      "sha256": "ea5a5cadab4e337a88fca7d25b0211fcfded6ee05438a19cb9162503171c98a3"
+    },
+    {
+      "path": "src/bran_r7_release/__init__.py",
+      "source_basename": "bran_r7_release/__init__.py",
+      "sha256": "8ecfe20403ebb84e055ea0278733d61c3489f8868f85e96d372d8ec7493a5dac",
+      "category": "public_import_facade"
+    }
+  ],
+  "includes_patient_data": false,
+  "includes_checkpoints_or_weights": false,
+  "includes_private_paths": false,
+  "includes_source_runner": false,
+  "includes_synthetic_tests": true,
+  "includes_generated_tensor_example": true,
+  "wheel_build_verified": true,
+  "license_granted": false,
+  "publication_scope": "private GitHub repository preparation authorized, pending project-owner source privacy and rights audit",
+  "uploaded": false
+}

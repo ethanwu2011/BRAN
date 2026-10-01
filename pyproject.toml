@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bran-r7-source"
+version = "0.1.0"
+description = "Source-only BRAN reusable representation with retained R7 implementation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["bran_r7_release"]
+py-modules = [
+  "bran_multisource_age_v2",
+  "bran_multisource_anchored_model_v3",
+  "bran_multisource_model_v2",
+  "bran_patient_state_anchor_v2",
+  "bran_patient_state_prototype_v1",
+  "bran_robust_clinical_r7",
+]

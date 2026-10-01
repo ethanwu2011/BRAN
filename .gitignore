@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+.venv/
+.env
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.parquet
+*.csv
+*.pkl
