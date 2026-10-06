@@ -7,7 +7,11 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
     env:
       OMP_NUM_THREADS: "2"
       OPENBLAS_NUM_THREADS: "2"
@@ -17,11 +21,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
           cache: pip
       - run: python -m pip install 'torch>=2.6' --index-url https://download.pytorch.org/whl/cpu
       - run: python -m pip install '.[test,figures]'
       - run: python scripts/verify_release.py
+      - run: python tools/research_snapshot.py verify
       - run: python -m unittest discover -s tests -v
-      - run: python examples/synthetic_encode.py
-      - run: python examples/synthetic_end_to_end.py
+      - name: Run the examples against the installed package from outside the source tree
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -c "import bran_r7_release, pathlib, sys; p = pathlib.Path(bran_r7_release.__file__); print(p); sys.exit(0 if 'site-packages' in p.parts else 'not the installed package')"
+          python "$GITHUB_WORKSPACE/examples/synthetic_encode.py"
+          python "$GITHUB_WORKSPACE/examples/synthetic_end_to_end.py"
