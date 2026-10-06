@@ -1,12 +1,26 @@
 cff-version: 1.2.0
 message: "Cite this software version when referring to the code. Manuscript citation metadata will be added when available."
 title: "BRAN patient representation and reproducibility tools"
+abstract: >-
+  BRAN learns a reusable 192-dimensional patient representation from blood
+  measurements, other eligible clinical measurements, typed age and retinal
+  features under incomplete observation. This repository holds the retained
+  R7 model code, the hash-locked research source snapshot used for the
+  reported analyses, the input contract, synthetic examples and tests. It
+  holds no patient data and no trained weights.
 type: software
 version: 0.2.0
 date-released: 2026-10-01
 authors:
   - given-names: Ethan
     family-names: Wu
+keywords:
+  - patient representation
+  - retinal imaging
+  - complete blood count
+  - multimodal learning
+  - missing data
+  - clinical machine learning
 repository-code: "https://github.com/ethanwu2011/BRAN"
 url: "https://github.com/ethanwu2011/BRAN"
 license: MIT

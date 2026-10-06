@@ -39,6 +39,7 @@ figures = ["matplotlib>=3.8"]
 [project.urls]
 Repository = "https://github.com/ethanwu2011/BRAN"
 Issues = "https://github.com/ethanwu2011/BRAN/issues"
+Changelog = "https://github.com/ethanwu2011/BRAN/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
