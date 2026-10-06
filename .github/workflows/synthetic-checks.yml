@@ -34,3 +34,38 @@ jobs:
           python -c "import bran_r7_release, pathlib, sys; p = pathlib.Path(bran_r7_release.__file__); print(p); sys.exit(0 if 'site-packages' in p.parts else 'not the installed package')"
           python "$GITHUB_WORKSPACE/examples/synthetic_encode.py"
           python "$GITHUB_WORKSPACE/examples/synthetic_end_to_end.py"
+  figures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OMP_NUM_THREADS: "2"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install the pinned figure environment
+        run: python -m pip install --require-hashes -r paper/figures/requirements-figures.txt
+      - name: Check Source Data hashes and the release file policy
+        run: python scripts/verify_release.py
+      - name: Check Source Data disclosure rules
+        run: python -m paper.figures.disclosure
+      - name: Test the figure layer (byte-identical rebuild tests skip outside the reference environment)
+        run: python -m unittest tests.test_figure_reproduction -v
+      - name: Provide fonts with Arial metrics
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-liberation fontconfig
+          mkdir -p "$RUNNER_TEMP/fonts"
+          ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Regular')" "$RUNNER_TEMP/fonts/Arial.ttf"
+          ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Bold')" "$RUNNER_TEMP/fonts/Arial Bold.ttf"
+          echo "BRAN_FONT_DIR=$RUNNER_TEMP/fonts" >> "$GITHUB_ENV"
+      # Byte identity needs the reference environment in paper/figures/REFERENCE_OUTPUTS.json, which includes the
+      # Arial font files of macOS. On Linux this step shows that every figure still builds from Source Data alone
+      # and reports the byte differences. It does not fail the job, because the reference check is
+      # make figures-check in the reference environment.
+      - name: Rebuild every figure from Source Data in portable mode
+        continue-on-error: true
+        run: python -m paper.figures.build_all --portable --allow-pending --out "$RUNNER_TEMP/figures"
