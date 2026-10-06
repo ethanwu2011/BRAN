@@ -1,0 +1,2701 @@
+{
+ "figure": "ed_table2",
+ "display": "Extended Data Table 2",
+ "display_short": "ED Table 2",
+ "title": "Extended Data Table 2 | Operating points and referral results for haemoglobin below 12 g/dL.",
+ "legend": "**Extended Data Table 2 | Operating points and referral results for haemoglobin below 12 g/dL.** **a**, Every cut rule for every setting of Fig. 4e and Extended Data Fig. 5h, whole blood count hidden, with cuts set in the training folds. Referred, found and missed are per 1,000 people evaluated. **b**, Development contrasts and the AI-READI official test split, scored once, a previously accessed paired check because a predecessor model decoded these blood counts. n, ≥1,880 development people (five-fold cross-validation, ≥160 below 12 g/dL) and ≥340 test people (≥20 below 12 g/dL), floored to 20. Bootstrap 95% intervals hold scores, risk maps and cuts fixed. Only net benefit at 0.10 and haemoglobin MAE carry prespecified criteria, judged on an interval bound, and no hypothesis tests were run. The retinal net benefit gain met its criterion in development but not on the test, where it fell in the deployed fold 0 model, while the five-fold haemoglobin criterion was met. At 90% specificity the retina did not raise cases found. AI-READI is a selected, diabetes-enriched population, not a screening population, so PPV, NPV, yield and net benefit depend on its case mix. Risk maps and cuts were not fully nested, and 12 g/dL is not sex specific because sex is not held. Haemoglobin below 11 g/dL is PLACEHOLDER (fewer than 50 in a class). PPV and NPV, positive and negative predictive value. AUROC, area under the receiver operating characteristic curve. MAE, mean absolute error.",
+ "panels": {
+  "a": {
+   "title": "Operating points for haemoglobin below 12 g/dL",
+   "columns": [
+    "setting",
+    "cut_rule",
+    "metric",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "printed",
+    "n_floor20",
+    "cases_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.335,
+     0.262,
+     0.407,
+     "0.335 [0.262, 0.407]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "specificity",
+     0.899,
+     0.886,
+     0.913,
+     "0.899 [0.886, 0.913]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "ppv",
+     0.249,
+     0.194,
+     0.307,
+     "0.249 [0.194, 0.307]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "npv",
+     0.932,
+     0.92,
+     0.944,
+     "0.932 [0.920, 0.944]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     122.0,
+     107.0,
+     136.0,
+     "122 [107, 136]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     30.0,
+     23.0,
+     38.0,
+     "30 [23, 38]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     60.0,
+     49.0,
+     71.0,
+     "60 [49, 71]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.359,
+     0.292,
+     0.432,
+     "0.359 [0.292, 0.432]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "specificity",
+     0.899,
+     0.885,
+     0.913,
+     "0.899 [0.885, 0.913]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "ppv",
+     0.261,
+     0.206,
+     0.32,
+     "0.261 [0.206, 0.320]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "npv",
+     0.934,
+     0.921,
+     0.946,
+     "0.934 [0.921, 0.946]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     124.0,
+     110.0,
+     140.0,
+     "124 [110, 140]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     32.0,
+     25.0,
+     41.0,
+     "32 [25, 41]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     58.0,
+     47.0,
+     69.0,
+     "58 [47, 69]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.229,
+     0.164,
+     0.297,
+     "0.229 [0.164, 0.297]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "specificity",
+     0.897,
+     0.882,
+     0.91,
+     "0.897 [0.882, 0.910]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "ppv",
+     0.181,
+     0.127,
+     0.234,
+     "0.181 [0.127, 0.234]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "npv",
+     0.921,
+     0.909,
+     0.934,
+     "0.921 [0.909, 0.934]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     115.0,
+     101.0,
+     130.0,
+     "115 [101, 130]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     21.0,
+     14.0,
+     28.0,
+     "21 [14, 28]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     70.0,
+     58.0,
+     81.0,
+     "70 [58, 81]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 90% specificity",
+     "all",
+     null,
+     null,
+     null,
+     "suppressed",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.376,
+     0.304,
+     0.45,
+     "0.376 [0.304, 0.450]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "specificity",
+     0.9,
+     0.885,
+     0.913,
+     "0.900 [0.885, 0.913]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "ppv",
+     0.272,
+     0.215,
+     0.332,
+     "0.272 [0.215, 0.332]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "npv",
+     0.936,
+     0.923,
+     0.948,
+     "0.936 [0.923, 0.948]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     125.0,
+     110.0,
+     140.0,
+     "125 [110, 140]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     34.0,
+     26.0,
+     42.0,
+     "34 [26, 42]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     56.0,
+     45.0,
+     67.0,
+     "56 [45, 67]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.371,
+     0.298,
+     0.443,
+     "0.371 [0.298, 0.443]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "specificity",
+     0.901,
+     0.887,
+     0.915,
+     "0.901 [0.887, 0.915]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "ppv",
+     0.272,
+     0.214,
+     0.332,
+     "0.272 [0.214, 0.332]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "npv",
+     0.935,
+     0.923,
+     0.947,
+     "0.935 [0.923, 0.947]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     123.0,
+     109.0,
+     138.0,
+     "123 [109, 138]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     33.0,
+     26.0,
+     42.0,
+     "33 [26, 42]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     57.0,
+     46.0,
+     67.0,
+     "57 [46, 67]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.312,
+     0.241,
+     0.381,
+     "0.312 [0.241, 0.381]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "specificity",
+     0.898,
+     0.884,
+     0.912,
+     "0.898 [0.884, 0.912]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "ppv",
+     0.232,
+     0.179,
+     0.285,
+     "0.232 [0.179, 0.285]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "npv",
+     0.929,
+     0.917,
+     0.942,
+     "0.929 [0.917, 0.942]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     121.0,
+     107.0,
+     135.0,
+     "121 [107, 135]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     28.0,
+     21.0,
+     36.0,
+     "28 [21, 36]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     62.0,
+     51.0,
+     73.0,
+     "62 [51, 73]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "sensitivity",
+     0.147,
+     0.097,
+     0.2,
+     "0.147 [0.097, 0.200]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "specificity",
+     0.899,
+     0.885,
+     0.912,
+     "0.899 [0.885, 0.912]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "ppv",
+     0.126,
+     0.082,
+     0.173,
+     "0.126 [0.082, 0.173]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "npv",
+     0.914,
+     0.9,
+     0.927,
+     "0.914 [0.900, 0.927]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "referred_per_1000",
+     105.0,
+     93.0,
+     118.0,
+     "105 [93, 118]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "cases_found_per_1000",
+     13.0,
+     8.0,
+     19.0,
+     "13 [8, 19]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 90% specificity",
+     "missed_cases_per_1000",
+     77.0,
+     65.0,
+     90.0,
+     "77 [65, 90]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.8,
+     0.739,
+     0.856,
+     "0.800 [0.739, 0.856]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.58,
+     0.557,
+     0.603,
+     "0.580 [0.557, 0.603]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.159,
+     0.137,
+     0.182,
+     "0.159 [0.137, 0.182]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.967,
+     0.956,
+     0.978,
+     "0.967 [0.956, 0.978]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     455.0,
+     431.0,
+     477.0,
+     "455 [431, 477]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     72.0,
+     61.0,
+     83.0,
+     "72 [61, 83]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     18.0,
+     12.0,
+     24.0,
+     "18 [12, 24]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.8,
+     0.739,
+     0.861,
+     "0.800 [0.739, 0.861]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.501,
+     0.478,
+     0.524,
+     "0.501 [0.478, 0.524]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.137,
+     0.115,
+     0.157,
+     "0.137 [0.115, 0.157]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.962,
+     0.948,
+     0.974,
+     "0.962 [0.948, 0.974]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     526.0,
+     504.0,
+     548.0,
+     "526 [504, 548]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     72.0,
+     60.0,
+     83.0,
+     "72 [60, 83]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     18.0,
+     12.0,
+     24.0,
+     "18 [12, 24]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.794,
+     0.735,
+     0.851,
+     "0.794 [0.735, 0.851]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.488,
+     0.465,
+     0.511,
+     "0.488 [0.465, 0.511]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.134,
+     0.112,
+     0.155,
+     "0.134 [0.112, 0.155]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.96,
+     0.947,
+     0.972,
+     "0.960 [0.947, 0.972]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     537.0,
+     516.0,
+     560.0,
+     "537 [516, 560]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     72.0,
+     60.0,
+     84.0,
+     "72 [60, 84]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     19.0,
+     13.0,
+     25.0,
+     "19 [13, 25]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.806,
+     0.747,
+     0.86,
+     "0.806 [0.747, 0.860]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.15,
+     0.133,
+     0.166,
+     "0.150 [0.133, 0.166]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.086,
+     0.072,
+     0.099,
+     "0.086 [0.072, 0.099]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.886,
+     0.848,
+     0.919,
+     "0.886 [0.848, 0.919]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     846.0,
+     830.0,
+     862.0,
+     "846 [830, 862]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     73.0,
+     61.0,
+     84.0,
+     "73 [61, 84]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     18.0,
+     12.0,
+     24.0,
+     "18 [12, 24]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.794,
+     0.731,
+     0.846,
+     "0.794 [0.731, 0.846]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.58,
+     0.558,
+     0.604,
+     "0.580 [0.558, 0.604]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.158,
+     0.135,
+     0.181,
+     "0.158 [0.135, 0.181]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.966,
+     0.955,
+     0.976,
+     "0.966 [0.955, 0.976]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     453.0,
+     430.0,
+     475.0,
+     "453 [430, 475]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     72.0,
+     60.0,
+     83.0,
+     "72 [60, 83]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     19.0,
+     13.0,
+     25.0,
+     "19 [13, 25]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.788,
+     0.725,
+     0.846,
+     "0.788 [0.725, 0.846]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.504,
+     0.482,
+     0.527,
+     "0.504 [0.482, 0.527]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.136,
+     0.116,
+     0.156,
+     "0.136 [0.116, 0.156]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.96,
+     0.946,
+     0.972,
+     "0.960 [0.946, 0.972]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     522.0,
+     499.0,
+     544.0,
+     "522 [499, 544]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     71.0,
+     60.0,
+     82.0,
+     "71 [60, 82]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     19.0,
+     13.0,
+     26.0,
+     "19 [13, 26]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.794,
+     0.736,
+     0.849,
+     "0.794 [0.736, 0.849]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.499,
+     0.477,
+     0.523,
+     "0.499 [0.477, 0.523]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.136,
+     0.115,
+     0.157,
+     "0.136 [0.115, 0.157]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.961,
+     0.948,
+     0.973,
+     "0.961 [0.948, 0.973]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     527.0,
+     504.0,
+     548.0,
+     "527 [504, 548]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     72.0,
+     61.0,
+     83.0,
+     "72 [61, 83]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     19.0,
+     13.0,
+     25.0,
+     "19 [13, 25]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "sensitivity",
+     0.782,
+     0.72,
+     0.84,
+     "0.782 [0.720, 0.840]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "specificity",
+     0.216,
+     0.197,
+     0.236,
+     "0.216 [0.197, 0.236]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "ppv",
+     0.09,
+     0.075,
+     0.103,
+     "0.090 [0.075, 0.103]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "npv",
+     0.909,
+     0.88,
+     0.936,
+     "0.909 [0.880, 0.936]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "referred_per_1000",
+     784.0,
+     764.0,
+     802.0,
+     "784 [764, 802]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "cases_found_per_1000",
+     71.0,
+     59.0,
+     81.0,
+     "71 [59, 81]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Cut for 80% sensitivity",
+     "missed_cases_per_1000",
+     20.0,
+     14.0,
+     26.0,
+     "20 [14, 26]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.288,
+     0.217,
+     0.358,
+     "0.288 [0.217, 0.358]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.925,
+     0.913,
+     0.937,
+     "0.925 [0.913, 0.937]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.277,
+     0.212,
+     0.346,
+     "0.277 [0.212, 0.346]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.929,
+     0.917,
+     0.941,
+     "0.929 [0.917, 0.941]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     94.0,
+     80.0,
+     107.0,
+     "94 [80, 107]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     26.0,
+     19.0,
+     33.0,
+     "26 [19, 33]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN with retina",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     64.0,
+     54.0,
+     75.0,
+     "64 [54, 75]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.306,
+     0.239,
+     0.376,
+     "0.306 [0.239, 0.376]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.929,
+     0.918,
+     0.941,
+     "0.929 [0.918, 0.941]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.301,
+     0.236,
+     0.377,
+     "0.301 [0.236, 0.377]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.931,
+     0.919,
+     0.943,
+     "0.931 [0.919, 0.943]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     92.0,
+     79.0,
+     105.0,
+     "92 [79, 105]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     28.0,
+     21.0,
+     36.0,
+     "28 [21, 36]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "BRAN without retina",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     63.0,
+     52.0,
+     73.0,
+     "63 [52, 73]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.194,
+     0.13,
+     0.259,
+     "0.194 [0.130, 0.259]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.918,
+     0.905,
+     0.929,
+     "0.918 [0.905, 0.929]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.19,
+     0.131,
+     0.253,
+     "0.190 [0.131, 0.253]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.92,
+     0.907,
+     0.932,
+     "0.920 [0.907, 0.932]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     93.0,
+     80.0,
+     106.0,
+     "93 [80, 106]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     18.0,
+     12.0,
+     24.0,
+     "18 [12, 24]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Retina and age",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     73.0,
+     61.0,
+     84.0,
+     "73 [61, 84]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Age only",
+     "Flag rate matched to prevalence",
+     "all",
+     null,
+     null,
+     null,
+     "suppressed",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.324,
+     0.254,
+     0.398,
+     "0.324 [0.254, 0.398]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.932,
+     0.92,
+     0.944,
+     "0.932 [0.920, 0.944]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.322,
+     0.253,
+     0.393,
+     "0.322 [0.253, 0.393]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.933,
+     0.921,
+     0.945,
+     "0.933 [0.921, 0.945]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     91.0,
+     78.0,
+     104.0,
+     "91 [78, 104]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     29.0,
+     22.0,
+     37.0,
+     "29 [22, 37]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical, retina, age",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     61.0,
+     50.0,
+     72.0,
+     "61 [50, 72]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.306,
+     0.24,
+     0.376,
+     "0.306 [0.240, 0.376]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.928,
+     0.915,
+     0.94,
+     "0.928 [0.915, 0.940]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.297,
+     0.229,
+     0.363,
+     "0.297 [0.229, 0.363]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.931,
+     0.919,
+     0.943,
+     "0.931 [0.919, 0.943]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     93.0,
+     80.0,
+     106.0,
+     "93 [80, 106]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     28.0,
+     21.0,
+     36.0,
+     "28 [21, 36]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, clinical and age",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     63.0,
+     52.0,
+     74.0,
+     "63 [52, 74]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.247,
+     0.185,
+     0.311,
+     "0.247 [0.185, 0.311]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.922,
+     0.909,
+     0.933,
+     "0.922 [0.909, 0.933]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.239,
+     0.176,
+     0.299,
+     "0.239 [0.176, 0.299]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.925,
+     0.913,
+     0.937,
+     "0.925 [0.913, 0.937]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     94.0,
+     81.0,
+     106.0,
+     "94 [81, 106]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     22.0,
+     16.0,
+     29.0,
+     "22 [16, 29]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, retina and age",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     68.0,
+     57.0,
+     79.0,
+     "68 [57, 79]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "sensitivity",
+     0.141,
+     0.091,
+     0.196,
+     "0.141 [0.091, 0.196]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "specificity",
+     0.915,
+     0.902,
+     0.927,
+     "0.915 [0.902, 0.927]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "ppv",
+     0.142,
+     0.09,
+     0.197,
+     "0.142 [0.090, 0.197]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "npv",
+     0.915,
+     0.901,
+     0.928,
+     "0.915 [0.901, 0.928]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "referred_per_1000",
+     90.0,
+     78.0,
+     102.0,
+     "90 [78, 102]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "cases_found_per_1000",
+     13.0,
+     8.0,
+     18.0,
+     "13 [8, 18]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Ridge, age and predicted sex",
+     "Flag rate matched to prevalence",
+     "missed_cases_per_1000",
+     78.0,
+     66.0,
+     90.0,
+     "78 [66, 90]",
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20",
+    "cases_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20",
+    "cases_floor20"
+   ],
+   "notes": [
+    "Per 1,000 metrics are referred, found and missed per 1,000 people evaluated."
+   ]
+  },
+  "b": {
+   "title": "Referral results in development and on the official test split",
+   "columns": [
+    "contrast",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "cases_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "Net benefit at 0.10, with minus without retina, development",
+     0.007,
+     0.001,
+     0.014,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Net benefit at 0.20, with minus without retina, development",
+     -0.004,
+     -0.01,
+     0.002,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Net benefit at 0.10, with minus without retina, normal residual map, development",
+     0.009,
+     0.002,
+     0.015,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Found per 1,000 at 90% specificity, with minus without retina, development",
+     -2.0,
+     -9.0,
+     4.0,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Net benefit at 0.10, BRAN with retina minus Ridge, clinical, retina, age",
+     -0.005,
+     -0.011,
+     0.001,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Net benefit at 0.10, BRAN without retina minus Ridge, clinical and age",
+     -0.003,
+     -0.008,
+     0.002,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Found per 1,000 at 90% specificity, Retina and age minus Ridge, retina and age",
+     -7.0,
+     -13.0,
+     -2.0,
+     1880,
+     160,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "Haemoglobin MAE (g/dL), with minus without retina, official test, five-fold ensemble",
+     -0.0615,
+     -0.0979,
+     -0.0275,
+     340,
+     null,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ],
+    [
+     "Haemoglobin MAE (g/dL), with minus without retina, official test, fold 0 model",
+     -0.0343,
+     -0.0755,
+     0.0055,
+     340,
+     null,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ],
+    [
+     "Net benefit at 0.10, with minus without retina, official test, fold 0 deployed model",
+     -0.0143,
+     -0.0304,
+     -0.0003,
+     340,
+     20,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ],
+    [
+     "Net benefit at 0.10, with minus without retina, official test, five-fold mean",
+     0.0078,
+     -0.0069,
+     0.0238,
+     340,
+     20,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ],
+    [
+     "AUROC below 12 g/dL, official test, fold 0 model, with retina",
+     0.8046,
+     0.7202,
+     0.8741,
+     340,
+     20,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ],
+    [
+     "AUROC below 12 g/dL, official test, fold 0 model, without retina",
+     0.8157,
+     0.7497,
+     0.8738,
+     340,
+     20,
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20",
+    "cases_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20",
+    "cases_floor20"
+   ],
+   "notes": []
+  }
+ },
+ "draw": {
+  "a": {
+   "rows": [
+    [
+     "group",
+     "Cut for 90% specificity",
+     []
+    ],
+    [
+     "row",
+     "BRAN with retina",
+     [
+      "0.335 [0.262, 0.407]",
+      "0.899 [0.886, 0.913]",
+      "0.249 [0.194, 0.307]",
+      "0.932 [0.920, 0.944]",
+      "122 [107, 136]",
+      "30 [23, 38]",
+      "60 [49, 71]"
+     ]
+    ],
+    [
+     "row",
+     "BRAN without retina",
+     [
+      "0.359 [0.292, 0.432]",
+      "0.899 [0.885, 0.913]",
+      "0.261 [0.206, 0.320]",
+      "0.934 [0.921, 0.946]",
+      "124 [110, 140]",
+      "32 [25, 41]",
+      "58 [47, 69]"
+     ]
+    ],
+    [
+     "row",
+     "Retina and age",
+     [
+      "0.229 [0.164, 0.297]",
+      "0.897 [0.882, 0.910]",
+      "0.181 [0.127, 0.234]",
+      "0.921 [0.909, 0.934]",
+      "115 [101, 130]",
+      "21 [14, 28]",
+      "70 [58, 81]"
+     ]
+    ],
+    [
+     "span",
+     "Age only",
+     [
+      "Suppressed, a cell held fewer than 20 people",
+      null
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical, retina, age",
+     [
+      "0.376 [0.304, 0.450]",
+      "0.900 [0.885, 0.913]",
+      "0.272 [0.215, 0.332]",
+      "0.936 [0.923, 0.948]",
+      "125 [110, 140]",
+      "34 [26, 42]",
+      "56 [45, 67]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical and age",
+     [
+      "0.371 [0.298, 0.443]",
+      "0.901 [0.887, 0.915]",
+      "0.272 [0.214, 0.332]",
+      "0.935 [0.923, 0.947]",
+      "123 [109, 138]",
+      "33 [26, 42]",
+      "57 [46, 67]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, retina and age",
+     [
+      "0.312 [0.241, 0.381]",
+      "0.898 [0.884, 0.912]",
+      "0.232 [0.179, 0.285]",
+      "0.929 [0.917, 0.942]",
+      "121 [107, 135]",
+      "28 [21, 36]",
+      "62 [51, 73]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, age and predicted sex",
+     [
+      "0.147 [0.097, 0.200]",
+      "0.899 [0.885, 0.912]",
+      "0.126 [0.082, 0.173]",
+      "0.914 [0.900, 0.927]",
+      "105 [93, 118]",
+      "13 [8, 19]",
+      "77 [65, 90]"
+     ]
+    ],
+    [
+     "group",
+     "Cut for 80% sensitivity",
+     []
+    ],
+    [
+     "row",
+     "BRAN with retina",
+     [
+      "0.800 [0.739, 0.856]",
+      "0.580 [0.557, 0.603]",
+      "0.159 [0.137, 0.182]",
+      "0.967 [0.956, 0.978]",
+      "455 [431, 477]",
+      "72 [61, 83]",
+      "18 [12, 24]"
+     ]
+    ],
+    [
+     "row",
+     "BRAN without retina",
+     [
+      "0.800 [0.739, 0.861]",
+      "0.501 [0.478, 0.524]",
+      "0.137 [0.115, 0.157]",
+      "0.962 [0.948, 0.974]",
+      "526 [504, 548]",
+      "72 [60, 83]",
+      "18 [12, 24]"
+     ]
+    ],
+    [
+     "row",
+     "Retina and age",
+     [
+      "0.794 [0.735, 0.851]",
+      "0.488 [0.465, 0.511]",
+      "0.134 [0.112, 0.155]",
+      "0.960 [0.947, 0.972]",
+      "537 [516, 560]",
+      "72 [60, 84]",
+      "19 [13, 25]"
+     ]
+    ],
+    [
+     "row",
+     "Age only",
+     [
+      "0.806 [0.747, 0.860]",
+      "0.150 [0.133, 0.166]",
+      "0.086 [0.072, 0.099]",
+      "0.886 [0.848, 0.919]",
+      "846 [830, 862]",
+      "73 [61, 84]",
+      "18 [12, 24]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical, retina, age",
+     [
+      "0.794 [0.731, 0.846]",
+      "0.580 [0.558, 0.604]",
+      "0.158 [0.135, 0.181]",
+      "0.966 [0.955, 0.976]",
+      "453 [430, 475]",
+      "72 [60, 83]",
+      "19 [13, 25]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical and age",
+     [
+      "0.788 [0.725, 0.846]",
+      "0.504 [0.482, 0.527]",
+      "0.136 [0.116, 0.156]",
+      "0.960 [0.946, 0.972]",
+      "522 [499, 544]",
+      "71 [60, 82]",
+      "19 [13, 26]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, retina and age",
+     [
+      "0.794 [0.736, 0.849]",
+      "0.499 [0.477, 0.523]",
+      "0.136 [0.115, 0.157]",
+      "0.961 [0.948, 0.973]",
+      "527 [504, 548]",
+      "72 [61, 83]",
+      "19 [13, 25]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, age and predicted sex",
+     [
+      "0.782 [0.720, 0.840]",
+      "0.216 [0.197, 0.236]",
+      "0.090 [0.075, 0.103]",
+      "0.909 [0.880, 0.936]",
+      "784 [764, 802]",
+      "71 [59, 81]",
+      "20 [14, 26]"
+     ]
+    ],
+    [
+     "group",
+     "Flag rate matched to prevalence",
+     []
+    ],
+    [
+     "row",
+     "BRAN with retina",
+     [
+      "0.288 [0.217, 0.358]",
+      "0.925 [0.913, 0.937]",
+      "0.277 [0.212, 0.346]",
+      "0.929 [0.917, 0.941]",
+      "94 [80, 107]",
+      "26 [19, 33]",
+      "64 [54, 75]"
+     ]
+    ],
+    [
+     "row",
+     "BRAN without retina",
+     [
+      "0.306 [0.239, 0.376]",
+      "0.929 [0.918, 0.941]",
+      "0.301 [0.236, 0.377]",
+      "0.931 [0.919, 0.943]",
+      "92 [79, 105]",
+      "28 [21, 36]",
+      "63 [52, 73]"
+     ]
+    ],
+    [
+     "row",
+     "Retina and age",
+     [
+      "0.194 [0.130, 0.259]",
+      "0.918 [0.905, 0.929]",
+      "0.190 [0.131, 0.253]",
+      "0.920 [0.907, 0.932]",
+      "93 [80, 106]",
+      "18 [12, 24]",
+      "73 [61, 84]"
+     ]
+    ],
+    [
+     "span",
+     "Age only",
+     [
+      "Suppressed, a cell held fewer than 20 people",
+      null
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical, retina, age",
+     [
+      "0.324 [0.254, 0.398]",
+      "0.932 [0.920, 0.944]",
+      "0.322 [0.253, 0.393]",
+      "0.933 [0.921, 0.945]",
+      "91 [78, 104]",
+      "29 [22, 37]",
+      "61 [50, 72]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, clinical and age",
+     [
+      "0.306 [0.240, 0.376]",
+      "0.928 [0.915, 0.940]",
+      "0.297 [0.229, 0.363]",
+      "0.931 [0.919, 0.943]",
+      "93 [80, 106]",
+      "28 [21, 36]",
+      "63 [52, 74]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, retina and age",
+     [
+      "0.247 [0.185, 0.311]",
+      "0.922 [0.909, 0.933]",
+      "0.239 [0.176, 0.299]",
+      "0.925 [0.913, 0.937]",
+      "94 [81, 106]",
+      "22 [16, 29]",
+      "68 [57, 79]"
+     ]
+    ],
+    [
+     "row",
+     "Ridge, age and predicted sex",
+     [
+      "0.141 [0.091, 0.196]",
+      "0.915 [0.902, 0.927]",
+      "0.142 [0.090, 0.197]",
+      "0.915 [0.901, 0.928]",
+      "90 [78, 102]",
+      "13 [8, 18]",
+      "78 [66, 90]"
+     ]
+    ]
+   ],
+   "note": "≥1,880 people with visible retinal features, ≥160 below 12 g/dL, prevalence 0.090 [0.077, 0.103]. Cuts set in the training folds, applied unchanged to the held-out fold. Paired participant-within-fold bootstrap 95% intervals, 1,000 draws."
+  },
+  "b": {
+   "rows": [
+    [
+     "group",
+     "Development, five-fold cross-validation",
+     [
+      "n ≥ 1,880, ≥ 160 below 12 g/dL"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, with minus without retina",
+     [
+      "+0.007 [0.001, 0.014]",
+      "Lower bound above 0",
+      "Met"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.20, with minus without retina",
+     [
+      "−0.004 [−0.010, 0.002]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, with minus without retina, normal residual map",
+     [
+      "+0.009 [0.002, 0.015]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "Found per 1,000 at 90% specificity, with minus without retina",
+     [
+      "−2 [−9, 4]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, BRAN with retina minus Ridge, clinical, retina, age",
+     [
+      "−0.005 [−0.011, 0.001]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, BRAN without retina minus Ridge, clinical and age",
+     [
+      "−0.003 [−0.008, 0.002]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "Found per 1,000 at 90% specificity, Retina and age minus Ridge, retina and age",
+     [
+      "−7 [−13, −2]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "span",
+     "Net benefit at 0.10, Retina and age minus Age only",
+     [
+      "The age-only cell held fewer than 20 people",
+      "Not estimable"
+     ]
+    ],
+    [
+     "group",
+     "Official test split, scored once",
+     [
+      "n ≥ 340, ≥ 20 below 12 g/dL"
+     ]
+    ],
+    [
+     "row",
+     "Haemoglobin MAE (g/dL), with minus without retina, five-fold ensemble",
+     [
+      "−0.061 [−0.098, −0.028]",
+      "Upper bound below 0",
+      "Met"
+     ]
+    ],
+    [
+     "row",
+     "Haemoglobin MAE (g/dL), with minus without retina, fold 0 model",
+     [
+      "−0.0343 [−0.0755, 0.0055]",
+      "Upper bound below 0",
+      "Not met, sensitivity"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, with minus without retina, fold 0 deployed model",
+     [
+      "−0.0143 [−0.0304, −0.0003]",
+      "Lower bound above 0",
+      "Not met"
+     ]
+    ],
+    [
+     "row",
+     "Net benefit at 0.10, with minus without retina, five-fold mean",
+     [
+      "+0.0078 [−0.0069, 0.0238]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "AUROC, fold 0 model, with retina",
+     [
+      "0.805 [0.720, 0.874]",
+      "–",
+      "Descriptive"
+     ]
+    ],
+    [
+     "row",
+     "AUROC, fold 0 model, without retina",
+     [
+      "0.816 [0.750, 0.874]",
+      "–",
+      "Descriptive"
+     ]
+    ]
+   ],
+   "note": "With minus without retina is BRAN with retina minus BRAN without retina, whole blood count hidden. Development, paired participant-within-fold bootstrap with 1,000 draws. Official test, person-level bootstrap with 2,000 draws. Criteria are prespecified bounds of the 95% interval."
+  }
+ },
+ "builder": {
+  "path": "BRAN_FIGURES_2026-10-01/locked/build_ed_table2_merged.py",
+  "sha256": "c415d20b3c5810eb78ca50a9f5a7d9f50840db2d6e35c4ce3fd8b10301583667"
+ },
+ "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+ "profile": "nature-medicine-2026-10-06",
+ "methods_notes": {
+  "a": "Every operating point shown reached its target. The age-only reference at 90% specificity and at the matched flag rate is suppressed because a cell of the confusion table held fewer than 20 people. Differences between operating points are descriptive.",
+  "b": "Net benefit at 0.10 was 0.031 [0.020, 0.041] for BRAN with retina, 0.023 [0.013, 0.033] for BRAN without retina, 0.019 [0.009, 0.029] for Retina and age, 0.035 [0.024, 0.046] for Ridge, clinical, retina, age, 0.026 [0.016, 0.036] for Ridge, clinical and age, 0.020 [0.009, 0.030] for Ridge, retina and age, against −0.011 [−0.026, 0.003] for treat all. At 90% specificity Retina and age minus BRAN without retina was −12 [−21, −4] cases found per 1,000 and Retina and age minus Ridge, age and predicted sex +7 [1, 15]. At 80% sensitivity BRAN with retina minus BRAN without retina was −72 [−90, −52] people referred per 1,000, with a sensitivity difference of 0.000 [−0.065, 0.067] and a specificity difference of +0.079 [0.059, 0.099], and Ridge, clinical, retina, age minus Ridge, clinical and age was −69 [−88, −48], so raw retinal features in a ridge model also lowered referrals. The two savings were not compared directly. Official test net benefit at 0.10, fold 0 deployed model 0.0468 with the retina and 0.0611 without, five-fold mean 0.0565 and 0.0487. The five-fold recalibration was fitted on single-model predictions, so that row carries no criterion. Haemoglobin MAE 0.911 g/dL with the retina and 0.973 without. Official test AUROC below 12 g/dL from the five-fold ensemble was 0.829 [0.755, 0.894] with the retina and 0.797 [0.724, 0.863] without, descriptive and not drawn.",
+  "checks": "Part a and the development rows of b are read through low_hb_use_source.Ledger, which pins the clinical-use aggregate and matches every printed block to its report.md cell. The official test rows are read through official_test_source.py, which pins its aggregate and report.md and matches each value to the printed sentence and to results log entry 20. Exact counts of the enclosing CBC cohort are kept out of the legend, canvas, notes and Source Data.",
+  "sources": "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json (SHA-256 aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4), BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/report.md, BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json (SHA-256 0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846), BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/report.md, and for the disclosure guard only BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json (SHA-256 6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a)."
+ },
+ "rebuild_command": "python BRAN_FIGURES_2026-10-01/locked/build_ed_table2_merged.py --from-source-data BRAN_FIGURES_2026-10-01/locked/source_data/ed_table2_source_data.json"
+}

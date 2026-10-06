@@ -1,0 +1,2019 @@
+{
+ "figure": "ed4",
+ "display": "Extended Data Fig. 5",
+ "display_short": "ED Fig. 5",
+ "title": "Extended Data Fig. 5 | Linear and raw-feature comparators for blood count completion.",
+ "legend": "**Extended Data Fig. 5 | Linear and raw-feature comparators for blood count completion.** **a**, Mean absolute error (MAE) relative to the training median, whole panel hidden. **b**, BRAN without retina minus Ridge MAE, as a percentage of median MAE. **c**, Haemoglobin MAE below 12 g/dL and paired differences. **d**, Macro AUROC over 25 conditions for one classifier given each arm's estimates, and prespecified paired differences (Bonferroni). **e**, BRAN minus ridge models given its inputs plus 64 retinal components. **f**, AUROC for haemoglobin below 12 g/dL beside each ridge match. **g**, Four arms of d. **h**, Calibration of the Fig. 4e logistic and normal residual risk maps. Points, estimates. Bars, paired participant-within-fold bootstrap 95% intervals (1,000 draws). Open circles, references. n, ≥1,880 development people, five-fold cross-validated (c, ≥160 below 12 g/dL). No hypothesis tests were run. With retina and age alone, ridge on raw retinal features was more accurate for six of nine values, and with the panel hidden for haemoglobin and haematocrit (e). Every ridge AUROC point estimate exceeded its BRAN setting (f), Ridge was more accurate below 12 g/dL without retina (c), and no completed arm exceeded the classifier without blood count input (d). With the normal residual map BRAN with retina and its ridge analogue were too extreme and Retina and age over-predicted (h). Risk maps were not fully nested. AUROC, area under the receiver operating characteristic curve. CBC, complete blood count. MCV, MCH and MCHC, mean corpuscular volume, haemoglobin and haemoglobin concentration. RDW, red cell distribution width.",
+ "panels": {
+  "a": {
+   "title": "Whole-panel completion, MAE relative to the training-median MAE",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "MAE ratio",
+     "ridge",
+     "Haemoglobin",
+     0.8604039100593655,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "Haemoglobin",
+     0.8571376630802658,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "Haemoglobin",
+     0.8221020784091416,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "Haematocrit",
+     0.8899424832014191,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "Haematocrit",
+     0.8934388752146861,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "Haematocrit",
+     0.8676201650101976,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "Red cells",
+     0.8979614608223775,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "Red cells",
+     0.8917270151118907,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "Red cells",
+     0.8817481263217174,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "MCV",
+     0.9631717178996405,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "MCV",
+     0.9482581398821905,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "MCV",
+     0.9587983962231038,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "MCH",
+     0.9587167972719287,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "MCH",
+     0.9518384378869859,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "MCH",
+     0.9584713684231486,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "MCHC",
+     0.9424550575686672,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "MCHC",
+     0.931147737523014,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "MCHC",
+     0.9330189898577855,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "RDW",
+     0.9948685511568922,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "RDW",
+     0.9496927143231746,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "RDW",
+     0.946672359258852,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "White cells",
+     0.9302899646951509,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "White cells",
+     0.9089599147751759,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "White cells",
+     0.8926163482525582,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "ridge",
+     "Platelets",
+     0.8951602333226183,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_no_retina",
+     "Platelets",
+     0.8893774538353543,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE ratio",
+     "native_with_retina",
+     "Platelets",
+     0.9047362821816368,
+     null,
+     null,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "b": {
+   "title": "BRAN minus Ridge MAE, % of training-median MAE",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "Haemoglobin",
+     -0.32662469790996385,
+     -1.7983444026429236,
+     1.0711447720471916,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "Haematocrit",
+     0.34963920132670046,
+     -0.9286549194795283,
+     1.8294950108303938,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "Red cells",
+     -0.6234445710486752,
+     -2.0662579959186216,
+     0.7756690052403801,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "MCV",
+     -1.491357801744996,
+     -3.0384673579070065,
+     0.08322665907587905,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "MCH",
+     -0.6878359384942785,
+     -2.121754465367321,
+     0.8794673155791166,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "MCHC",
+     -1.1307320045653129,
+     -2.706505180000003,
+     0.4106167652966245,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "RDW",
+     -4.517583683371766,
+     -7.327332017073926,
+     -2.1288283993519275,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "White cells",
+     -2.133004991997503,
+     -4.489777251256858,
+     -0.32087265751491345,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference",
+     "BRAN minus Ridge",
+     "Platelets",
+     -0.5782779487264063,
+     -2.1353788646449794,
+     0.8761198242519893,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "c": {
+   "title": "Haemoglobin below 12 g/dL",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "MAE below 12 g/dL (g/dL)",
+     "median",
+     "Haemoglobin",
+     2.6347059586468866,
+     2.531420383128555,
+     2.741832537151608,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE below 12 g/dL (g/dL)",
+     "ridge",
+     "Haemoglobin",
+     2.0745781224104842,
+     1.9327923407824708,
+     2.2322756970641753,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE below 12 g/dL (g/dL)",
+     "native_no_retina",
+     "Haemoglobin",
+     2.2708358981775008,
+     2.1582335268662316,
+     2.392160353189855,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "MAE below 12 g/dL (g/dL)",
+     "native_with_retina",
+     "Haemoglobin",
+     2.059353533938273,
+     1.9378259518713812,
+     2.1810483614231018,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference (g/dL)",
+     "BRAN minus Ridge",
+     "Haemoglobin",
+     0.19625777576701653,
+     0.08424625363271292,
+     0.2793066100996746,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired difference (g/dL)",
+     "BRAN minus median",
+     "Haemoglobin",
+     -0.36387006046938586,
+     -0.45770581804565014,
+     -0.26857504220514405,
+     160,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "d": {
+   "title": "Downstream readout",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "macro AUROC",
+     "Training median",
+     "25 conditions",
+     0.6758600065543807,
+     0.6657194748202752,
+     0.6851580533537285,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "Ridge",
+     "25 conditions",
+     0.680753965642046,
+     0.6706515333843602,
+     0.690162448036338,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "BRAN without retina",
+     "25 conditions",
+     0.6809853143107262,
+     0.6706129329685402,
+     0.690302219828,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "BRAN with retina",
+     "25 conditions",
+     0.6815208179214239,
+     0.6708695744956933,
+     0.6908507309406914,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "Observed CBC",
+     "25 conditions",
+     0.680812879143171,
+     0.6705714039703924,
+     0.6901177843997612,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "No CBC input",
+     "25 conditions",
+     0.6818592133406126,
+     0.6714169445860095,
+     0.6915831901985451,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired AUROC difference, Bonferroni family 95%",
+     "native_minus_ridge",
+     "25 conditions",
+     0.00023134866868013138,
+     -0.0007988481800181816,
+     0.001243907441565405,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired AUROC difference, Bonferroni family 95%",
+     "native_minus_median",
+     "25 conditions",
+     0.005125307756345454,
+     0.0031804837078992566,
+     0.007146525092463994,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "e": {
+   "title": "Ridge on retinal features",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "Haemoglobin",
+     2.634613540665326,
+     1.313979837333953,
+     4.097356194324658,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "Haemoglobin",
+     1.9028303375690347,
+     0.43671654772430674,
+     3.3921639970511275,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "Haematocrit",
+     2.293339957431486,
+     0.836323643473489,
+     3.7920312071790936,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "Haematocrit",
+     2.0789340635298323,
+     0.65515798431759,
+     3.5617733465412504,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "Red cells",
+     0.8658087333482188,
+     -0.36286987996592357,
+     2.108945768731811,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "Red cells",
+     0.4227114412256973,
+     -1.028411583165025,
+     1.9433648951101967,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "MCV",
+     2.379000958024919,
+     1.1968789924234982,
+     3.491846038972856,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "MCV",
+     -1.017792474523452,
+     -2.5201584360812648,
+     0.432001820697331,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "MCH",
+     1.282242798199884,
+     0.1451515499379457,
+     2.4066451630550714,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "MCH",
+     -0.23912721913431917,
+     -1.5314927953107644,
+     1.097781229554145,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "MCHC",
+     1.2051294935419667,
+     0.03572890613376135,
+     2.418540730264895,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "MCHC",
+     0.08395689762623543,
+     -1.3542297068009095,
+     1.426310584243634,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "RDW",
+     -1.7774884156895143,
+     -3.1244800294851953,
+     -0.4131846901043563,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "RDW",
+     -2.8872650166849336,
+     -4.381606226555136,
+     -1.543561852526062,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "White cells",
+     0.5798043812703636,
+     -0.8899257255132341,
+     1.9475126814686308,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "White cells",
+     -2.080877364705783,
+     -3.5096422791805186,
+     -0.6060226420527073,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "retina and age only",
+     "Platelets",
+     3.1963447222219243,
+     2.084499464139808,
+     4.283506862097012,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "BRAN minus ridge, % of median MAE",
+     "whole panel hidden with retina",
+     "Platelets",
+     -0.5104781901596324,
+     -1.8678251408304278,
+     0.802329347629463,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "f": {
+   "title": "Low haemoglobin detection",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "AUROC below 12 g/dL",
+     "bran_i_cbc_hidden_with_retina",
+     "Haemoglobin",
+     0.757913534687486,
+     0.7232331570129893,
+     0.789796844365501,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "AUROC below 12 g/dL",
+     "ridge_noncbc_pca64_age",
+     "Haemoglobin",
+     0.7732069468713773,
+     0.7350122064887722,
+     0.8048408415249863,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "AUROC below 12 g/dL",
+     "bran_ii_cbc_hidden_no_retina",
+     "Haemoglobin",
+     0.7296728058066283,
+     0.6889012372618364,
+     0.7681421854381696,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "AUROC below 12 g/dL",
+     "ridge_noncbc_age",
+     "Haemoglobin",
+     0.7376263137301894,
+     0.6984914171783281,
+     0.7729592343936368,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "AUROC below 12 g/dL",
+     "bran_iii_retina_and_age_only",
+     "Haemoglobin",
+     0.6925252178050396,
+     0.6566486758914338,
+     0.7316174261117812,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "AUROC below 12 g/dL",
+     "ridge_pca64_age",
+     "Haemoglobin",
+     0.7044508473475029,
+     0.667698744843554,
+     0.7407031634147988,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "paired AUROC difference",
+     "i_minus_ridge_noncbc_pca64_age",
+     "Haemoglobin",
+     -0.015293412183891242,
+     -0.03633224328932566,
+     0.006146199079792564,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "paired AUROC difference",
+     "ii_minus_ridge_noncbc_age",
+     "Haemoglobin",
+     -0.007953507923561087,
+     -0.03072653517741973,
+     0.014582873447713692,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ],
+    [
+     "paired AUROC difference",
+     "iii_minus_ridge_pca64_age",
+     "Haemoglobin",
+     -0.011925629542463234,
+     -0.04098825701994339,
+     0.020793179975078565,
+     1880,
+     "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+     "6bc95598f52d7832d9b48bc006d973ab1f22b3266da055b4e86613ec37f85c8a"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "g": {
+   "title": "Downstream readout, four arms",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "macro AUROC",
+     "Observed CBC",
+     "25 conditions",
+     0.680812879143171,
+     0.6705714039703924,
+     0.6901177843997612,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "BRAN without retina",
+     "25 conditions",
+     0.6809853143107262,
+     0.6706129329685402,
+     0.690302219828,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "Training median",
+     "25 conditions",
+     0.6758600065543807,
+     0.6657194748202752,
+     0.6851580533537285,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "macro AUROC",
+     "No CBC input",
+     "25 conditions",
+     0.6818592133406126,
+     0.6714169445860095,
+     0.6915831901985451,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ],
+    [
+     "paired AUROC difference, Bonferroni family 95%",
+     "BRAN minus median",
+     "25 conditions",
+     0.005125307756345454,
+     0.0031804837078992566,
+     0.007146525092463994,
+     1880,
+     "BRAN_R7_COMPLETION_UTILITY_U2_REPORT_2026-09-28/aggregate.json",
+     "3e4202ffaceb030a3974ec94701d71a5a8658d49247047f97d5606eeaa6329e9"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": []
+  },
+  "h": {
+   "title": "Calibration, low haemoglobin",
+   "columns": [
+    "element",
+    "setting",
+    "field",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "n_floor20",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "calibration slope",
+     "BRAN with retina, logistic_recalibration",
+     "below 12 g/dL",
+     0.982,
+     0.821,
+     1.149,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "BRAN with retina, logistic_recalibration",
+     "below 12 g/dL",
+     0.997,
+     0.857,
+     1.132,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "BRAN with retina, gaussian_residual",
+     "below 12 g/dL",
+     0.807,
+     0.661,
+     0.961,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "BRAN with retina, gaussian_residual",
+     "below 12 g/dL",
+     0.979,
+     0.842,
+     1.111,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "BRAN without retina, logistic_recalibration",
+     "below 12 g/dL",
+     0.98,
+     0.803,
+     1.184,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "BRAN without retina, logistic_recalibration",
+     "below 12 g/dL",
+     0.999,
+     0.858,
+     1.13,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "BRAN without retina, gaussian_residual",
+     "below 12 g/dL",
+     1.044,
+     0.844,
+     1.263,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "BRAN without retina, gaussian_residual",
+     "below 12 g/dL",
+     1.117,
+     0.959,
+     1.263,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Retina and age, logistic_recalibration",
+     "below 12 g/dL",
+     0.839,
+     0.596,
+     1.162,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Retina and age, logistic_recalibration",
+     "below 12 g/dL",
+     0.989,
+     0.839,
+     1.127,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Retina and age, gaussian_residual",
+     "below 12 g/dL",
+     0.856,
+     0.655,
+     1.112,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Retina and age, gaussian_residual",
+     "below 12 g/dL",
+     0.809,
+     0.687,
+     0.922,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Age only, logistic_recalibration",
+     "below 12 g/dL",
+     -0.609,
+     -2.792,
+     1.616,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Age only, logistic_recalibration",
+     "below 12 g/dL",
+     0.999,
+     0.849,
+     1.136,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Age only, gaussian_residual",
+     "below 12 g/dL",
+     -3.989,
+     -10.188,
+     0.925,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Age only, gaussian_residual",
+     "below 12 g/dL",
+     0.898,
+     0.763,
+     1.021,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, clinical, retina, age, logistic_recalibration",
+     "below 12 g/dL",
+     0.981,
+     0.817,
+     1.15,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, clinical, retina, age, logistic_recalibration",
+     "below 12 g/dL",
+     0.994,
+     0.855,
+     1.124,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, clinical, retina, age, gaussian_residual",
+     "below 12 g/dL",
+     0.8,
+     0.655,
+     0.95,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, clinical, retina, age, gaussian_residual",
+     "below 12 g/dL",
+     0.894,
+     0.77,
+     1.013,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, clinical and age, logistic_recalibration",
+     "below 12 g/dL",
+     0.941,
+     0.747,
+     1.145,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, clinical and age, logistic_recalibration",
+     "below 12 g/dL",
+     0.992,
+     0.855,
+     1.125,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, clinical and age, gaussian_residual",
+     "below 12 g/dL",
+     0.842,
+     0.66,
+     1.031,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, clinical and age, gaussian_residual",
+     "below 12 g/dL",
+     0.905,
+     0.782,
+     1.024,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, retina and age, logistic_recalibration",
+     "below 12 g/dL",
+     0.985,
+     0.771,
+     1.223,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, retina and age, logistic_recalibration",
+     "below 12 g/dL",
+     1.0,
+     0.856,
+     1.138,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, retina and age, gaussian_residual",
+     "below 12 g/dL",
+     0.845,
+     0.665,
+     1.051,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, retina and age, gaussian_residual",
+     "below 12 g/dL",
+     0.9,
+     0.771,
+     1.025,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, age and predicted sex, logistic_recalibration",
+     "below 12 g/dL",
+     0.208,
+     -1.496,
+     2.195,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, age and predicted sex, logistic_recalibration",
+     "below 12 g/dL",
+     1.001,
+     0.85,
+     1.137,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "calibration slope",
+     "Ridge, age and predicted sex, gaussian_residual",
+     "below 12 g/dL",
+     0.262,
+     -0.381,
+     0.945,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ],
+    [
+     "observed over expected",
+     "Ridge, age and predicted sex, gaussian_residual",
+     "below 12 g/dL",
+     0.895,
+     0.761,
+     1.015,
+     1880,
+     "BRAN_NATMED_PUSH_2026-10-02/fig4_low_hb_clinical_use/EXECUTE_ATTEMPT1/aggregate.json",
+     "aca5112a1aaca04276abfb58baf0c107c810e36bde2cfd3caba4e11d546dcbe4"
+    ]
+   ],
+   "count_columns": [
+    "n_floor20"
+   ],
+   "floored_columns": [
+    "n_floor20"
+   ],
+   "notes": [
+    "Slopes of Age only and Ridge, age and predicted sex are off scale on the canvas."
+   ]
+  }
+ },
+ "draw": {
+  "a": {
+   "hemoglobin": {
+    "ridge": 0.8604039100593655,
+    "native_no_retina": 0.8571376630802658,
+    "native_with_retina": 0.8221020784091416
+   },
+   "hct": {
+    "ridge": 0.8899424832014191,
+    "native_no_retina": 0.8934388752146861,
+    "native_with_retina": 0.8676201650101976
+   },
+   "rbc": {
+    "ridge": 0.8979614608223775,
+    "native_no_retina": 0.8917270151118907,
+    "native_with_retina": 0.8817481263217174
+   },
+   "mcv": {
+    "ridge": 0.9631717178996405,
+    "native_no_retina": 0.9482581398821905,
+    "native_with_retina": 0.9587983962231038
+   },
+   "mch": {
+    "ridge": 0.9587167972719287,
+    "native_no_retina": 0.9518384378869859,
+    "native_with_retina": 0.9584713684231486
+   },
+   "mchc": {
+    "ridge": 0.9424550575686672,
+    "native_no_retina": 0.931147737523014,
+    "native_with_retina": 0.9330189898577855
+   },
+   "rdw": {
+    "ridge": 0.9948685511568922,
+    "native_no_retina": 0.9496927143231746,
+    "native_with_retina": 0.946672359258852
+   },
+   "wbc": {
+    "ridge": 0.9302899646951509,
+    "native_no_retina": 0.9089599147751759,
+    "native_with_retina": 0.8926163482525582
+   },
+   "plt": {
+    "ridge": 0.8951602333226183,
+    "native_no_retina": 0.8893774538353543,
+    "native_with_retina": 0.9047362821816368
+   }
+  },
+  "b": {
+   "hemoglobin": [
+    -0.32662469790996385,
+    -1.7983444026429236,
+    1.0711447720471916
+   ],
+   "hct": [
+    0.34963920132670046,
+    -0.9286549194795283,
+    1.8294950108303938
+   ],
+   "rbc": [
+    -0.6234445710486752,
+    -2.0662579959186216,
+    0.7756690052403801
+   ],
+   "mcv": [
+    -1.491357801744996,
+    -3.0384673579070065,
+    0.08322665907587905
+   ],
+   "mch": [
+    -0.6878359384942785,
+    -2.121754465367321,
+    0.8794673155791166
+   ],
+   "mchc": [
+    -1.1307320045653129,
+    -2.706505180000003,
+    0.4106167652966245
+   ],
+   "rdw": [
+    -4.517583683371766,
+    -7.327332017073926,
+    -2.1288283993519275
+   ],
+   "wbc": [
+    -2.133004991997503,
+    -4.489777251256858,
+    -0.32087265751491345
+   ],
+   "plt": [
+    -0.5782779487264063,
+    -2.1353788646449794,
+    0.8761198242519893
+   ]
+  },
+  "e": {
+   "hemoglobin": {
+    "eye": [
+     2.634613540665326,
+     1.313979837333953,
+     4.097356194324658
+    ],
+    "wr": [
+     1.9028303375690347,
+     0.43671654772430674,
+     3.3921639970511275
+    ]
+   },
+   "hct": {
+    "eye": [
+     2.293339957431486,
+     0.836323643473489,
+     3.7920312071790936
+    ],
+    "wr": [
+     2.0789340635298323,
+     0.65515798431759,
+     3.5617733465412504
+    ]
+   },
+   "rbc": {
+    "eye": [
+     0.8658087333482188,
+     -0.36286987996592357,
+     2.108945768731811
+    ],
+    "wr": [
+     0.4227114412256973,
+     -1.028411583165025,
+     1.9433648951101967
+    ]
+   },
+   "mcv": {
+    "eye": [
+     2.379000958024919,
+     1.1968789924234982,
+     3.491846038972856
+    ],
+    "wr": [
+     -1.017792474523452,
+     -2.5201584360812648,
+     0.432001820697331
+    ]
+   },
+   "mch": {
+    "eye": [
+     1.282242798199884,
+     0.1451515499379457,
+     2.4066451630550714
+    ],
+    "wr": [
+     -0.23912721913431917,
+     -1.5314927953107644,
+     1.097781229554145
+    ]
+   },
+   "mchc": {
+    "eye": [
+     1.2051294935419667,
+     0.03572890613376135,
+     2.418540730264895
+    ],
+    "wr": [
+     0.08395689762623543,
+     -1.3542297068009095,
+     1.426310584243634
+    ]
+   },
+   "rdw": {
+    "eye": [
+     -1.7774884156895143,
+     -3.1244800294851953,
+     -0.4131846901043563
+    ],
+    "wr": [
+     -2.8872650166849336,
+     -4.381606226555136,
+     -1.543561852526062
+    ]
+   },
+   "wbc": {
+    "eye": [
+     0.5798043812703636,
+     -0.8899257255132341,
+     1.9475126814686308
+    ],
+    "wr": [
+     -2.080877364705783,
+     -3.5096422791805186,
+     -0.6060226420527073
+    ]
+   },
+   "plt": {
+    "eye": [
+     3.1963447222219243,
+     2.084499464139808,
+     4.283506862097012
+    ],
+    "wr": [
+     -0.5104781901596324,
+     -1.8678251408304278,
+     0.802329347629463
+    ]
+   }
+  },
+  "c": {
+   "lowarm": {
+    "median": [
+     2.6347059586468866,
+     2.531420383128555,
+     2.741832537151608
+    ],
+    "ridge": [
+     2.0745781224104842,
+     1.9327923407824708,
+     2.2322756970641753
+    ],
+    "native_no_retina": [
+     2.2708358981775008,
+     2.1582335268662316,
+     2.392160353189855
+    ],
+    "native_with_retina": [
+     2.059353533938273,
+     1.9378259518713812,
+     2.1810483614231018
+    ]
+   },
+   "low_ridge": [
+    0.19625777576701653,
+    0.08424625363271292,
+    0.2793066100996746
+   ],
+   "low_median": [
+    -0.36387006046938586,
+    -0.45770581804565014,
+    -0.26857504220514405
+   ]
+  },
+  "d": {
+   "auc": {
+    "median": [
+     0.6758600065543807,
+     0.6657194748202752,
+     0.6851580533537285
+    ],
+    "ridge": [
+     0.680753965642046,
+     0.6706515333843602,
+     0.690162448036338
+    ],
+    "native_no_retina": [
+     0.6809853143107262,
+     0.6706129329685402,
+     0.690302219828
+    ],
+    "native_with_retina": [
+     0.6815208179214239,
+     0.6708695744956933,
+     0.6908507309406914
+    ],
+    "observed_cbc": [
+     0.680812879143171,
+     0.6705714039703924,
+     0.6901177843997612
+    ],
+    "noncbc_only": [
+     0.6818592133406126,
+     0.6714169445860095,
+     0.6915831901985451
+    ]
+   },
+   "actr": {
+    "native_minus_ridge": [
+     0.00023134866868013138,
+     -0.0007988481800181816,
+     0.001243907441565405
+    ],
+    "native_minus_median": [
+     0.005125307756345454,
+     0.0031804837078992566,
+     0.007146525092463994
+    ]
+   }
+  },
+  "f": {
+   "auc": {
+    "bran_i_cbc_hidden_with_retina": [
+     0.757913534687486,
+     0.7232331570129893,
+     0.789796844365501
+    ],
+    "ridge_noncbc_pca64_age": [
+     0.7732069468713773,
+     0.7350122064887722,
+     0.8048408415249863
+    ],
+    "bran_ii_cbc_hidden_no_retina": [
+     0.7296728058066283,
+     0.6889012372618364,
+     0.7681421854381696
+    ],
+    "ridge_noncbc_age": [
+     0.7376263137301894,
+     0.6984914171783281,
+     0.7729592343936368
+    ],
+    "bran_iii_retina_and_age_only": [
+     0.6925252178050396,
+     0.6566486758914338,
+     0.7316174261117812
+    ],
+    "ridge_pca64_age": [
+     0.7044508473475029,
+     0.667698744843554,
+     0.7407031634147988
+    ]
+   },
+   "dcon": {
+    "i_minus_ridge_noncbc_pca64_age": [
+     -0.015293412183891242,
+     -0.03633224328932566,
+     0.006146199079792564
+    ],
+    "ii_minus_ridge_noncbc_age": [
+     -0.007953507923561087,
+     -0.03072653517741973,
+     0.014582873447713692
+    ],
+    "iii_minus_ridge_pca64_age": [
+     -0.011925629542463234,
+     -0.04098825701994339,
+     0.020793179975078565
+    ]
+   }
+  },
+  "g": {
+   "auc": {
+    "observed_cbc": [
+     0.680812879143171,
+     0.6705714039703924,
+     0.6901177843997612
+    ],
+    "native_no_retina": [
+     0.6809853143107262,
+     0.6706129329685402,
+     0.690302219828
+    ],
+    "median": [
+     0.6758600065543807,
+     0.6657194748202752,
+     0.6851580533537285
+    ],
+    "noncbc_only": [
+     0.6818592133406126,
+     0.6714169445860095,
+     0.6915831901985451
+    ]
+   },
+   "dmm": [
+    0.005125307756345454,
+    0.0031804837078992566,
+    0.007146525092463994
+   ]
+  },
+  "h": {
+   "eye_plus_remaining|logistic_recalibration": [
+    [
+     0.982,
+     0.821,
+     1.149
+    ],
+    [
+     0.997,
+     0.857,
+     1.132
+    ]
+   ],
+   "eye_plus_remaining|gaussian_residual": [
+    [
+     0.807,
+     0.661,
+     0.961
+    ],
+    [
+     0.979,
+     0.842,
+     1.111
+    ]
+   ],
+   "remaining_no_eye|logistic_recalibration": [
+    [
+     0.98,
+     0.803,
+     1.184
+    ],
+    [
+     0.999,
+     0.858,
+     1.13
+    ]
+   ],
+   "remaining_no_eye|gaussian_residual": [
+    [
+     1.044,
+     0.844,
+     1.263
+    ],
+    [
+     1.117,
+     0.959,
+     1.263
+    ]
+   ],
+   "eye_and_age|logistic_recalibration": [
+    [
+     0.839,
+     0.596,
+     1.162
+    ],
+    [
+     0.989,
+     0.839,
+     1.127
+    ]
+   ],
+   "eye_and_age|gaussian_residual": [
+    [
+     0.856,
+     0.655,
+     1.112
+    ],
+    [
+     0.809,
+     0.687,
+     0.922
+    ]
+   ],
+   "age_only|logistic_recalibration": [
+    [
+     -0.609,
+     -2.792,
+     1.616
+    ],
+    [
+     0.999,
+     0.849,
+     1.136
+    ]
+   ],
+   "age_only|gaussian_residual": [
+    [
+     -3.989,
+     -10.188,
+     0.925
+    ],
+    [
+     0.898,
+     0.763,
+     1.021
+    ]
+   ],
+   "ridge_remaining_plus_retinal_pca64|logistic_recalibration": [
+    [
+     0.981,
+     0.817,
+     1.15
+    ],
+    [
+     0.994,
+     0.855,
+     1.124
+    ]
+   ],
+   "ridge_remaining_plus_retinal_pca64|gaussian_residual": [
+    [
+     0.8,
+     0.655,
+     0.95
+    ],
+    [
+     0.894,
+     0.77,
+     1.013
+    ]
+   ],
+   "ridge_remaining_no_eye|logistic_recalibration": [
+    [
+     0.941,
+     0.747,
+     1.145
+    ],
+    [
+     0.992,
+     0.855,
+     1.125
+    ]
+   ],
+   "ridge_remaining_no_eye|gaussian_residual": [
+    [
+     0.842,
+     0.66,
+     1.031
+    ],
+    [
+     0.905,
+     0.782,
+     1.024
+    ]
+   ],
+   "ridge_retinal_pca64_and_age|logistic_recalibration": [
+    [
+     0.985,
+     0.771,
+     1.223
+    ],
+    [
+     1.0,
+     0.856,
+     1.138
+    ]
+   ],
+   "ridge_retinal_pca64_and_age|gaussian_residual": [
+    [
+     0.845,
+     0.665,
+     1.051
+    ],
+    [
+     0.9,
+     0.771,
+     1.025
+    ]
+   ],
+   "ridge_age_and_predicted_sex|logistic_recalibration": [
+    [
+     0.208,
+     -1.496,
+     2.195
+    ],
+    [
+     1.001,
+     0.85,
+     1.137
+    ]
+   ],
+   "ridge_age_and_predicted_sex|gaussian_residual": [
+    [
+     0.262,
+     -0.381,
+     0.945
+    ],
+    [
+     0.895,
+     0.761,
+     1.015
+    ]
+   ]
+  }
+ },
+ "builder": {
+  "path": "BRAN_FIGURES_2026-10-01/locked/build_ed4.py",
+  "sha256": "6a89be9b044b15f2d428dc04354a7dd35e601af7ae5a25430db60e87fdc1e00b"
+ },
+ "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+ "profile": "nature-medicine-2026-10-06",
+ "methods_notes": {
+  "panels": "Ridge models given raw retinal features were more accurate than BRAN for haemoglobin and haematocrit, both with the retina and age alone and with the whole panel hidden. The linear estimator is Ridge regression (Hoerl and Kennard, reference 16 of the integrated paper) with penalty weight 1 on standardized raw non-CBC inputs and their observation indicators, fitted separately for each CBC value in the outer training folds. This fixed-penalty Ridge is used in a to d.\na, Whole panel hidden. Mean absolute error (MAE) for Ridge, BRAN without retina and BRAN with retina for the nine complete blood count (CBC) values, shown as a ratio to the MAE of the training median (dashed line at 1.0, lower is better).\nb, Paired difference in MAE, BRAN without retina minus Ridge, on the same people. Each difference and its interval are divided by the training-median MAE for that value so that the nine values share one scale, and each point equals the horizontal gap between the BRAN and Ridge points in a. Negative values favour BRAN, and b and e share one horizontal scale. In original units the differences were haemoglobin −0.004 [−0.020, 0.012] g/dL, haematocrit +0.011 [−0.028, 0.056] %, red cells −0.002 [−0.008, 0.003] 10⁶/µL, MCV −0.062 [−0.127, 0.003] fL, MCH −0.012 [−0.037, 0.015] pg, MCHC −0.010 [−0.023, 0.003] g/dL, RDW −0.040 [−0.065, −0.019] %, white cells −0.030 [−0.064, −0.005] 10³/µL, platelets −0.309 [−1.140, 0.468] 10³/µL. Intervals excluded zero for RDW and white cells, in favour of BRAN, and included zero for the other seven values.\nc, Haemoglobin MAE among people with haemoglobin below 12 g/dL (top), and paired differences for BRAN without retina (bottom), where negative values favour BRAN. MAE was 2.635 [2.531, 2.742] g/dL for the training median, 2.075 [1.933, 2.232] for Ridge, 2.271 [2.158, 2.392] for BRAN without retina and 2.059 [1.938, 2.181] for BRAN with retina, and BRAN without retina minus median was −0.364 [−0.458, −0.269] g/dL. Ridge was more accurate than BRAN without retina, paired difference +0.196 [0.084, 0.279] g/dL. BRAN with retina had a point estimate of 2.059 g/dL against 2.075 for Ridge, and no paired comparison of these two exists. Every estimator overestimates haemoglobin in this stratum, partly through regression toward the mean because the stratum is defined on the true value.\nd, Macro AUROC across 25 recorded conditions for one fixed logistic classifier fitted on observed CBC values and then given training medians, Ridge estimates or BRAN estimates in place of the hidden CBC. The observed CBC and a separately fitted classifier with no CBC input are references. The two paired differences (bottom, positive values favour BRAN) are the prespecified primary family and use Bonferroni intervals for joint 95% coverage. Macro AUROC was 0.6759 [0.6657, 0.6852] for the training median, 0.6808 [0.6707, 0.6902] for Ridge, 0.6810 [0.6706, 0.6903] for BRAN without retina, 0.6815 [0.6709, 0.6909] for BRAN with retina, 0.6808 [0.6706, 0.6901] for the observed CBC, 0.6819 [0.6714, 0.6916] for the classifier with no CBC input. BRAN without retina minus Ridge was +0.0002 [−0.0008, 0.0012] and BRAN without retina minus median +0.0051 [0.0032, 0.0071]. BRAN completion matched Ridge completion, and no completed arm exceeded the classifier with no CBC input. BRAN with retina receives retinal input that Ridge and the median do not, so its comparison with them is secondary and not matched for information.\ne, Paired MAE difference for each value, BRAN minus a ridge model given the same inputs plus raw retinal features, as a percentage of the training-median MAE. Blue, retina and age only, where BRAN sees the retinal features and typed age with every blood and physiological value erased (Fig. 4), against ridge on the first 64 principal components of the BRAN retinal input features and typed age. Purple, whole panel hidden with retina, BRAN with retina against ridge on the non-CBC clinical values, the same 64 components and age. Negative values favour BRAN. In original units the retina and age only differences were haemoglobin +0.030 [0.015, 0.046] g/dL, haematocrit +0.070 [0.026, 0.116] %, red cells +0.003 [−0.001, 0.008] 10⁶/µL, MCV +0.100 [0.050, 0.146] fL, MCH +0.022 [0.002, 0.041] pg, MCHC +0.010 [0.000, 0.020] g/dL, RDW −0.016 [−0.028, −0.004] %, white cells +0.008 [−0.013, 0.028] 10³/µL, platelets +1.707 [1.113, 2.287] 10³/µL, and the whole panel hidden differences were haemoglobin +0.021 [0.005, 0.038] g/dL, haematocrit +0.064 [0.020, 0.109] %, red cells +0.002 [−0.004, 0.008] 10⁶/µL, MCV −0.043 [−0.106, 0.018] fL, MCH −0.004 [−0.026, 0.019] pg, MCHC +0.001 [−0.011, 0.012] g/dL, RDW −0.026 [−0.039, −0.014] %, white cells −0.030 [−0.050, −0.009] 10³/µL, platelets −0.272 [−0.997, 0.428] 10³/µL. With the retina and age alone the ridge model was more accurate for six values (haemoglobin, haematocrit, MCV, MCH, MCHC and platelets), BRAN for RDW, and the interval included zero for red cells and white cells. Haemoglobin MAE was 1.027 g/dL for ridge against 1.057 for BRAN, and haematocrit 2.856% against 2.926%. With the whole panel hidden and retina available the ridge model was more accurate for haemoglobin and haematocrit, BRAN for RDW and white cells, and the interval included zero for the other five values.\nf, AUROC for haemoglobin below 12 g/dL from predicted haemoglobin for each BRAN arm of Fig. 4 and its matched ridge model (top), with paired differences, BRAN minus ridge (bottom), where positive values favour BRAN. BRAN with retina scored AUROC 0.758 [0.723, 0.790] against 0.773 [0.735, 0.805] for ridge on clinical values, retina and age, paired difference −0.015 [−0.036, 0.006]. BRAN without retina scored AUROC 0.730 [0.689, 0.768] against 0.738 [0.698, 0.773] for ridge on clinical values and age, paired difference −0.008 [−0.031, 0.015]. Retina and age scored AUROC 0.693 [0.657, 0.732] against 0.704 [0.668, 0.741] for ridge on retina and age, paired difference −0.012 [−0.041, 0.021]. Clinical means the non-CBC clinical values and retina means the 64 retinal components. No paired interval excluded zero, and every ridge point estimate was higher than its BRAN arm. The ridge models in e and f were refitted in each outer training fold with the penalty chosen by inner five-fold cross-validation, unlike the fixed-penalty Ridge in a to d, and the retinal components were fitted in the outer training folds.\ng, Downstream readout for four arms of d. It repeats the values of d without Ridge and BRAN with retina, with the same arm names. Observed CBC 0.6808 [0.6706, 0.6901], BRAN without retina 0.6810 [0.6706, 0.6903], training median 0.6759 [0.6657, 0.6852] and classifier with no CBC input 0.6819 [0.6714, 0.6916]. BRAN without retina minus median +0.0051 [0.0032, 0.0071], Bonferroni interval for joint 95% coverage. BRAN completion came within 0.0002 of the observed CBC, a comparison with no paired interval in the source.\nh, Circles use the logistic recalibration of Fig. 4e, fitted to case status on the held-out scores of the other four folds. Squares use a normal residual map, which turns predicted haemoglobin into a risk through the residual spread of each fold without fitting to case status. With the logistic map every slope interval included 1 and observed over expected ran from 0.989 to 1.000. With the normal residual map the slope lay below 1 for BRAN with retina, 0.807 [0.661, 0.961], and Ridge, clinical, retina, age, 0.800 [0.655, 0.950], and Retina and age predicted more cases than observed, 0.809 [0.687, 0.922]. Age only and Ridge, age and predicted sex barely discriminate, AUROC 0.486 [0.435, 0.536] and 0.546 [0.499, 0.591], slopes −0.609 [−2.792, 1.616] and 0.208 [−1.496, 2.195] with the logistic map and −3.989 [−10.188, 0.925] and 0.262 [−0.381, 0.945] with the normal residual map. The predicted sex comes from a classifier trained on BRSET retinal features whose accuracy in AI-READI is unknown.\nAll panels. Open circles mark the training median and the classifier with no CBC input, which are references. Points are estimates and lines are 95% intervals from a paired participant-within-fold bootstrap with 1,000 draws. All results are five-fold cross-validated AI-READI development data on at least 1,880 people with all nine CBC values observed and at least one other physiological input. Panels f and h and the retina-and-age points in e use the people in that cohort with visible retinal features, also at least 1,880. Counts of people are lower bounds floored to a multiple of 20, and the exact numbers are withheld. This is reused development data, not external validation."
+ },
+ "rebuild_command": "python BRAN_FIGURES_2026-10-01/locked/build_ed4.py --from-source-data BRAN_FIGURES_2026-10-01/locked/source_data/ed4_source_data.json"
+}

@@ -1,0 +1,3076 @@
+{
+ "schema": "bran-source-data-v1",
+ "figure": "fig5",
+ "display": "Fig. 5",
+ "display_short": "Fig. 5",
+ "title": "BRAN under missing inputs and in external cohorts without retinal images",
+ "revision": "20261006a2",
+ "legend": "**Fig. 5 | BRAN under missing inputs and in external cohorts without retinal images.** **a**, Inputs and history. People, development adults, eICU training exposure, INSPIRE test survivors and KNHANES adults fitting or testing **e** (≥, released lower bound). HiRID admissions, PLACEHOLDER. **b**,**c**, 26-condition macro AUROC in held-out AI-READI folds, clinical fields (**b**) or input blocks (**c**) withheld. Dashed line, all inputs. †, descriptive. Late fusion led without blood count or retina by 0.013 [0.007, 0.018]. **d**, Five-pattern means and paired differences, primary versus gradient boosting. Open marker, late fusion ahead. **b** to **d**, 1,928 adults, fewer than 20 abstentions per pattern (exact shares PLACEHOLDER). **e**, KNHANES 2024 locked test (5,600 adults, haemoglobin 5,360, 7 diagnoses). Key secondaries not met, one-sided Holm-adjusted P = 0.400 (label efficiency) and 0.084 (haemoglobin). In men the primary interval included zero, BRAN trailed at 500 labels and native haemoglobin bias differed by sex. **f**, INSPIRE surgical mortality (≥17,660 survivors, ≥80 deaths). Primary contrast versus blood tests plus context crossed zero (two-comparison adjusted). **g**, HiRID haemoglobin error, direct and local blocks on different admission sets. Direct-use nominal 90% intervals covered 0.41. Local BRAN tied raw inputs. Not drawn, earlier-checkpoint BRAN trailed raw readouts in 5 of 7 KNHANES 2022 to 2023 comparisons (support PLACEHOLDER), three KNHANES 2010 to 2012 studies tied and label budget was adverse (Extended Data Fig. 3e). Points, estimates. Bars, 95% bootstrap intervals (1,000 draws, linearized for haemoglobin in **e**), unadjusted unless stated, baseline bars in Source Data. Label-efficiency intervals omit subsample spread.",
+ "methods_notes": "Methods notes for Fig. 5, revision 20261006a2. These paragraphs hold the per-panel detail that the Nature Medicine legend leaves out. Panels b to d score 26 recorded conditions in held-out AI-READI development folds under controlled input removal. Panel e scores 7 diagnoses and haemoglobin in KNHANES 2024 with every readout fitted on KNHANES 2022 to 2023 and locked before any 2024 row was decoded. Panels f and g score two further external cohorts. No external cohort has retinal images, so the external rows test the missing-input route and cannot test fusion.\n\na, Cohort inputs and exposure. One row per cohort. The first three columns show what BRAN received, coloured by modality. A filled dot means given, a half dot partial and a small grey dot withheld or absent. INSPIRE supplies haemoglobin, haematocrit, platelets and white cell count among 18 preoperative blood measurements without red cell indices, together with blood chemistry and typed age. In HiRID and both KNHANES cohorts the whole blood count is withheld because haemoglobin is a target. HiRID supplies seven non-CBC physiology fields with age unknown. eICU entered encoder training through a nine-field blood count cache without chemistry. Encoder training is filled for eICU, a training source, and half filled for AI-READI, whose development folds are each scored by an encoder trained on the other folds. INSPIRE, HiRID and KNHANES were never used to train the encoder, and their absence from the fold 0 exposure receipt is asserted at build time. Scored before is filled where the same partition was scored previously, the reused AI-READI development folds and the INSPIRE, HiRID and KNHANES 2022 to 2023 partitions scored with an earlier checkpoint. KNHANES 2024 had never been scored before its locked temporal test in e. eICU is not an evaluation cohort (dash). People is a different quantity in each row. It gives the 1,928 AI-READI development adults (exact, paired_people of the pinned matched screening aggregate MS), the eICU fold 0 continuation exposure of at least 38,040 people, the released lower bound of 17,660 survivors in the INSPIRE test split, which also held at least 80 deaths, released separately and not summed, the 10,620 KNHANES 2022 to 2023 adults aged 19 to 79 within whom every readout of e was fitted, and the 5,600 KNHANES 2024 adults aged 19 to 79 scored in e among 6,990 people in the 2024 survey design. Exposure counts are rounded down to multiples of 20 and are not additive, and the KNHANES counts come from the KNHANES 2024 aggregate, which rounds down to multiples of 10. The HiRID admission count is withheld and is PLACEHOLDER. At build time the pinned H6 and H7 aggregates are asserted to flag it as suppressed and the pinned H5 aggregate to hold no count field. H3, H4 and H9 are not read by this build. The support count of the earlier KNHANES 2022 to 2023 evaluation with an earlier checkpoint is withheld by its release schema and is PLACEHOLDER, and it is a different population from the fitting set shown. The text version of this panel is Extended Data Table 1.\n\nb, Field removal. Native-head macro AUROC over 26 recorded conditions in held-out AI-READI development folds as additional clinical fields are withheld by controlled dropout. BRAN (circles with absolute bootstrap 95% intervals) gave 0.703 [0.693, 0.712] with existing observations, 0.696 [0.687, 0.706] at 25% withheld, 0.684 [0.674, 0.694] at 50% and 0.667 [0.657, 0.676] at 75%. The 0% point means no additional dropout and does not imply complete fields. The other markers are the four mask-trained baselines of d, offset horizontally within each level, with shapes as in the key. At 0%, 25%, 50% and 75% withheld they gave gradient boosting 0.680 [0.671, 0.688], 0.670 [0.662, 0.678], 0.656 [0.647, 0.664], 0.637 [0.629, 0.645], MICE 0.687 [0.677, 0.696], 0.678 [0.669, 0.687], 0.668 [0.659, 0.677], 0.654 [0.645, 0.663], median imputation 0.695 [0.686, 0.705], 0.684 [0.675, 0.693], 0.668 [0.659, 0.677], 0.650 [0.641, 0.658] and late fusion 0.701 [0.692, 0.710], 0.691 [0.683, 0.701], 0.677 [0.668, 0.686], 0.663 [0.654, 0.671]. Baseline intervals are absolute bootstrap 95% intervals and are listed here and in the Source Data rather than drawn. n, 1,928 development adults with fewer than 20 abstentions in every pattern, exact supported counts withheld under the small-cell rule.\n\nc, Block removal. The same estimand with a whole block of inputs removed. BRAN gave retina absent 0.687 [0.677, 0.696], clinical physiology absent with typed age kept 0.633 [0.623, 0.642], blood count absent 0.699 [0.690, 0.709] and blood count and retina absent 0.683 [0.674, 0.692], against 0.703 [0.693, 0.712] with all existing inputs (dashed line). † marks the two blood count routes, which are descriptive and outside the prespecified estimand. Typed age stays in every block. With no clinical physiology and no retina BRAN abstains, because age alone never authorizes a prediction. The baselines in the order all inputs, retina absent, physiology absent, blood count absent and blood count and retina absent gave gradient boosting 0.680 [0.671, 0.688], 0.685 [0.676, 0.694], 0.606 [0.597, 0.614], 0.677 [0.668, 0.685], 0.683 [0.674, 0.692], MICE 0.687 [0.677, 0.696], 0.682 [0.672, 0.692], 0.621 [0.612, 0.630], 0.685 [0.676, 0.693], 0.678 [0.668, 0.686], median imputation 0.695 [0.686, 0.705], 0.690 [0.681, 0.700], 0.617 [0.608, 0.626], 0.692 [0.683, 0.702], 0.687 [0.678, 0.696] and late fusion 0.701 [0.692, 0.710], 0.699 [0.689, 0.708], 0.625 [0.616, 0.633], 0.698 [0.689, 0.708], 0.696 [0.686, 0.705]. With the retina absent, median imputation and late fusion sat above BRAN in point estimate, and with blood count and retina absent gradient boosting, median imputation and late fusion did. Paired against BRAN, late fusion led with blood count and retina absent, BRAN minus late fusion −0.013 [−0.018, −0.007], an interval wholly below zero that the legend reports and the Source Data list with the paired contrasts of every profile. n and intervals as in b.\n\nd, Missing-data baselines. BRAN native heads against four comparators fitted locally on outer-training folds with the same random field-mask augmentation BRAN used in training and scored on the exact masks and BRAN-supported rows of b and c. Gradient boosting uses native missing values on clinical values, observation flags, typed age and a 64-component retinal projection with fixed hyperparameters. MICE is chained-equation imputation with five posterior-sampled imputations and tuned logistic regression with mask indicators. Median imputation uses training-fold medians, mask indicators and tuned logistic regression. Late fusion averages a tuned clinical and a tuned retinal logistic model over the modalities present. Left, the prespecified five-pattern mean of macro AUROC (equal mean over 25%, 50% and 75% clinical fields withheld, retina absent and clinical physiology absent) with bootstrap 95% intervals, BRAN 0.673 [0.665, 0.682], gradient boosting 0.651 [0.643, 0.658], MICE 0.661 [0.652, 0.669], median imputation 0.662 [0.654, 0.670], late fusion 0.671 [0.663, 0.679]. Right, BRAN minus each comparator with paired bootstrap 95% intervals, per pattern and for the five-pattern mean (Mean). Five-pattern mean, gradient boosting +0.022 [0.016, 0.029], MICE +0.013 [0.007, 0.018], median imputation +0.011 [0.006, 0.017], late fusion +0.002 [−0.003, 0.007]. The primary contrast is BRAN minus gradient boosting, +0.022 [0.016, 0.029], and BRAN is superior under the prespecified rule (paired lower bound above zero, noninferiority margin 0.010). The late fusion interval crosses zero, a tie. Paired contrasts per pattern follow. 25% of clinical fields withheld, gradient boosting +0.026 [0.018, 0.034], MICE +0.018 [0.011, 0.025], median imputation +0.012 [0.006, 0.018], late fusion +0.005 [−0.001, 0.011]. 50% withheld, gradient boosting +0.028 [0.019, 0.036], MICE +0.015 [0.009, 0.022], median imputation +0.015 [0.009, 0.022], late fusion +0.006 [0.000, 0.013]. 75% withheld, gradient boosting +0.030 [0.021, 0.038], MICE +0.013 [0.006, 0.021], median imputation +0.017 [0.010, 0.025], late fusion +0.004 [−0.002, 0.011]. Retina absent, gradient boosting +0.002 [−0.005, 0.009], MICE +0.005 [−0.001, 0.011], median imputation −0.004 [−0.008, 0.002], late fusion −0.012 [−0.016, −0.007]. Clinical physiology absent with typed age kept, gradient boosting +0.027 [0.018, 0.036], MICE +0.011 [0.003, 0.020], median imputation +0.016 [0.008, 0.024], late fusion +0.008 [0.000, 0.016]. The open marker is the one cell whose paired interval lies wholly below zero, late fusion leading BRAN with the retina absent, −0.012 [−0.016, −0.007]. Paired contrasts for the profiles outside the estimand follow. Existing observations, gradient boosting +0.023 [0.015, 0.031], MICE +0.016 [0.010, 0.022], median imputation +0.007 [0.002, 0.013], late fusion +0.001 [−0.004, 0.007]. Blood count absent, gradient boosting +0.023 [0.015, 0.030], MICE +0.015 [0.009, 0.021], median imputation +0.007 [0.001, 0.013], late fusion +0.001 [−0.005, 0.007]. Blood count and retina absent, gradient boosting +0.000 [−0.007, 0.007], MICE +0.005 [−0.001, 0.012], median imputation −0.004 [−0.010, 0.001], late fusion −0.013 [−0.018, −0.007]. The AUROC drop from existing observations, where a positive drop is a loss, is given next for BRAN and gradient boosting with the paired difference of the two drops. Retina absent, BRAN +0.016 [0.010, 0.021] and gradient boosting −0.006 [−0.012, 0.001], difference +0.022 [0.014, 0.028]. 25% of clinical fields withheld, BRAN +0.006 [0.004, 0.009] and gradient boosting +0.009 [0.007, 0.012], difference −0.003 [−0.006, −0.000]. 50% withheld, BRAN +0.019 [0.015, 0.023] and gradient boosting +0.024 [0.020, 0.027], difference −0.005 [−0.009, −0.000]. 75% withheld, BRAN +0.036 [0.030, 0.041] and gradient boosting +0.042 [0.038, 0.047], difference −0.007 [−0.012, −0.001]. Blood count absent, BRAN +0.003 [0.001, 0.005] and gradient boosting +0.003 [0.000, 0.005], difference +0.000 [−0.002, 0.003]. Blood count and retina absent, BRAN +0.020 [0.013, 0.026] and gradient boosting −0.004 [−0.011, 0.004], difference +0.023 [0.015, 0.031]. Clinical physiology absent with typed age kept, BRAN +0.070 [0.063, 0.078] and gradient boosting +0.074 [0.068, 0.079], difference −0.004 [−0.011, 0.003]. Secondary contrasts are descriptive and not multiplicity adjusted. The BRAN encoder saw all outer-training labels during its own training while the comparators were refitted per fold, so the comparison matches inputs and masks but not upstream label exposure. Gradient boosting used fixed hyperparameters and a tuned version could score higher. Comparator imputers saw inner-validation features, never labels, during tuning. The run replayed 222 sealed BRAN cells of the earlier missingness stress test with a largest absolute difference of 0. n, 1,928 development adults with fewer than 20 abstentions per pattern, exact counts withheld, with a complete 26-condition panel in every profile (8 of 8). Intervals in b to d are participant bootstrap intervals from 1,000 paired draws within outer folds (seed 98551), absolute for arms and paired for contrasts, not multiplicity adjusted. The exact share scored per pattern remains PLACEHOLDER.\n\ne, KNHANES 2024 temporal test. BRAN was applied unchanged to the 2024 Korean National Health and Nutrition Examination Survey through its clinical-only route with seventeen clinical measurements and typed age, the whole blood count hidden and no retina. Every readout and comparator was fitted within the 10,620 KNHANES 2022 to 2023 adults aged 19 to 79 and hashed into fit lock 47113a35 before any 2024 row was decoded, and 2024 was then scored once. Sinusitis, otitis media and sleep apnoea were deleted from the 2024 health questionnaire (KNHANES phase 9 guide, PDF pages 123 to 125 and section 4-1) and were dropped before decoding. An earlier attempt had read the 2024 column metadata and header row count, found these three labels absent and stopped. It decoded no 2024 row, and its header read triggered the correction recorded in ATTEMPT2_TECHNICAL_CORRECTION.txt. The panel therefore holds 7 self-reported physician diagnoses, hypertension, dyslipidaemia, diabetes, kidney disease, asthma, atopic dermatitis and allergic rhinitis, and its macro AUROC is not directly comparable with the ten-diagnosis macro of the earlier KNHANES 2022 to 2023 study or with the 26-condition macro of b to d. Left, survey-weighted macro AUROC per missing-data pattern for the BRAN state logistic readout (circles with 95% intervals), mask-trained gradient boosting (squares) and a mask-trained raw logistic regression (diamonds). All three were fitted without survey weights on pooled copies of the same 2022 to 2023 field masks. Gradient boosting uses native missing values and was tuned on a four-point grid over three PSU folds. The raw logistic regression imputes training medians and adds mask indicators and typed age, the class of median imputation in d, so it shares the diamond. Patterns are natural missingness after erasure of each diagnosis's defining measurements, a further 50% of fields withheld, all blood chemistry removed, and a further 25% or 75% withheld. The first three are the prespecified primary patterns and Primary mean is their average, unlike the five-pattern Mean of d. BRAN gave natural 0.742 [0.730, 0.755], 50% withheld 0.728 [0.716, 0.741], no chemistry 0.722 [0.709, 0.735], 25% withheld 0.733 [0.721, 0.746], 75% withheld 0.719 [0.704, 0.732], three-pattern mean 0.731 [0.720, 0.741]. Gradient boosting gave natural 0.725 [0.712, 0.738], 50% withheld 0.726 [0.714, 0.739], no chemistry 0.712 [0.699, 0.726], 25% withheld 0.721 [0.709, 0.734], 75% withheld 0.718 [0.703, 0.733], three-pattern mean 0.721 [0.709, 0.733]. Raw logistic gave natural 0.740 [0.727, 0.752], 50% withheld 0.725 [0.713, 0.738], no chemistry 0.727 [0.714, 0.740], 25% withheld 0.730 [0.717, 0.744], 75% withheld 0.721 [0.708, 0.735], three-pattern mean 0.730 [0.719, 0.742]. Baseline intervals are listed here rather than drawn. Right, top, BRAN minus each comparator on the three-pattern mean with paired 95% intervals. The primary contrast against gradient boosting was +0.009 [0.001, 0.018] against a noninferiority margin of −0.010 (dotted line), so BRAN was noninferior, and the interval also lay above zero. Against the mask-trained raw logistic regression BRAN tied, +0.000 [−0.005, 0.006]. Per pattern in the order natural, 50% withheld, no chemistry, 25% withheld and 75% withheld, BRAN minus gradient boosting was +0.017 [0.007, 0.028], +0.001 [−0.009, 0.011], +0.010 [−0.002, 0.021], +0.012 [0.001, 0.022], +0.001 [−0.011, 0.012], and BRAN minus raw logistic was +0.002 [−0.006, 0.011], +0.003 [−0.004, 0.010], −0.005 [−0.011, 0.001], +0.003 [−0.006, 0.011], −0.002 [−0.010, 0.005]. On the three-pattern mean BRAN led a raw logistic regression fitted without laboratory values by +0.031 [0.024, 0.039] and pattern-specific retrained gradient boosting by +0.015 [0.007, 0.022]. Mask training mattered, because the same BRAN readout fitted on natural inputs only trailed the mask-trained readout by +0.013 [0.006, 0.020], +0.021 [0.013, 0.028] and +0.027 [0.020, 0.035] with 25%, 50% and 75% of fields withheld. By sex the primary contrast was +0.007 [−0.007, 0.020] in men, an interval that includes zero, and +0.012 [0.001, 0.023] in women. Right, middle, the two key secondaries form one Holm family judged at a one-sided 0.025 level, and both were not met. Label efficiency at 250 labels compares two fixed C = 1 logistic regression probes, one on the BRAN state and one on raw inputs with median imputation, mask indicators and typed age, each refitted on 20 stratified subsamples of natural 2022 to 2023 inputs without mask training. Neither probe is an arm of the left panel, so in that row the diamond marks the raw logistic class and not the mask-trained raw logistic regression, and the BRAN probe is not the mask-trained primary BRAN arm. BRAN minus raw logistic was +0.000 [−0.003, 0.004], Holm-adjusted one-sided P = 0.400. At 500 labels BRAN was behind, −0.004 [−0.007, −0.001]. Haemoglobin error without a blood count under natural missingness was 0.838 [0.818, 0.859] g/dL for the state ridge readout against 0.798 [0.779, 0.818] g/dL for raw gradient boosting, difference +0.040 [0.029, 0.051] g/dL against a noninferiority margin of +0.05 g/dL (dotted line), Holm-adjusted one-sided P = 0.084. A positive haemoglobin difference means larger BRAN error, so the direction header of that row is reversed. The native BRAN haemoglobin head applied directly had error 1.037 [1.014, 1.060] g/dL with signed bias −0.885 [−0.934, −0.837] g/dL in men and +0.707 [0.662, 0.752] g/dL in women, because sex is not a BRAN input, against 1.238 [1.211, 1.266] g/dL for the training median. n, 5,600 adults aged 19 to 79 among 6,990 people in the 2024 survey design, and 5,360 in the haemoglobin analysis, of 5,410 with a haemoglobin target, rounded down to multiples of 10 by the release. AUROC, AUROC contrast and label-efficiency intervals are percentile 95% intervals from 1,000 stratified PSU bootstrap draws of the 2024 survey design (seed 98421, at least 900 valid). Haemoglobin error, bias and the haemoglobin contrast use Taylor-linearized with-replacement PSU 95% intervals of the same design. The haemoglobin P value is one-sided from a t distribution on that linearized variance, and the label-efficiency P value comes from the bootstrap draws. Label-efficiency intervals cover the 2024 design for the mean over the 20 subsamples and omit the spread between subsamples. All intervals treat fitted predictions as fixed and are not multiplicity adjusted outside the Holm family. KNHANES 2022 to 2023 had been evaluated before with an earlier checkpoint and informed this design.\n\nf, Surgical cohort. INSPIRE hospital mortality after surgery with incomplete preoperative blood tests, typed age and no retina, read out by a fixed local L2 logistic model with identical surgical context in every arm. Left, AUROC with marginal 95% participant-bootstrap intervals, context 0.869 [0.827, 0.909], blood tests plus context 0.930 [0.901, 0.954] and BRAN plus context 0.942 [0.917, 0.964]. Right, BRAN plus context minus the comparator in the same row, with intervals adjusted for two comparisons. Against context alone +0.073 [0.034, 0.116]. Against blood tests plus context +0.013 [−0.002, 0.030], so the prespecified primary superiority criterion was not met. Blood tests plus context is drawn in the clinical colour and context alone in grey. n, the test split held at least 17,660 survivors and at least 80 deaths (released lower bounds, not summed). Intervals use 1,000 requested draws with at least 900 valid. The test partition had been scored before with an earlier checkpoint.\n\ng, ICU haemoglobin. HiRID haemoglobin from seven non-CBC physiology fields with the blood count and retina absent and age unknown. Direct use, with no HiRID fitting and all scoring admissions, gave BRAN error 2.619 [2.588, 2.654] g/dL with signed bias +2.31 g/dL (printed next to the marker) and nominal 90% interval coverage 0.406 [0.395, 0.416] using the AI-READI calibrated radius (pinned H7 aggregate, reported in the legend as 0.41). It beat the AI-READI training median 3.327 [3.291, 3.367] and was far worse than every local readout. Local fit, on the evaluation split, a local median offset brought BRAN to 1.654 [1.596, 1.709] and a local ridge readout to 1.633 [1.576, 1.689], which tied raw inputs with ridge 1.634 [1.578, 1.691], difference −0.001 [−0.007, 0.004]. BRAN with ridge was better than BRAN with offset, −0.022 [−0.039, −0.003]. The local median was 1.640 [1.582, 1.694]. On the same evaluation split direct use gave 2.642 [2.567, 2.721] g/dL with bias +2.32, the same failure. The direct and local blocks use different scoring sets. Intervals are fixed-fit 95% admission-bootstrap intervals, 1,000 draws with at least 900 valid and seed 92331 for direct use and 1,000 shared draws for the local fit. HiRID admissions are not proven person-disjoint. n, the HiRID admission count is PLACEHOLDER because every HiRID aggregate suppresses it.\n\nMarks. Purple is BRAN and grey marks baselines and medians. Blood count, clinical inputs and raw-input comparators share the blood colour of the house palette and retina has its own colour (Wong vermillion and blue under the Nature Medicine profile). In b to e the marker shape identifies the comparator class as in the key of b, the row labels of d and the key of e. In the label-efficiency row of e the diamond marks the class of a natural-only raw logistic probe. Dashed lines mark zero or a reference and dotted lines in e mark a prespecified margin. Controlled field dropout differs from natural missingness.\n\nAdverse results kept visible. On the image, the late-fusion lead with the retina absent (open marker in d and positions in c), the late-fusion tie on the five-pattern mean (d), late fusion above BRAN with blood count and retina absent (positions in c), the KNHANES 2024 tie with a mask-trained raw logistic regression and both key secondaries not met (printed in e), the HiRID direct-transport failure (position and printed bias in g), the HiRID local tie with raw inputs (g), and the INSPIRE primary contrast whose interval crosses zero (f). The legend adds the paired late-fusion lead with blood count and retina absent, the Holm-adjusted P of each key secondary, the KNHANES 2024 primary contrast in men, whose interval includes zero, BRAN behind raw logistic at 500 labels, the sex-specific bias of the native haemoglobin head and the HiRID direct-use interval coverage of 0.41 against a nominal 0.90. BRAN against raw-input readouts in KNHANES 2022 to 2023 with an earlier checkpoint was behind in 5, tied in 1 and ahead in 1 of 7 comparisons, with ExtraTrees natural 0.684 against raw 0.703, no-laboratory raw logistic 0.693 against BRAN 0.662, half-fields raw ExtraTrees 0.682 against BRAN logistic 0.669, and haemoglobin state minus raw +0.014 [0.008, 0.021] g/dL favouring raw trees. KNHANES 2010 to 2012 final model, any retinal abnormality, BRAN 0.656 against raw 0.644, difference +0.012 [−0.010, 0.032], tie. KNHANES 2010 to 2012 final model, mobility within osteoarthritis, BRAN 0.665 against raw 0.671, difference −0.006 [−0.035, 0.020], tie. KNHANES 2010 to 2012 final model, usual activity limitation, BRAN 0.698 against raw 0.705, difference −0.007 [−0.036, 0.016], tie. The internal label-budget curve is adverse and is shown in Extended Data Fig. 3e. These KNHANES 2022 to 2023 and 2010 to 2012 comparisons are not drawn in any figure, so this note and the Source Data are their record.\n\nEstimand note. Panels b to d show native-head AUROC. The existing-observations value 0.703 (0.7025 unrounded) is the native estimand and is not the matched-route 0.7026 of Fig. 3a and Extended Data Fig. 3a or the fixed-readout 0.6750 of Extended Data Fig. 3c. The BRAN five-pattern mean 0.673 [0.665, 0.682] in d equals the prespecified mean of the earlier missingness report and excludes the existing-observations reference.\n\nPanel a cell sources. Each cell was asserted against a phrase in the named source at build time. AI-READI, blood count yes (M2md), other clinical yes (OUT), retina yes (E4), encoder training partial (E4 and MC), scored before yes (M2md), people 1,928 (OUT and MS paired_people). eICU, blood count yes (LIN and NSQ), other clinical no (NSQ), retina no (E4), encoder training yes (E4 and MC), scored before not applicable (OUT), people ≥38,040 (E4). INSPIRE, blood count partial (INSE1 and INSV1), other clinical yes (INSV1), retina no (INSmd), encoder training no (INSmd and E4 absence check), scored before yes (INSmd), people ≥17,660 (INS support block). HiRID, blood count no (H5md), other clinical yes (H5md), retina no (H5md), encoder training no (OUT and E4 absence check), scored before yes (H6), people PLACEHOLDER (H6 and H7 and H6agg and H7agg suppression flags). KNHANES 2022 to 2023, blood count no (KS), other clinical yes (KS), retina no (KS), encoder training no (OUT and E4 absence check), scored before yes (KS and OUT), people 10,620 (K24rep and KNmd and K24agg population count). KNHANES 2024, blood count no (K24rep), other clinical yes (K24rep), retina no (K24rep), encoder training no (K24rep and OUT and E4 absence check), scored before no (K24rep and OUT), people 5,600 (K24rep and K24agg population count).\n\nSources, relative to the project root folder. OUT BRAN_MASTER_OUTLINE_2026-09-30_rev2.md. E4 BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md. MC BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_R7_EIGHT_HOUR_RESEARCH_ADDENDUM_2026-09-28_v3/CURRENT_MODEL_CARD.md. M2 BRAN_R7_MISSINGNESS_M2_REPORT_2026-09-25/aggregate_table.json. M2md BRAN_R7_MISSINGNESS_M2_REPORT_2026-09-25/RESULTS.md. INS BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json. INSmd BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/RESULTS.md. INSV1 BRAN_INSPIRE_ADAPTATION_V1_DESIGN.md. INSE1 BRAN_R7_INSPIRE_E1_DESIGN.md. H5 BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/aggregate_table.json. H5md BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/RESULTS.md. H6 BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_HIRID_R7_H6_REPORT_2026-09-25/RESULTS.md. H6agg BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json. H7 BRAN_HIRID_R7_Q4_H7_REPORT_2026-09-28/report.md. H7agg BRAN_HIRID_R7_Q4_H7_REPORT_2026-09-28/aggregate.json. KN BRAN_KNHANES_V5_EXTERNAL_ATTEMPT1/aggregate.json. KNmd BRAN_KNHANES_V5_EXTERNAL_ATTEMPT1/report.md. KS BRAN_KNHANES_SCREENING_V1_ATTEMPT1/report_v2/report.md. C3 BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_COMMUNITY_RETINAL_C3_REPORT_2026-09-25/RESULTS.md. D5 BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_COMMUNITY_FUNCTION_D5_REPORT_V2_2026-09-25/RESULTS.md. CQ4 BRAN_CLINICAL_DISCOVERY_2026-09-30/CQ4_CLINICAL_RESULT_V1.txt. NSQ BRAN_NATIVE_SOURCE_QUALIFICATION_DESIGN_V1.md. LIN BRAN_PRETRAINING_LINEAGE_AND_SOURCE_PROGRESS_V1.md. K24 BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/README.md. K24cor BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/ATTEMPT2_TECHNICAL_CORRECTION.txt. K24ro BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/k24_readouts.py. K24met BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/k24_metrics.py. LOG BRAN_OVERNIGHT_2026-10-01/RESULTS_LOG.md. Baselines BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json, bound by the SHA-256 of BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/protocol.json (72f62a35840d8be9d063e5ac42d0ae891f751291ee8e2312ddbaa20629fa1080) and cross-checked cell by cell against BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/report.md. KNHANES 2024, K24agg BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json pinned at SHA-256 ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828, bound by the SHA-256 of K24prot BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/protocol.json (3befbdfe42019d5504c861bf7d82eaa2f9e444f3a1ff3d6c10c50bb652a438fe), which also binds K24, K24cor, K24ro and K24met, and cross-checked against K24rep BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/report.md. Plotted values in b to g and the counts of a come from the pinned aggregates BASE BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json (SHA-256 4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d), M2 BRAN_R7_MISSINGNESS_M2_REPORT_2026-09-25/aggregate_table.json (SHA-256 c059aa2c325b4695abbdce49817112f4463b3f21f43b734ef1c1180b6d6e189a), K24agg BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json (SHA-256 ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828), INS BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json (SHA-256 aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8), H5 BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/aggregate_table.json (SHA-256 2fa6ea507a8c40992c6ba524f35edc76154bc545908a3d1bfe31eccb56cd2407), H6agg BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json (SHA-256 65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb), H7agg BRAN_HIRID_R7_Q4_H7_REPORT_2026-09-28/aggregate.json (SHA-256 5c9e6bceedba0cb117cae4105c6847a76d9e9186cfa25cd94aa5eb66688dc823), MS BRAN_MATCHED_SCREENING_V1/aggregate.json (SHA-256 dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a).\n\nBuild. Drawn by BRAN_FIGURES_2026-10-01/locked/build_fig5.py with bran_plotly_style under its Nature Medicine profile, importing the loaders and source assertions of BRAN_FIGURES_2026-10-01/build_fig5_v5.py and BRAN_FIGURES_2026-10-01/build_fig5_v2.py on the aggregate path only. The Source Data JSON holds everything the drawing step needs, and the source-data-only rebuild draws the identical PNG from it without opening any other project file, under the rendering stack recorded in the manifest. Exported once as PDF, SVG and 600 dpi PNG with a SHA-256 manifest. No patient-level file was opened.",
+ "panels": {
+  "a": {
+   "title": "Fig. 5a. Cohort inputs, encoder training, earlier scoring and people analysed",
+   "columns": [
+    "cohort",
+    "group",
+    "blood_count",
+    "other_clinical",
+    "retina",
+    "encoder_training",
+    "scored_before",
+    "people_printed",
+    "people_count",
+    "people_count_type",
+    "people_definition",
+    "cell_source_keys",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "AI-READI",
+     "development",
+     "yes",
+     "yes",
+     "yes",
+     "partial",
+     "yes",
+     "1,928",
+     1928,
+     "exact",
+     "development adults of the train and validation splits, scored out of fold in b to d (paired_people of the matched screening aggregate MS)",
+     "E4 | M2md | MC | OUT",
+     "BRAN_MATCHED_SCREENING_V1/aggregate.json",
+     "dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a"
+    ],
+    [
+     "eICU",
+     "development",
+     "yes",
+     "no",
+     "no",
+     "yes",
+     "not applicable",
+     "≥38,040",
+     38040,
+     "lower bound, floored to 20",
+     "fold 0 continuation training exposure",
+     "E4 | LIN | MC | NSQ | OUT",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19"
+    ],
+    [
+     "INSPIRE",
+     "external",
+     "partial",
+     "yes",
+     "no",
+     "no",
+     "yes",
+     "≥17,660",
+     17660,
+     "lower bound, floored to 20",
+     "survivors in the test split, released separately from at least 80 deaths and not summed",
+     "INSE1 | INSV1 | INSmd",
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "HiRID",
+     "external",
+     "no",
+     "yes",
+     "no",
+     "no",
+     "yes",
+     "PLACEHOLDER",
+     null,
+     "withheld",
+     "admission count suppressed by every HiRID aggregate (complementary suppression)",
+     "H5md | H6 | OUT",
+     "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+     "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+    ],
+    [
+     "KNHANES 2022–2023",
+     "external",
+     "no",
+     "yes",
+     "no",
+     "no",
+     "yes",
+     "10,620",
+     10620,
+     "rounded down to 10 by the release",
+     "adults aged 19 to 79 within whom every readout of e was fitted",
+     "KS | OUT",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "KNHANES 2024",
+     "external",
+     "no",
+     "yes",
+     "no",
+     "no",
+     "no",
+     "5,600",
+     5600,
+     "rounded down to 10 by the release",
+     "adults aged 19 to 79 scored in e",
+     "K24rep | OUT",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ]
+   ],
+   "count_columns": [
+    "people_count"
+   ],
+   "floored_columns": [],
+   "notes": [
+    "Cell states were asserted at build time against phrases in the named source files (methods_notes lists each). People is a different quantity per row, as people_definition states. AI-READI development adults (exact, paired_people of MS), eICU fold 0 training exposure (eICU is not evaluated in this figure), INSPIRE test-split survivors, the KNHANES 2022 to 2023 adults on whom the readouts of e were fitted, and the KNHANES 2024 adults tested in e. ≥ marks a released lower bound. INSPIRE also released at least 80 deaths in its test split, not summed with survivors. The HiRID admission count is withheld (H6 and H7 flag it as suppressed and H5 holds no count) and is PLACEHOLDER. The support of the earlier KNHANES 2022 to 2023 evaluation with an earlier checkpoint is withheld by its release schema, is a different population from the fitting set and is PLACEHOLDER."
+   ]
+  },
+  "b": {
+   "title": "Fig. 5b. Field removal, native-head macro AUROC over 26 conditions, held-out AI-READI development folds",
+   "columns": [
+    "arm",
+    "arm_label",
+    "marker",
+    "pattern",
+    "clinical_fields_withheld_pct",
+    "macro_auroc",
+    "ci95_low",
+    "ci95_high",
+    "interval_drawn",
+    "development_adults_exact",
+    "abstentions_per_pattern",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "BRAN",
+     "BRAN",
+     "circle",
+     "available",
+     0,
+     0.7025389001255713,
+     0.6928898881605993,
+     0.7120467469299396,
+     true,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN",
+     "BRAN",
+     "circle",
+     "clinical_drop25",
+     25,
+     0.6964337487154312,
+     0.6872613108464964,
+     0.7058749672260696,
+     true,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN",
+     "BRAN",
+     "circle",
+     "clinical_drop50",
+     50,
+     0.683527340637107,
+     0.6736757707939253,
+     0.6940074993637814,
+     true,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN",
+     "BRAN",
+     "circle",
+     "clinical_drop75",
+     75,
+     0.6666623041739902,
+     0.6569178054206224,
+     0.6761974762006108,
+     true,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "available",
+     0,
+     0.6795032450979321,
+     0.6706997745109038,
+     0.687758535715282,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "clinical_drop25",
+     25,
+     0.6703676993965145,
+     0.6618108780594436,
+     0.6784479479834145,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "clinical_drop50",
+     50,
+     0.6559203589208198,
+     0.6474399898680673,
+     0.6639881748200416,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "clinical_drop75",
+     75,
+     0.6370295840196744,
+     0.6288261283674863,
+     0.6450171674167252,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "available",
+     0,
+     0.6866612192851209,
+     0.6774810145617038,
+     0.6955836218122896,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "clinical_drop25",
+     25,
+     0.6781618042397047,
+     0.6691677741568155,
+     0.6871180402280169,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "clinical_drop50",
+     50,
+     0.6681642511567303,
+     0.6591723659440148,
+     0.6771969920612103,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "clinical_drop75",
+     75,
+     0.6535293027543582,
+     0.644652109056052,
+     0.6626304851551458,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "available",
+     0,
+     0.6952709938330597,
+     0.6859677032142544,
+     0.7046573052245332,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "clinical_drop25",
+     25,
+     0.6841160117287775,
+     0.6751402101749945,
+     0.6932207671648911,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "clinical_drop50",
+     50,
+     0.6682889444572735,
+     0.6592149092433113,
+     0.6768886393351856,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "clinical_drop75",
+     75,
+     0.6495931129729633,
+     0.6413588215439854,
+     0.6581045094911542,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "available",
+     0,
+     0.7010582780266044,
+     0.6917107195055834,
+     0.7104842108694863,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "clinical_drop25",
+     25,
+     0.6912589806213141,
+     0.6826240505542558,
+     0.700516946581778,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "clinical_drop50",
+     50,
+     0.6772144354789875,
+     0.6682571804189615,
+     0.6860982719696778,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "clinical_drop75",
+     75,
+     0.662716408723553,
+     0.6544075517911284,
+     0.6709443285861932,
+     false,
+     1928,
+     "fewer than 20",
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ]
+   ],
+   "count_columns": [
+    "development_adults_exact"
+   ],
+   "floored_columns": [],
+   "notes": [
+    "Absolute participant-bootstrap 95% intervals, 1,000 paired draws within outer folds, seed 98551. Baseline intervals are listed but not drawn.",
+    "development_adults_exact is paired_people of the pinned matched screening aggregate MS (BRAN_MATCHED_SCREENING_V1/aggregate.json, SHA-256 dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a). The baselines aggregate of the source column releases only a floored per-pattern supported count, which is not printed because it would bound the abstentions."
+   ]
+  },
+  "c": {
+   "title": "Fig. 5c. Block removal, same estimand as b",
+   "columns": [
+    "quantity",
+    "arm_or_comparator",
+    "arm_label",
+    "marker",
+    "profile",
+    "profile_label",
+    "descriptive_route",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "drawn",
+    "interval_drawn",
+    "reference_line_all_inputs",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "macro AUROC",
+     "BRAN",
+     "BRAN",
+     "circle",
+     "available",
+     "All inputs",
+     false,
+     0.7025389001255713,
+     0.6928898881605993,
+     0.7120467469299396,
+     true,
+     true,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "BRAN",
+     "BRAN",
+     "circle",
+     "no_retina",
+     "No retina",
+     false,
+     0.686727901359132,
+     0.6770445310591907,
+     0.6961939810611595,
+     true,
+     true,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "BRAN",
+     "BRAN",
+     "circle",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.6327008907818141,
+     0.6226436906960585,
+     0.6423843581889416,
+     true,
+     true,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "BRAN",
+     "BRAN",
+     "circle",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.6994776497066391,
+     0.6901432277720952,
+     0.7089886828807154,
+     true,
+     true,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "BRAN",
+     "BRAN",
+     "circle",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.6829544799215251,
+     0.6735581698970871,
+     0.6919403520418369,
+     true,
+     true,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "available",
+     "All inputs",
+     false,
+     0.6795032450979321,
+     0.6706997745109038,
+     0.687758535715282,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "no_retina",
+     "No retina",
+     false,
+     0.685206277899022,
+     0.6758239068979084,
+     0.693689718714814,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.6056775385785598,
+     0.5970493032360651,
+     0.6137361523915206,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.6769300652355323,
+     0.6680916392343266,
+     0.6851184164049876,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.6832447655021832,
+     0.6737238351699573,
+     0.6921762512099742,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "available",
+     "All inputs",
+     false,
+     0.6866612192851209,
+     0.6774810145617038,
+     0.6955836218122896,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "no_retina",
+     "No retina",
+     false,
+     0.6818995692793067,
+     0.6721839246456752,
+     0.6917191964511429,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.6212875488494021,
+     0.6123503234913729,
+     0.6298193104253734,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.6845676663170959,
+     0.6755609699333825,
+     0.6933797411187863,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.6775770003488868,
+     0.6682239041147736,
+     0.6862471594606934,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "available",
+     "All inputs",
+     false,
+     0.6952709938330597,
+     0.6859677032142544,
+     0.7046573052245332,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "no_retina",
+     "No retina",
+     false,
+     0.6904542570170205,
+     0.6812967004183796,
+     0.6995196054414192,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.6170470927733688,
+     0.6082497649246664,
+     0.6258454366717271,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.6923838459785924,
+     0.6833370362745014,
+     0.7015178440864949,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.6872059677210852,
+     0.6780329198997616,
+     0.6963814294018342,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "available",
+     "All inputs",
+     false,
+     0.7010582780266044,
+     0.6917107195055834,
+     0.7104842108694863,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "no_retina",
+     "No retina",
+     false,
+     0.6986183456563455,
+     0.6894087973772811,
+     0.7079207556217231,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.6248391357880811,
+     0.6162490112593771,
+     0.6334636076902302,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.6983300572772613,
+     0.6889298139427333,
+     0.7077352875471157,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "macro AUROC",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.6955235265177632,
+     0.6862580804107618,
+     0.7047817145929652,
+     true,
+     false,
+     0.7025389001255713,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "available",
+     "All inputs",
+     false,
+     0.023035655027639157,
+     0.015218297271343387,
+     0.03060781692483422,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "no_retina",
+     "No retina",
+     false,
+     0.0015216234601099776,
+     -0.005461149780803531,
+     0.008902827473336435,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.02702335220325436,
+     0.017849699563243053,
+     0.036255856934613626,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.02254758447110672,
+     0.014815217095522146,
+     0.03012032315938203,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "Gradient boosting",
+     "square",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     -0.0002902855806580229,
+     -0.0072061817188080685,
+     0.006849674738010785,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "available",
+     "All inputs",
+     false,
+     0.01587768084045038,
+     0.009828393371552127,
+     0.021892110675616982,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "no_retina",
+     "No retina",
+     false,
+     0.004828332079825248,
+     -0.0014186023113911537,
+     0.011279393544454426,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.011413341932412058,
+     0.0033612869750422464,
+     0.01977565869554255,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.014909983389543191,
+     0.00863560046717785,
+     0.02081376087890229,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "MICE",
+     "triangle-up",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     0.005377479572638344,
+     -0.0014557115509858526,
+     0.012249151583395247,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "available",
+     "All inputs",
+     false,
+     0.007267906292511617,
+     0.0017448068826614207,
+     0.012677506161164495,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "no_retina",
+     "No retina",
+     false,
+     -0.0037263556578884804,
+     -0.008490692548280438,
+     0.0015516530538906821,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.015653798008445352,
+     0.007886574203421889,
+     0.024164962163174094,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.007093803728046688,
+     0.001377227259805533,
+     0.012694289289338686,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "Median imputation",
+     "diamond",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     -0.004251487799560083,
+     -0.009634631174223723,
+     0.0008989785486998023,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "available",
+     "All inputs",
+     false,
+     0.0014806220989669328,
+     -0.004066256984750371,
+     0.0068251962881898075,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "no_retina",
+     "No retina",
+     false,
+     -0.011890444297213532,
+     -0.016472620167896728,
+     -0.0067905683404626115,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "all_clinical_hidden",
+     "No physiology",
+     false,
+     0.007861754993732983,
+     0.00016434321646289498,
+     0.015963116800058467,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "whole_cbc_hidden",
+     "No blood count",
+     true,
+     0.0011475924293777862,
+     -0.0045635044251919445,
+     0.006702985336530683,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "Late fusion",
+     "cross",
+     "whole_cbc_no_retina",
+     "No blood count or retina",
+     true,
+     -0.012569046596238032,
+     -0.0176191088284402,
+     -0.007428906672608863,
+     false,
+     false,
+     null,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ]
+   ],
+   "count_columns": [],
+   "floored_columns": [],
+   "notes": [
+    "† marks the two descriptive blood count routes outside the prespecified estimand. Typed age stays in every block.",
+    "The paired BRAN-minus-comparator rows are not drawn in c (the no retina and no physiology contrasts are the ones drawn in d). Paired participant bootstrap 95% intervals, 1,000 draws within outer folds, not multiplicity adjusted. Two cells lie wholly below zero, late fusion with the retina absent (the open marker of d) and late fusion with blood count and retina absent, −0.013 [−0.018, −0.007], which the legend reports."
+   ]
+  },
+  "d": {
+   "title": "Fig. 5d. Missing-data baselines, five-pattern mean and paired contrasts",
+   "columns": [
+    "quantity",
+    "arm_or_comparator",
+    "pattern",
+    "pattern_label",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "open_marker",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "five-pattern mean macro AUROC",
+     "BRAN",
+     "five_pattern_mean",
+     "Five-pattern mean",
+     0.6732104371334948,
+     0.6646498089326446,
+     0.6823449608382064,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "five-pattern mean macro AUROC",
+     "GBM",
+     "five_pattern_mean",
+     "Five-pattern mean",
+     0.6508402917629181,
+     0.6433091687736228,
+     0.6582200917032017,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "five-pattern mean macro AUROC",
+     "MICE_LR",
+     "five_pattern_mean",
+     "Five-pattern mean",
+     0.6606084952559004,
+     0.6524446535173887,
+     0.6685554793280799,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "five-pattern mean macro AUROC",
+     "MEDIAN_LR",
+     "five_pattern_mean",
+     "Five-pattern mean",
+     0.6618998837898806,
+     0.6538948083709157,
+     0.6697527821357542,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "five-pattern mean macro AUROC",
+     "LATE_FUSION",
+     "five_pattern_mean",
+     "Five-pattern mean",
+     0.6709294612536562,
+     0.6628093887016134,
+     0.6789931913909203,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "clinical_drop25",
+     "25%",
+     0.02606604931891665,
+     0.01819651251525984,
+     0.033645544773988935,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "clinical_drop50",
+     "50%",
+     0.02760698171628717,
+     0.019317224535165045,
+     0.03567655615272216,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "clinical_drop75",
+     "75%",
+     0.02963272015431584,
+     0.021073879688828182,
+     0.03816600862377612,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "no_retina",
+     "No retina",
+     0.0015216234601099776,
+     -0.005461149780803531,
+     0.008902827473336435,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "all_clinical_hidden",
+     "No physiology",
+     0.02702335220325436,
+     0.017849699563243053,
+     0.036255856934613626,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "GBM",
+     "mean",
+     "Mean",
+     0.02237014537057669,
+     0.015593059862025384,
+     0.029228949968433744,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "clinical_drop25",
+     "25%",
+     0.018271944475726443,
+     0.011304948213165142,
+     0.024966927667856638,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "clinical_drop50",
+     "50%",
+     0.01536308948037668,
+     0.008528588448300654,
+     0.0221944384821872,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "clinical_drop75",
+     "75%",
+     0.013133001419632029,
+     0.005922135506142618,
+     0.020715360209462144,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "no_retina",
+     "No retina",
+     0.004828332079825248,
+     -0.0014186023113911537,
+     0.011279393544454426,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "all_clinical_hidden",
+     "No physiology",
+     0.011413341932412058,
+     0.0033612869750422464,
+     0.01977565869554255,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MICE_LR",
+     "mean",
+     "Mean",
+     0.012601941877594447,
+     0.007054414409463169,
+     0.018103156736375355,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "clinical_drop25",
+     "25%",
+     0.012317736986653727,
+     0.0060398263674200595,
+     0.018432935564958525,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "clinical_drop50",
+     "50%",
+     0.015238396179833469,
+     0.008579057560241105,
+     0.02235609414198733,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "clinical_drop75",
+     "75%",
+     0.0170691912010269,
+     0.010366221101847664,
+     0.024776616335602592,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "no_retina",
+     "No retina",
+     -0.0037263556578884804,
+     -0.008490692548280438,
+     0.0015516530538906821,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "all_clinical_hidden",
+     "No physiology",
+     0.015653798008445352,
+     0.007886574203421889,
+     0.024164962163174094,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "MEDIAN_LR",
+     "mean",
+     "Mean",
+     0.011310553343614194,
+     0.0061505774969183215,
+     0.01680355299422728,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "clinical_drop25",
+     "25%",
+     0.005174768094117099,
+     -0.0006567249250255535,
+     0.01080063342586955,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "clinical_drop50",
+     "50%",
+     0.006312905158119442,
+     0.0003605398875839495,
+     0.01297607389226612,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "clinical_drop75",
+     "75%",
+     0.00394589545043722,
+     -0.002354199263856857,
+     0.010802556765596539,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "no_retina",
+     "No retina",
+     -0.011890444297213532,
+     -0.016472620167896728,
+     -0.0067905683404626115,
+     true,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "all_clinical_hidden",
+     "No physiology",
+     0.007861754993732983,
+     0.00016434321646289498,
+     0.015963116800058467,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ],
+    [
+     "BRAN minus comparator, paired",
+     "LATE_FUSION",
+     "mean",
+     "Mean",
+     0.002280975879838665,
+     -0.002560163429330492,
+     0.007447534490823388,
+     false,
+     "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+     "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+    ]
+   ],
+   "count_columns": [],
+   "floored_columns": [],
+   "notes": [
+    "Primary contrast BRAN minus gradient boosting on the five-pattern mean, superiority when the paired lower bound is above zero (noninferiority margin 0.010). Other contrasts descriptive and not multiplicity adjusted. Mean is the five-pattern mean."
+   ]
+  },
+  "e": {
+   "title": "Fig. 5e. KNHANES 2024 locked temporal test, 7 diagnoses",
+   "columns": [
+    "block",
+    "arm_or_comparator",
+    "pattern",
+    "pattern_label",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "interval_drawn",
+    "margin",
+    "decision",
+    "holm_adjusted_p_one_sided",
+    "interval_method",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "natural",
+     "Natural",
+     0.7417627198330241,
+     0.7301029472583963,
+     0.754581486454241,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "drop50",
+     "50%",
+     0.7276615843608353,
+     0.7158401457643805,
+     0.740603221649379,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "no_labs",
+     "No chemistry",
+     0.7220838727486338,
+     0.7088378439365854,
+     0.7352170352974514,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "mean3",
+     "Primary mean",
+     0.7305027256474977,
+     0.7198486151393207,
+     0.7413729403204338,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "drop25",
+     "25%",
+     0.7329419584185324,
+     0.7213578193483461,
+     0.7462845768888281,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "bran_state_logistic",
+     "drop75",
+     "75%",
+     0.7185236385333729,
+     0.7043469524625007,
+     0.7318493393028224,
+     true,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "natural",
+     "Natural",
+     0.7246468885788578,
+     0.7121774209748654,
+     0.7375005256246665,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "drop50",
+     "50%",
+     0.7263237908164933,
+     0.713897873683536,
+     0.7390299150527054,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "no_labs",
+     "No chemistry",
+     0.7122339521275939,
+     0.6990519977465698,
+     0.7256499000119133,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "mean3",
+     "Primary mean",
+     0.7210682105076484,
+     0.7094065995547899,
+     0.7328443804713235,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "drop25",
+     "25%",
+     0.7213035846053591,
+     0.7088669624588788,
+     0.734441713132548,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_gbm_masktrained",
+     "drop75",
+     "75%",
+     0.7178344070892606,
+     0.7030193609481241,
+     0.7325072307016692,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "natural",
+     "Natural",
+     0.739646521499591,
+     0.7272567208545488,
+     0.7521078331524312,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "drop50",
+     "50%",
+     0.7247694224067133,
+     0.7126348406490278,
+     0.737999814995094,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "no_labs",
+     "No chemistry",
+     0.727053074941603,
+     0.7139068561549986,
+     0.7395652270820967,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "mean3",
+     "Primary mean",
+     0.7304896729493024,
+     0.7190804151661668,
+     0.7418164831778473,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "drop25",
+     "25%",
+     0.7303512550110026,
+     0.7173965960397709,
+     0.7440431162071525,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "survey-weighted macro AUROC",
+     "raw_logistic_masktrained",
+     "drop75",
+     "75%",
+     0.7208991257231467,
+     0.7075177190006589,
+     0.7345811516502627,
+     false,
+     null,
+     null,
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "BRAN minus comparator, three-pattern mean",
+     "raw_gbm_masktrained",
+     "mean3",
+     "Primary mean",
+     0.009434515139849387,
+     0.0009238228848823582,
+     0.017677592442972977,
+     true,
+     -0.01,
+     "Noninferior",
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "BRAN minus comparator, three-pattern mean",
+     "raw_logistic_masktrained",
+     "mean3",
+     "Primary mean",
+     1.3052698195292756e-05,
+     -0.005334272152487968,
+     0.005663099276798419,
+     true,
+     null,
+     "Tie",
+     null,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "key secondary, label efficiency",
+     "raw_logistic probe",
+     "natural",
+     "250 labels",
+     0.0004687236414184781,
+     -0.0032497253921799306,
+     0.004027116384187154,
+     true,
+     null,
+     "Not met",
+     0.3996003996003996,
+     "PSU bootstrap percentile",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "key secondary, haemoglobin error g/dL",
+     "raw_gbm",
+     "natural",
+     "Natural",
+     0.04008376176960998,
+     0.02882147126005495,
+     0.051346052279165014,
+     true,
+     0.05,
+     "Not met",
+     0.08399467904190645,
+     "Taylor linearized PSU",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ]
+   ],
+   "count_columns": [],
+   "floored_columns": [],
+   "notes": [
+    "n, 5,600 adults aged 19 to 79 among 6,990 people in the 2024 survey design, 5,360 in the haemoglobin analysis of 5,410 with a target, counts rounded down to 10 by the release. Readouts fitted on 10,620 KNHANES 2022 to 2023 adults and locked (fit lock 47113a35) before any 2024 row was decoded.",
+    "Key secondaries in canvas order, label efficiency at 250 labels (one-sided Holm-adjusted P = 0.3996) and haemoglobin error noninferiority (one-sided Holm-adjusted P = 0.0840), one Holm family at a one-sided 0.025 level, both not met. The label-efficiency interval covers the 2024 design for the mean over 20 subsamples and omits the spread between subsamples. Baseline AUROC intervals are listed but not drawn."
+   ]
+  },
+  "f": {
+   "title": "Fig. 5f. INSPIRE hospital mortality after surgery",
+   "columns": [
+    "quantity",
+    "row",
+    "colour_class",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "interval_type",
+    "test_survivors_lower_bound",
+    "test_deaths_lower_bound",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "AUROC",
+     "Context",
+     "grey",
+     0.8691449847233504,
+     0.8274352775628394,
+     0.9089810686368995,
+     "marginal participant bootstrap",
+     17660,
+     80,
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "AUROC",
+     "Blood tests + context",
+     "blood",
+     0.9296447153225145,
+     0.9005926990031806,
+     0.9544977472143842,
+     "marginal participant bootstrap",
+     17660,
+     80,
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "AUROC",
+     "BRAN + context",
+     "shared",
+     0.9423533101315706,
+     0.9173793236615706,
+     0.9640988973012001,
+     "marginal participant bootstrap",
+     17660,
+     80,
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "BRAN + context minus comparator",
+     "vs context",
+     "shared",
+     0.0732083254082202,
+     0.03404587287563001,
+     0.1156050589326197,
+     "adjusted for two comparisons",
+     17660,
+     80,
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "BRAN + context minus comparator",
+     "vs blood tests + context",
+     "shared",
+     0.012708594809056173,
+     -0.0024703546356252127,
+     0.030052102171236123,
+     "adjusted for two comparisons",
+     17660,
+     80,
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ]
+   ],
+   "count_columns": [
+    "test_survivors_lower_bound",
+    "test_deaths_lower_bound"
+   ],
+   "floored_columns": [
+    "test_survivors_lower_bound",
+    "test_deaths_lower_bound"
+   ],
+   "notes": [
+    "1,000 requested draws with at least 900 valid. Primary superiority over blood tests plus context not met."
+   ]
+  },
+  "g": {
+   "title": "Fig. 5g. HiRID haemoglobin, direct use and local fit",
+   "columns": [
+    "block",
+    "row",
+    "colour_class",
+    "mae_g_dl",
+    "ci95_low",
+    "ci95_high",
+    "signed_bias_g_dl_printed",
+    "admissions",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "Direct use",
+     "AI-READI median",
+     "grey",
+     3.3270639777023945,
+     3.290957270343875,
+     3.367457707330242,
+     null,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/aggregate_table.json",
+     "2fa6ea507a8c40992c6ba524f35edc76154bc545908a3d1bfe31eccb56cd2407"
+    ],
+    [
+     "Direct use",
+     "BRAN",
+     "shared",
+     2.6189463322158093,
+     2.5879758039312475,
+     2.6541224307288527,
+     2.3103543072624038,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/aggregate_table.json",
+     "2fa6ea507a8c40992c6ba524f35edc76154bc545908a3d1bfe31eccb56cd2407"
+    ],
+    [
+     "Local fit",
+     "Local median",
+     "grey",
+     1.6395054629097185,
+     1.5817945558584399,
+     1.6943628681901337,
+     null,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+     "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+    ],
+    [
+     "Local fit",
+     "Raw inputs + ridge",
+     "blood",
+     1.6341113835620138,
+     1.5782890890727699,
+     1.6907177153091268,
+     null,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+     "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+    ],
+    [
+     "Local fit",
+     "BRAN + offset",
+     "shared",
+     1.6541991184001597,
+     1.5960042620032961,
+     1.709205678940831,
+     null,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+     "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+    ],
+    [
+     "Local fit",
+     "BRAN + ridge",
+     "shared",
+     1.6326189059547411,
+     1.576248425900128,
+     1.6886611070858057,
+     null,
+     "PLACEHOLDER",
+     "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+     "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+    ]
+   ],
+   "count_columns": [],
+   "floored_columns": [],
+   "notes": [
+    "Fixed-fit 95% admission-bootstrap intervals, 1,000 draws (seed 92331 for direct use, shared draws for the local fit). Direct and local blocks use different scoring sets, all scoring admissions for direct use and the evaluation split for the local fit. Admission counts are suppressed by the source and are PLACEHOLDER.",
+    "Not drawn. Direct-use BRAN nominal 90% interval coverage with the AI-READI calibrated radius was 0.406 [0.395, 0.416] (BRAN_HIRID_R7_Q4_H7_REPORT_2026-09-28/aggregate.json, SHA-256 5c9e6bceedba0cb117cae4105c6847a76d9e9186cfa25cd94aa5eb66688dc823)."
+   ]
+  }
+ },
+ "draw": {
+  "a": {
+   "rows": [
+    {
+     "cohort": "AI-READI",
+     "group": "development",
+     "cells": {
+      "blood": "yes",
+      "other": "yes",
+      "retina": "yes",
+      "enc": "partial",
+      "scored": "yes"
+     },
+     "people": "1,928"
+    },
+    {
+     "cohort": "eICU",
+     "group": "development",
+     "cells": {
+      "blood": "yes",
+      "other": "no",
+      "retina": "no",
+      "enc": "yes",
+      "scored": "not applicable"
+     },
+     "people": "≥38,040"
+    },
+    {
+     "cohort": "INSPIRE",
+     "group": "external",
+     "cells": {
+      "blood": "partial",
+      "other": "yes",
+      "retina": "no",
+      "enc": "no",
+      "scored": "yes"
+     },
+     "people": "≥17,660"
+    },
+    {
+     "cohort": "HiRID",
+     "group": "external",
+     "cells": {
+      "blood": "no",
+      "other": "yes",
+      "retina": "no",
+      "enc": "no",
+      "scored": "yes"
+     },
+     "people": null
+    },
+    {
+     "cohort": "KNHANES 2022–2023",
+     "group": "external",
+     "cells": {
+      "blood": "no",
+      "other": "yes",
+      "retina": "no",
+      "enc": "no",
+      "scored": "yes"
+     },
+     "people": "10,620"
+    },
+    {
+     "cohort": "KNHANES 2024",
+     "group": "external",
+     "cells": {
+      "blood": "no",
+      "other": "yes",
+      "retina": "no",
+      "enc": "no",
+      "scored": "no"
+     },
+     "people": "5,600"
+    }
+   ]
+  },
+  "b": {
+   "pct": [
+    0,
+    25,
+    50,
+    75
+   ],
+   "patterns": [
+    "available",
+    "clinical_drop25",
+    "clinical_drop50",
+    "clinical_drop75"
+   ],
+   "values": {
+    "BRAN": [
+     [
+      0.7025389001255713,
+      0.6928898881605993,
+      0.7120467469299396
+     ],
+     [
+      0.6964337487154312,
+      0.6872613108464964,
+      0.7058749672260696
+     ],
+     [
+      0.683527340637107,
+      0.6736757707939253,
+      0.6940074993637814
+     ],
+     [
+      0.6666623041739902,
+      0.6569178054206224,
+      0.6761974762006108
+     ]
+    ],
+    "GBM": [
+     [
+      0.6795032450979321,
+      0.6706997745109038,
+      0.687758535715282
+     ],
+     [
+      0.6703676993965145,
+      0.6618108780594436,
+      0.6784479479834145
+     ],
+     [
+      0.6559203589208198,
+      0.6474399898680673,
+      0.6639881748200416
+     ],
+     [
+      0.6370295840196744,
+      0.6288261283674863,
+      0.6450171674167252
+     ]
+    ],
+    "MICE_LR": [
+     [
+      0.6866612192851209,
+      0.6774810145617038,
+      0.6955836218122896
+     ],
+     [
+      0.6781618042397047,
+      0.6691677741568155,
+      0.6871180402280169
+     ],
+     [
+      0.6681642511567303,
+      0.6591723659440148,
+      0.6771969920612103
+     ],
+     [
+      0.6535293027543582,
+      0.644652109056052,
+      0.6626304851551458
+     ]
+    ],
+    "MEDIAN_LR": [
+     [
+      0.6952709938330597,
+      0.6859677032142544,
+      0.7046573052245332
+     ],
+     [
+      0.6841160117287775,
+      0.6751402101749945,
+      0.6932207671648911
+     ],
+     [
+      0.6682889444572735,
+      0.6592149092433113,
+      0.6768886393351856
+     ],
+     [
+      0.6495931129729633,
+      0.6413588215439854,
+      0.6581045094911542
+     ]
+    ],
+    "LATE_FUSION": [
+     [
+      0.7010582780266044,
+      0.6917107195055834,
+      0.7104842108694863
+     ],
+     [
+      0.6912589806213141,
+      0.6826240505542558,
+      0.700516946581778
+     ],
+     [
+      0.6772144354789875,
+      0.6682571804189615,
+      0.6860982719696778
+     ],
+     [
+      0.662716408723553,
+      0.6544075517911284,
+      0.6709443285861932
+     ]
+    ]
+   }
+  },
+  "c": {
+   "profiles": [
+    [
+     "available",
+     "All<br>inputs"
+    ],
+    [
+     "no_retina",
+     "No<br>retina"
+    ],
+    [
+     "all_clinical_hidden",
+     "No<br>physiology"
+    ],
+    [
+     "whole_cbc_hidden",
+     "No blood<br>count†"
+    ],
+    [
+     "whole_cbc_no_retina",
+     "No blood<br>count or<br>retina†"
+    ]
+   ],
+   "values": {
+    "BRAN": [
+     [
+      0.7025389001255713,
+      0.6928898881605993,
+      0.7120467469299396
+     ],
+     [
+      0.686727901359132,
+      0.6770445310591907,
+      0.6961939810611595
+     ],
+     [
+      0.6327008907818141,
+      0.6226436906960585,
+      0.6423843581889416
+     ],
+     [
+      0.6994776497066391,
+      0.6901432277720952,
+      0.7089886828807154
+     ],
+     [
+      0.6829544799215251,
+      0.6735581698970871,
+      0.6919403520418369
+     ]
+    ],
+    "GBM": [
+     [
+      0.6795032450979321,
+      0.6706997745109038,
+      0.687758535715282
+     ],
+     [
+      0.685206277899022,
+      0.6758239068979084,
+      0.693689718714814
+     ],
+     [
+      0.6056775385785598,
+      0.5970493032360651,
+      0.6137361523915206
+     ],
+     [
+      0.6769300652355323,
+      0.6680916392343266,
+      0.6851184164049876
+     ],
+     [
+      0.6832447655021832,
+      0.6737238351699573,
+      0.6921762512099742
+     ]
+    ],
+    "MICE_LR": [
+     [
+      0.6866612192851209,
+      0.6774810145617038,
+      0.6955836218122896
+     ],
+     [
+      0.6818995692793067,
+      0.6721839246456752,
+      0.6917191964511429
+     ],
+     [
+      0.6212875488494021,
+      0.6123503234913729,
+      0.6298193104253734
+     ],
+     [
+      0.6845676663170959,
+      0.6755609699333825,
+      0.6933797411187863
+     ],
+     [
+      0.6775770003488868,
+      0.6682239041147736,
+      0.6862471594606934
+     ]
+    ],
+    "MEDIAN_LR": [
+     [
+      0.6952709938330597,
+      0.6859677032142544,
+      0.7046573052245332
+     ],
+     [
+      0.6904542570170205,
+      0.6812967004183796,
+      0.6995196054414192
+     ],
+     [
+      0.6170470927733688,
+      0.6082497649246664,
+      0.6258454366717271
+     ],
+     [
+      0.6923838459785924,
+      0.6833370362745014,
+      0.7015178440864949
+     ],
+     [
+      0.6872059677210852,
+      0.6780329198997616,
+      0.6963814294018342
+     ]
+    ],
+    "LATE_FUSION": [
+     [
+      0.7010582780266044,
+      0.6917107195055834,
+      0.7104842108694863
+     ],
+     [
+      0.6986183456563455,
+      0.6894087973772811,
+      0.7079207556217231
+     ],
+     [
+      0.6248391357880811,
+      0.6162490112593771,
+      0.6334636076902302
+     ],
+     [
+      0.6983300572772613,
+      0.6889298139427333,
+      0.7077352875471157
+     ],
+     [
+      0.6955235265177632,
+      0.6862580804107618,
+      0.7047817145929652
+     ]
+    ]
+   },
+   "reference": 0.7025389001255713
+  },
+  "d": {
+   "abs": {
+    "BRAN": [
+     0.6732104371334948,
+     0.6646498089326446,
+     0.6823449608382064
+    ],
+    "GBM": [
+     0.6508402917629181,
+     0.6433091687736228,
+     0.6582200917032017
+    ],
+    "MICE_LR": [
+     0.6606084952559004,
+     0.6524446535173887,
+     0.6685554793280799
+    ],
+    "MEDIAN_LR": [
+     0.6618998837898806,
+     0.6538948083709157,
+     0.6697527821357542
+    ],
+    "LATE_FUSION": [
+     0.6709294612536562,
+     0.6628093887016134,
+     0.6789931913909203
+    ]
+   },
+   "cols": [
+    [
+     "clinical_drop25",
+     "25%"
+    ],
+    [
+     "clinical_drop50",
+     "50%"
+    ],
+    [
+     "clinical_drop75",
+     "75%"
+    ],
+    [
+     "no_retina",
+     "No<br>retina"
+    ],
+    [
+     "all_clinical_hidden",
+     "No<br>physiology"
+    ],
+    [
+     "mean",
+     "Mean"
+    ]
+   ],
+   "con": {
+    "GBM": [
+     [
+      0.02606604931891665,
+      0.01819651251525984,
+      0.033645544773988935
+     ],
+     [
+      0.02760698171628717,
+      0.019317224535165045,
+      0.03567655615272216
+     ],
+     [
+      0.02963272015431584,
+      0.021073879688828182,
+      0.03816600862377612
+     ],
+     [
+      0.0015216234601099776,
+      -0.005461149780803531,
+      0.008902827473336435
+     ],
+     [
+      0.02702335220325436,
+      0.017849699563243053,
+      0.036255856934613626
+     ],
+     [
+      0.02237014537057669,
+      0.015593059862025384,
+      0.029228949968433744
+     ]
+    ],
+    "MICE_LR": [
+     [
+      0.018271944475726443,
+      0.011304948213165142,
+      0.024966927667856638
+     ],
+     [
+      0.01536308948037668,
+      0.008528588448300654,
+      0.0221944384821872
+     ],
+     [
+      0.013133001419632029,
+      0.005922135506142618,
+      0.020715360209462144
+     ],
+     [
+      0.004828332079825248,
+      -0.0014186023113911537,
+      0.011279393544454426
+     ],
+     [
+      0.011413341932412058,
+      0.0033612869750422464,
+      0.01977565869554255
+     ],
+     [
+      0.012601941877594447,
+      0.007054414409463169,
+      0.018103156736375355
+     ]
+    ],
+    "MEDIAN_LR": [
+     [
+      0.012317736986653727,
+      0.0060398263674200595,
+      0.018432935564958525
+     ],
+     [
+      0.015238396179833469,
+      0.008579057560241105,
+      0.02235609414198733
+     ],
+     [
+      0.0170691912010269,
+      0.010366221101847664,
+      0.024776616335602592
+     ],
+     [
+      -0.0037263556578884804,
+      -0.008490692548280438,
+      0.0015516530538906821
+     ],
+     [
+      0.015653798008445352,
+      0.007886574203421889,
+      0.024164962163174094
+     ],
+     [
+      0.011310553343614194,
+      0.0061505774969183215,
+      0.01680355299422728
+     ]
+    ],
+    "LATE_FUSION": [
+     [
+      0.005174768094117099,
+      -0.0006567249250255535,
+      0.01080063342586955
+     ],
+     [
+      0.006312905158119442,
+      0.0003605398875839495,
+      0.01297607389226612
+     ],
+     [
+      0.00394589545043722,
+      -0.002354199263856857,
+      0.010802556765596539
+     ],
+     [
+      -0.011890444297213532,
+      -0.016472620167896728,
+      -0.0067905683404626115
+     ],
+     [
+      0.007861754993732983,
+      0.00016434321646289498,
+      0.015963116800058467
+     ],
+     [
+      0.002280975879838665,
+      -0.002560163429330492,
+      0.007447534490823388
+     ]
+    ]
+   },
+   "hollow": [
+    [
+     "no_retina",
+     "LATE_FUSION"
+    ]
+   ]
+  },
+  "e": {
+   "cols": [
+    [
+     "natural",
+     "Natural",
+     0.0
+    ],
+    [
+     "drop50",
+     "50%",
+     1.0
+    ],
+    [
+     "no_labs",
+     "No<br>chemistry",
+     2.0
+    ],
+    [
+     "mean3",
+     "Primary<br>mean",
+     3.0
+    ],
+    [
+     "drop25",
+     "25%",
+     4.35
+    ],
+    [
+     "drop75",
+     "75%",
+     5.35
+    ]
+   ],
+   "arms": [
+    "bran_state_logistic",
+    "raw_gbm_masktrained",
+    "raw_logistic_masktrained"
+   ],
+   "values": {
+    "bran_state_logistic": [
+     [
+      0.7417627198330241,
+      0.7301029472583963,
+      0.754581486454241
+     ],
+     [
+      0.7276615843608353,
+      0.7158401457643805,
+      0.740603221649379
+     ],
+     [
+      0.7220838727486338,
+      0.7088378439365854,
+      0.7352170352974514
+     ],
+     [
+      0.7305027256474977,
+      0.7198486151393207,
+      0.7413729403204338
+     ],
+     [
+      0.7329419584185324,
+      0.7213578193483461,
+      0.7462845768888281
+     ],
+     [
+      0.7185236385333729,
+      0.7043469524625007,
+      0.7318493393028224
+     ]
+    ],
+    "raw_gbm_masktrained": [
+     [
+      0.7246468885788578,
+      0.7121774209748654,
+      0.7375005256246665
+     ],
+     [
+      0.7263237908164933,
+      0.713897873683536,
+      0.7390299150527054
+     ],
+     [
+      0.7122339521275939,
+      0.6990519977465698,
+      0.7256499000119133
+     ],
+     [
+      0.7210682105076484,
+      0.7094065995547899,
+      0.7328443804713235
+     ],
+     [
+      0.7213035846053591,
+      0.7088669624588788,
+      0.734441713132548
+     ],
+     [
+      0.7178344070892606,
+      0.7030193609481241,
+      0.7325072307016692
+     ]
+    ],
+    "raw_logistic_masktrained": [
+     [
+      0.739646521499591,
+      0.7272567208545488,
+      0.7521078331524312
+     ],
+     [
+      0.7247694224067133,
+      0.7126348406490278,
+      0.737999814995094
+     ],
+     [
+      0.727053074941603,
+      0.7139068561549986,
+      0.7395652270820967
+     ],
+     [
+      0.7304896729493024,
+      0.7190804151661668,
+      0.7418164831778473
+     ],
+     [
+      0.7303512550110026,
+      0.7173965960397709,
+      0.7440431162071525
+     ],
+     [
+      0.7208991257231467,
+      0.7075177190006589,
+      0.7345811516502627
+     ]
+    ]
+   },
+   "primary": [
+    [
+     "raw_gbm_masktrained",
+     [
+      0.009434515139849387,
+      0.0009238228848823582,
+      0.017677592442972977
+     ],
+     "Noninferior"
+    ],
+    [
+     "raw_logistic_masktrained",
+     [
+      1.3052698195292756e-05,
+      -0.005334272152487968,
+      0.005663099276798419
+     ],
+     "Tie"
+    ]
+   ],
+   "margin": -0.01,
+   "le": [
+    0.0004687236414184781,
+    -0.0032497253921799306,
+    0.004027116384187154
+   ],
+   "le_size": 250,
+   "hb": [
+    0.04008376176960998,
+    0.02882147126005495,
+    0.051346052279165014
+   ],
+   "hb_margin": 0.05
+  },
+  "f": {
+   "arms": [
+    [
+     "Context",
+     "grey",
+     [
+      0.8691449847233504,
+      0.8274352775628394,
+      0.9089810686368995
+     ]
+    ],
+    [
+     "Blood tests + context",
+     "blood",
+     [
+      0.9296447153225145,
+      0.9005926990031806,
+      0.9544977472143842
+     ]
+    ],
+    [
+     "BRAN + context",
+     "shared",
+     [
+      0.9423533101315706,
+      0.9173793236615706,
+      0.9640988973012001
+     ]
+    ]
+   ],
+   "con": [
+    [
+     "vs context",
+     [
+      0.0732083254082202,
+      0.03404587287563001,
+      0.1156050589326197
+     ]
+    ],
+    [
+     "vs blood tests + context",
+     [
+      0.012708594809056173,
+      -0.0024703546356252127,
+      0.030052102171236123
+     ]
+    ]
+   ]
+  },
+  "g": {
+   "groups": [
+    [
+     "Direct use",
+     [
+      [
+       "AI-READI median",
+       "grey",
+       [
+        3.3270639777023945,
+        3.290957270343875,
+        3.367457707330242
+       ]
+      ],
+      [
+       "BRAN",
+       "shared",
+       [
+        2.6189463322158093,
+        2.5879758039312475,
+        2.6541224307288527
+       ]
+      ]
+     ]
+    ],
+    [
+     "Local fit",
+     [
+      [
+       "Local median",
+       "grey",
+       [
+        1.6395054629097185,
+        1.5817945558584399,
+        1.6943628681901337
+       ]
+      ],
+      [
+       "Raw inputs + ridge",
+       "blood",
+       [
+        1.6341113835620138,
+        1.5782890890727699,
+        1.6907177153091268
+       ]
+      ],
+      [
+       "BRAN + offset",
+       "shared",
+       [
+        1.6541991184001597,
+        1.5960042620032961,
+        1.709205678940831
+       ]
+      ],
+      [
+       "BRAN + ridge",
+       "shared",
+       [
+        1.6326189059547411,
+        1.576248425900128,
+        1.6886611070858057
+       ]
+      ]
+     ]
+    ]
+   ],
+   "bias": 2.3103543072624038
+  }
+ },
+ "sources": {
+  "BASE": {
+   "path": "BRAN_OVERNIGHT_2026-10-01/missingness_baselines/results/attempt1/aggregate.json",
+   "sha256": "4e7a6e6b0d58f32534e46e5edecb3b75df08e2892394956eff01ae8cb349539d"
+  },
+  "M2": {
+   "path": "BRAN_R7_MISSINGNESS_M2_REPORT_2026-09-25/aggregate_table.json",
+   "sha256": "c059aa2c325b4695abbdce49817112f4463b3f21f43b734ef1c1180b6d6e189a"
+  },
+  "K24agg": {
+   "path": "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+   "sha256": "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+  },
+  "INS": {
+   "path": "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+   "sha256": "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+  },
+  "H5": {
+   "path": "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/aggregate_table.json",
+   "sha256": "2fa6ea507a8c40992c6ba524f35edc76154bc545908a3d1bfe31eccb56cd2407"
+  },
+  "H6agg": {
+   "path": "BRAN_HIRID_R7_H6_REPORT_2026-09-25/aggregate_table.json",
+   "sha256": "65747fa97710d8169c5983f83a130de61bd23991ae39ef0f9fcf1ca6098f90eb"
+  },
+  "H7agg": {
+   "path": "BRAN_HIRID_R7_Q4_H7_REPORT_2026-09-28/aggregate.json",
+   "sha256": "5c9e6bceedba0cb117cae4105c6847a76d9e9186cfa25cd94aa5eb66688dc823"
+  },
+  "MS": {
+   "path": "BRAN_MATCHED_SCREENING_V1/aggregate.json",
+   "sha256": "dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a"
+  }
+ },
+ "paths_relative_to": "the project root folder (Foresight)",
+ "disclosure": "Counts are of three kinds, as the count-type column of each row states. AI-READI is exact, counts printed with ≥ are released lower bounds rounded down to a multiple of 20, and KNHANES counts are rounded down to a multiple of 10 by their release. The HiRID admission count is withheld. No cell below 20 and no per-person value is present."
+}

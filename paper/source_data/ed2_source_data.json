@@ -1,0 +1,1329 @@
+{
+ "schema": "bran-source-data-v1",
+ "figure": "ed2",
+ "display": "Extended Data Fig. 2",
+ "display_short": "EDFig2",
+ "title": "Participant flow and cohort characteristics",
+ "legend": "**Extended Data Fig. 2 | Participant flow and cohort characteristics.**\n**a**, AI-READI. The 1,928 development adults are reused throughout and scored out of fold. The 352-person official test was scored once by the predecessor model in August 2026, whose paired primary end point was not met, and once by BRAN on 5 October 2026 as a previously accessed check (Extended Data Fig. 1).\n**b**, Development beside the whole local release, which also holds the official test. Study group is held only for the release, age has no summary aggregate, and sex, race and ethnicity need controlled access, so these cells are PLACEHOLDER. The encoder has no sex, race, ethnicity or medication input. UAB, University of Alabama at Birmingham. UCSD, University of California San Diego. UW, University of Washington.\n**c**, Prevalence of 26 self-reported conditions among development adults with an explicit answer, with floored counts of yes and of answers. Each condition had at least 50 people with and 50 without it before any model was scored. MCI, mild cognitive impairment.\n**d**, External cohorts, one row per analysis, with the figure showing it. Encoder says whether a cohort trained the encoder (training source, people in the final fit) or never did (unseen), and scored before marks cohorts an earlier BRAN checkpoint had also scored. No external cohort has retinal photographs, so every external row tests the clinical-only route. The MIMIC-IV replication rule was not met, eICU had insufficient support, and the MIMIC-III CareVue and HiRID counts are PLACEHOLDER. ED, Extended Data.\nCounts with ≥ are lower bounds rounded down to 20, KNHANES survey counts are rounded down to 10, and other counts are exact.",
+ "methods_notes": "Methods notes for Extended Data Fig. 2 (moved from the legend). a, each fold holds out 385 or 386 people and every readout of a fold is fitted on the remaining 1,542 or 1,543, and the five fold models do not share a coordinate frame. The red-cell axis was learned in the at least 380 held-out people of fold 0 with both routes. The predecessor had decoded the official-test blood counts and ten condition source fields. b, images were counted by camera for development only. Study group is the AI-READI recruitment stratum, and the cohort is enriched for type 2 diabetes. c, missing answers are left out of the denominator. Prediabetes is labelled only where type 2 diabetes is labelled absent (at least 1,200 answers). The most common conditions were elevated A1C (51.1%), high cholesterol (50.0%), high blood pressure (49.6%) and the least common MCI (3.1%). The gate also needed at least 10 people with and 10 without each condition per outer fold. d, NHANES 2005 to 2008 (at least 8,480 people in the fold 0 fit), MIMIC-IV (33,760), eICU (38,040), MIMIC-III (7,180) and NWICU (17,860) are the five clinical-only training sources. KNHANES samples different people each year. The NHANES 2011 to 2014 grip cohort lies inside the 2009 to 2018 cycles. For NHANES 1999 to 2004 deaths are given for the red-cell and then the distance analysis. The ED Fig. 7 subgroups use NHANES 2005 to 2008 (discovery, at least 1,520 adults with all 19 laboratory values in range and 1,260 with diabetes) and 2009 to 2018 (validation, at least 4,460 and 4,060). INSPIRE releases survivors and deaths separately. MIMIC-IV follows one index admission per person, from at least 157,100 people to 30,040 survivors of a stay of at least 72 hours, 4,240 of whom died within 365 days. The replication needed eICU or MIMIC-III CareVue to show the same direction with a 95% interval excluding zero.",
+ "panels": {
+  "a": {
+   "title": "AI-READI participant flow.",
+   "columns": [
+    "box",
+    "title",
+    "detail",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "release",
+     "Local AI-READI release, 2,280 adults",
+     "Three sites, recommended splits train 1,576, validation 352 and test 352",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "development",
+     "Development, 1,928 adults",
+     "Train and validation splits, scored out of fold. Clinical measurements 1,928, colour fundus photographs ≥1,920 (42,558 images)",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "official",
+     "Official test, 352 adults",
+     "Predecessor model scored once in August 2026, ≥340 complete cases, paired primary not met (ED Fig. 1)",
+     "PATIENT_ATLAS_OFFICIAL_TEST_RESULT_V1.json",
+     "534a8ea9b2d6b141e50edc512f1a46e7971a91d282ed31beba668f85eeed0e75"
+    ],
+    [
+     "folds",
+     "Five participant folds",
+     "385 or 386 held out per fold, readouts fitted on 1,542 or 1,543",
+     "BRAN_R7_READOUT_CURVE_L1_REPORT_2026-09-28/report.md",
+     "c74f11b6386f04c17ad7bdee4170b230b943585b3c7588ac16dda9c25f6ce2f9"
+    ],
+    [
+     "fold0",
+     "Fold 0 held out with both routes, ≥380",
+     "Taught the red-cell axis without any outcome (Fig. 6)",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/aggregate.json",
+     "aad5fd29c523460868ab39bff7aa7ffbce33d6e1391be9e0d8ddcdfa205bc8b4"
+    ],
+    [
+     "bran_scoring",
+     "BRAN scored once, ≥340",
+     "5 October 2026, a previously accessed check (ED Fig. 1)",
+     "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+     "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+    ]
+   ]
+  },
+  "b": {
+   "title": "Characteristics of AI-READI development (1,928) and of the whole local release (2,280). Site and image counts are exact.",
+   "columns": [
+    "group",
+    "characteristic",
+    "development",
+    "local_release",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "Site",
+     "UAB",
+     "686 (35.6%)",
+     "800 (35.1%)",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "Site",
+     "UCSD",
+     "578 (30.0%)",
+     "682 (29.9%)",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "Site",
+     "UW",
+     "664 (34.4%)",
+     "798 (35.0%)",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "Colour fundus photographs",
+     "People",
+     "≥1,920",
+     "≥2,260",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "Colour fundus photographs",
+     "Images",
+     "42,558",
+     "50,315",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "Colour fundus photographs",
+     "Eidon (iCare), images",
+     "15,234 (35.8%)",
+     "Not counted",
+     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+    ],
+    [
+     "Colour fundus photographs",
+     "Aurora (Optomed), images",
+     "8,275 (19.4%)",
+     "Not counted",
+     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+    ],
+    [
+     "Colour fundus photographs",
+     "Maestro2 (Topcon), images",
+     "7,687 (18.1%)",
+     "Not counted",
+     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+    ],
+    [
+     "Colour fundus photographs",
+     "Triton (Topcon), images",
+     "11,362 (26.7%)",
+     "Not counted",
+     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+    ],
+    [
+     "Study group",
+     "Healthy",
+     "PLACEHOLDER",
+     "776 (34.0%)",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "Study group",
+     "Prediabetes, lifestyle controlled",
+     "PLACEHOLDER",
+     "560 (24.6%)",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "Study group",
+     "Oral or non-insulin medication",
+     "PLACEHOLDER",
+     "686 (30.1%)",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "Study group",
+     "Insulin dependent",
+     "PLACEHOLDER",
+     "258 (11.3%)",
+     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+    ],
+    [
+     "No summary aggregate",
+     "Age",
+     "PLACEHOLDER",
+     "PLACEHOLDER",
+     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+    ],
+    [
+     "Not held in the record",
+     "Sex, race and ethnicity",
+     "PLACEHOLDER",
+     "PLACEHOLDER",
+     "BRAN_MASTER_OUTLINE_2026-09-30_rev2.md",
+     "ba33ff74e491f09fd4d3c0d1ff18500916d4c134a4f1dd6a373a7faeb5aa0e88"
+    ]
+   ]
+  },
+  "c": {
+   "title": "Prevalence of 26 self-reported conditions among development adults with an explicit answer, printed to one decimal and drawn at that value. Counts are lower bounds rounded down to 20.",
+   "columns": [
+    "condition_group",
+    "condition_code",
+    "condition",
+    "prevalence_pct",
+    "yes_lower_bound",
+    "answered_lower_bound",
+    "source",
+    "source_sha256"
+   ],
+   "count_columns": [
+    "yes_lower_bound",
+    "answered_lower_bound"
+   ],
+   "floored_columns": [
+    "yes_lower_bound",
+    "answered_lower_bound"
+   ],
+   "rows": [
+    [
+     "Eye",
+     "mhoccur_ded",
+     "Dry eye",
+     32.6,
+     620,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Eye",
+     "mhoccur_crt",
+     "Cataracts",
+     30.1,
+     560,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Eye",
+     "mhoccur_glc",
+     "Glaucoma",
+     8.0,
+     140,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Eye",
+     "mhoccur_amd",
+     "Macular degeneration",
+     5.1,
+     80,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mh_a1c",
+     "Elevated A1C",
+     51.1,
+     980,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_clsh",
+     "High cholesterol",
+     50.0,
+     940,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_hbp",
+     "High blood pressure",
+     49.6,
+     940,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhterm_predm",
+     "Prediabetes",
+     39.4,
+     460,
+     1200,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_obs",
+     "Obesity",
+     37.4,
+     700,
+     1880,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhterm_dm2",
+     "Type II diabetes",
+     37.3,
+     700,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_cvdot",
+     "Other heart issues",
+     13.1,
+     240,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_rnl",
+     "Kidney problems",
+     9.9,
+     180,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_circ",
+     "Circulation problems",
+     8.3,
+     160,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_lbp",
+     "Low blood pressure",
+     5.6,
+     100,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_mi",
+     "Heart attack",
+     4.9,
+     80,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Cardiometabolic and vascular",
+     "mhoccur_strk",
+     "Stroke",
+     4.4,
+     80,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_ra",
+     "Arthritis",
+     41.8,
+     800,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_ua",
+     "Urinary problems",
+     22.7,
+     420,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_gi",
+     "Digestive problems",
+     22.3,
+     420,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_ca",
+     "Cancer",
+     17.8,
+     340,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_fall",
+     "Falls",
+     16.7,
+     320,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_ear",
+     "Hearing impairment",
+     14.9,
+     280,
+     1920,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_plm",
+     "Pulmonary problems",
+     13.8,
+     260,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_oa",
+     "Osteoporosis",
+     13.0,
+     240,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_cns",
+     "Other neurological",
+     7.9,
+     140,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ],
+    [
+     "Other",
+     "mhoccur_cogn",
+     "MCI",
+     3.1,
+     40,
+     1900,
+     "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+     "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+    ]
+   ]
+  },
+  "d": {
+   "title": "External cohorts behind Figs. 5 and 6 and Extended Data Figs. 6 and 7. Counts with ≥ are lower bounds rounded down to 20, KNHANES survey counts are rounded down to 10 by their run.",
+   "columns": [
+    "group",
+    "cohort",
+    "analysis",
+    "encoder",
+    "people",
+    "deaths",
+    "shown_in",
+    "encoder_source",
+    "encoder_source_sha256",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "Korean national survey (KNHANES), clinical-only route",
+     "2022 to 2023",
+     "Fitting set of every locked readout of the 2024 test",
+     "Unseen, scored before",
+     "13,190 in the survey design, 10,620 aged 19 to 79",
+     "Cross-sectional",
+     "Fig. 5",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "Korean national survey (KNHANES), clinical-only route",
+     "2022 and 2023",
+     "Grip strength discovery (2022) and replication (2023)",
+     "Unseen, scored before",
+     "≥1,180 aged 65 to 79 in 2022, ≥1,300 in 2023",
+     "Cross-sectional",
+     "Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_modalities/results/attempt_01/aggregate.json",
+     "539e122cc303aa4517f17544c767a3947d505281cca995f3da8e0e27cf4775c3"
+    ],
+    [
+     "Korean national survey (KNHANES), clinical-only route",
+     "2024",
+     "Locked temporal test, scored once",
+     "Unseen",
+     "6,990 in the survey design, 5,600 aged 19 to 79",
+     "Cross-sectional",
+     "Fig. 5",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "Korean national survey (KNHANES), clinical-only route",
+     "2024",
+     "Grip strength and phase angle replication",
+     "Unseen",
+     "Grip ≥1,340 aged 65 to 79 and ≥3,740 aged 40 to 79, phase angle ≥3,760",
+     "Cross-sectional",
+     "Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_NATMED_PHASE2_2026-10-05/knhanes_2024_grip_replication/EXECUTE_ATTEMPT2/aggregate.json",
+     "3f9ace54ee83592a778339a0314b8ab4650003594923385dedd29bb04438b003"
+    ],
+    [
+     "US national survey (NHANES), blood tests only",
+     "1999 to 2004",
+     "Death replication in a third era",
+     "Unseen",
+     "≥8,740 aged 40 and older, ≥8,720 analysed for the red-cell axis and ≥7,600 aged 40 to 79 for distance",
+     "≥3,700 and ≥2,640",
+     "Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_NATMED_PHASE2_2026-10-05/death_replication_9904/EXECUTE_ATTEMPT1/aggregate.json",
+     "38b98230529ed0094edd6fbdfb51f2a691c9ff56febc82288ce140f0eaf7660b"
+    ],
+    [
+     "US national survey (NHANES), blood tests only",
+     "2005 to 2008",
+     "Red-cell axis replication, subgroup discovery",
+     "Training source, ≥8,480",
+     "≥6,440 aged 40 and older",
+     "≥1,780",
+     "Fig. 6, ED Fig. 7",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/aggregate.json",
+     "aad5fd29c523460868ab39bff7aa7ffbce33d6e1391be9e0d8ddcdfa205bc8b4"
+    ],
+    [
+     "US national survey (NHANES), blood tests only",
+     "2009 to 2018",
+     "Red-cell axis primary cohort, subgroup validation",
+     "Unseen",
+     "≥17,640 aged 40 and older, ≥17,600 analysed",
+     "≥1,940",
+     "Fig. 6, ED Fig. 7",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/aggregate.json",
+     "aad5fd29c523460868ab39bff7aa7ffbce33d6e1391be9e0d8ddcdfa205bc8b4"
+    ],
+    [
+     "US national survey (NHANES), blood tests only",
+     "2009 to 2018",
+     "Distance from health and death",
+     "Unseen",
+     "≥15,940 aged 40 to 79, ≥15,900 analysed",
+     "≥1,220",
+     "Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_NATMED_PUSH_2026-10-02/fig6_discovery_expansion/EXECUTE_ATTEMPT2/aggregate.json",
+     "9ec254055d7b0bcd68a4a0bc1437f30f195d117fbdfffdf7a4f2e31c98b72898"
+    ],
+    [
+     "US national survey (NHANES), blood tests only",
+     "2011 to 2014",
+     "Grip strength replication in US adults",
+     "Unseen",
+     "≥1,680 aged 65 to 79, ≥1,480 analysed",
+     "Cross-sectional",
+     "Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_NATMED_PUSH_2026-10-02/fig6_discovery_expansion/EXECUTE_ATTEMPT2/aggregate.json",
+     "9ec254055d7b0bcd68a4a0bc1437f30f195d117fbdfffdf7a4f2e31c98b72898"
+    ],
+    [
+     "Hospital cohorts",
+     "INSPIRE",
+     "Hospital death after surgery, test split",
+     "Unseen, scored before",
+     "≥17,660 survivors and ≥80 deaths, released separately",
+     "≥80 in hospital",
+     "Fig. 5",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "Hospital cohorts",
+     "HiRID",
+     "ICU haemoglobin from seven physiology fields",
+     "Unseen, scored before",
+     "PLACEHOLDER",
+     "Not studied",
+     "Fig. 5",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/RESULTS.md",
+     "9b8b797c79ac6470756bf9a6e23b10b3accfb17e8226b16aa2fc2c7b981be12a"
+    ],
+    [
+     "Hospital cohorts",
+     "MIMIC-IV",
+     "Recovery deficit at discharge and one-year death, replication not met",
+     "Training source, ≥33,760",
+     "≥157,100 index admissions, ≥30,040 analysed",
+     "≥4,240 within 365 days",
+     "ED Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/aggregate.json",
+     "c3a4d66e1836942b1af2e6f34f0cdcc8ef7ae90b3a8e83a38d0324d7ea3e4ab3"
+    ],
+    [
+     "Hospital cohorts",
+     "eICU",
+     "Recovery-deficit replication, death in hospital after ICU discharge",
+     "Training source, ≥38,040",
+     "Insufficient support, no estimate",
+     "Not estimated",
+     "ED Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/aggregate.json",
+     "c3a4d66e1836942b1af2e6f34f0cdcc8ef7ae90b3a8e83a38d0324d7ea3e4ab3"
+    ],
+    [
+     "Hospital cohorts",
+     "MIMIC-III CareVue",
+     "Recovery-deficit replication",
+     "Training source, ≥7,180",
+     "PLACEHOLDER",
+     "PLACEHOLDER",
+     "ED Fig. 6",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19",
+     "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/aggregate.json",
+     "c3a4d66e1836942b1af2e6f34f0cdcc8ef7ae90b3a8e83a38d0324d7ea3e4ab3"
+    ]
+   ],
+   "notes": [
+    "source is the aggregate or report the row's people and death counts were read from, with its SHA-256. encoder_source is the training exposure receipt, which lists every encoder training source, so a cohort absent from it never trained the encoder."
+   ]
+  }
+ },
+ "draw": {
+  "flow": [
+   [
+    "release",
+    "Local AI-READI release, 2,280 adults",
+    "Three sites, recommended splits train 1,576, validation 352 and test 352",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "development",
+    "Development, 1,928 adults",
+    "Train and validation splits, scored out of fold. Clinical measurements 1,928, colour fundus photographs ≥1,920 (42,558 images)",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "official",
+    "Official test, 352 adults",
+    "Predecessor model scored once in August 2026, ≥340 complete cases, paired primary not met (ED Fig. 1)",
+    "PATIENT_ATLAS_OFFICIAL_TEST_RESULT_V1.json",
+    "534a8ea9b2d6b141e50edc512f1a46e7971a91d282ed31beba668f85eeed0e75"
+   ],
+   [
+    "folds",
+    "Five participant folds",
+    "385 or 386 held out per fold, readouts fitted on 1,542 or 1,543",
+    "BRAN_R7_READOUT_CURVE_L1_REPORT_2026-09-28/report.md",
+    "c74f11b6386f04c17ad7bdee4170b230b943585b3c7588ac16dda9c25f6ce2f9"
+   ],
+   [
+    "fold0",
+    "Fold 0 held out with both routes, ≥380",
+    "Taught the red-cell axis without any outcome (Fig. 6)",
+    "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/aggregate.json",
+    "aad5fd29c523460868ab39bff7aa7ffbce33d6e1391be9e0d8ddcdfa205bc8b4"
+   ],
+   [
+    "bran_scoring",
+    "BRAN scored once, ≥340",
+    "5 October 2026, a previously accessed check (ED Fig. 1)",
+    "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+    "0b0805e7668d757c0f82ce8a87e86f05a45a387dca755bd5e7b12672e9ea3846"
+   ]
+  ],
+  "table1": [
+   [
+    "Site",
+    "UAB",
+    "686 (35.6%)",
+    "800 (35.1%)",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "Site",
+    "UCSD",
+    "578 (30.0%)",
+    "682 (29.9%)",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "Site",
+    "UW",
+    "664 (34.4%)",
+    "798 (35.0%)",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "Colour fundus photographs",
+    "People",
+    "≥1,920",
+    "≥2,260",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "Colour fundus photographs",
+    "Images",
+    "42,558",
+    "50,315",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "Colour fundus photographs",
+    "Eidon (iCare), images",
+    "15,234 (35.8%)",
+    "Not counted",
+    "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+    "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+   ],
+   [
+    "Colour fundus photographs",
+    "Aurora (Optomed), images",
+    "8,275 (19.4%)",
+    "Not counted",
+    "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+    "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+   ],
+   [
+    "Colour fundus photographs",
+    "Maestro2 (Topcon), images",
+    "7,687 (18.1%)",
+    "Not counted",
+    "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+    "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+   ],
+   [
+    "Colour fundus photographs",
+    "Triton (Topcon), images",
+    "11,362 (26.7%)",
+    "Not counted",
+    "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+    "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
+   ],
+   [
+    "Study group",
+    "Healthy",
+    "PLACEHOLDER",
+    "776 (34.0%)",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "Study group",
+    "Prediabetes, lifestyle controlled",
+    "PLACEHOLDER",
+    "560 (24.6%)",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "Study group",
+    "Oral or non-insulin medication",
+    "PLACEHOLDER",
+    "686 (30.1%)",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "Study group",
+    "Insulin dependent",
+    "PLACEHOLDER",
+    "258 (11.3%)",
+    "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+    "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
+   ],
+   [
+    "No summary aggregate",
+    "Age",
+    "PLACEHOLDER",
+    "PLACEHOLDER",
+    "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+    "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
+   ],
+   [
+    "Not held in the record",
+    "Sex, race and ethnicity",
+    "PLACEHOLDER",
+    "PLACEHOLDER",
+    "BRAN_MASTER_OUTLINE_2026-09-30_rev2.md",
+    "ba33ff74e491f09fd4d3c0d1ff18500916d4c134a4f1dd6a373a7faeb5aa0e88"
+   ]
+  ],
+  "blocks": [
+   [
+    "Eye",
+    [
+     "mhoccur_crt",
+     "mhoccur_ded",
+     "mhoccur_glc",
+     "mhoccur_amd"
+    ]
+   ],
+   [
+    "Cardiometabolic and vascular",
+    [
+     "mhoccur_circ",
+     "mh_a1c",
+     "mhoccur_mi",
+     "mhoccur_hbp",
+     "mhoccur_clsh",
+     "mhoccur_rnl",
+     "mhoccur_lbp",
+     "mhoccur_obs",
+     "mhoccur_cvdot",
+     "mhterm_predm",
+     "mhoccur_strk",
+     "mhterm_dm2"
+    ]
+   ],
+   [
+    "Other",
+    [
+     "mhoccur_ra",
+     "mhoccur_ca",
+     "mhoccur_gi",
+     "mhoccur_fall",
+     "mhoccur_ear",
+     "mhoccur_cogn",
+     "mhoccur_oa",
+     "mhoccur_cns",
+     "mhoccur_plm",
+     "mhoccur_ua"
+    ]
+   ]
+  ],
+  "conditions": [
+   [
+    "Eye",
+    "mhoccur_ded",
+    "Dry eye",
+    32.6,
+    620,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Eye",
+    "mhoccur_crt",
+    "Cataracts",
+    30.1,
+    560,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Eye",
+    "mhoccur_glc",
+    "Glaucoma",
+    8.0,
+    140,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Eye",
+    "mhoccur_amd",
+    "Macular degeneration",
+    5.1,
+    80,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mh_a1c",
+    "Elevated A1C",
+    51.1,
+    980,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_clsh",
+    "High cholesterol",
+    50.0,
+    940,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_hbp",
+    "High blood pressure",
+    49.6,
+    940,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhterm_predm",
+    "Prediabetes",
+    39.4,
+    460,
+    1200,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_obs",
+    "Obesity",
+    37.4,
+    700,
+    1880,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhterm_dm2",
+    "Type II diabetes",
+    37.3,
+    700,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_cvdot",
+    "Other heart issues",
+    13.1,
+    240,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_rnl",
+    "Kidney problems",
+    9.9,
+    180,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_circ",
+    "Circulation problems",
+    8.3,
+    160,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_lbp",
+    "Low blood pressure",
+    5.6,
+    100,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_mi",
+    "Heart attack",
+    4.9,
+    80,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Cardiometabolic and vascular",
+    "mhoccur_strk",
+    "Stroke",
+    4.4,
+    80,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_ra",
+    "Arthritis",
+    41.8,
+    800,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_ua",
+    "Urinary problems",
+    22.7,
+    420,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_gi",
+    "Digestive problems",
+    22.3,
+    420,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_ca",
+    "Cancer",
+    17.8,
+    340,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_fall",
+    "Falls",
+    16.7,
+    320,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_ear",
+    "Hearing impairment",
+    14.9,
+    280,
+    1920,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_plm",
+    "Pulmonary problems",
+    13.8,
+    260,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_oa",
+    "Osteoporosis",
+    13.0,
+    240,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_cns",
+    "Other neurological",
+    7.9,
+    140,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ],
+   [
+    "Other",
+    "mhoccur_cogn",
+    "MCI",
+    3.1,
+    40,
+    1900,
+    "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+    "8a64c3689b1950eedda2f1d7dc942322f140f137a5cc515329b36488b5b75c3c"
+   ]
+  ],
+  "external": [
+   [
+    "Korean national survey (KNHANES), clinical-only route",
+    [
+     [
+      "2022 to 2023",
+      "Fitting set of every locked readout of the 2024 test",
+      "Unseen, scored before",
+      "13,190 in the survey design, 10,620 aged 19 to 79",
+      "Cross-sectional",
+      "Fig. 5"
+     ],
+     [
+      "2022 and 2023",
+      "Grip strength discovery (2022) and replication (2023)",
+      "Unseen, scored before",
+      "≥1,180 aged 65 to 79 in 2022, ≥1,300 in 2023",
+      "Cross-sectional",
+      "Fig. 6"
+     ],
+     [
+      "2024",
+      "Locked temporal test, scored once",
+      "Unseen",
+      "6,990 in the survey design, 5,600 aged 19 to 79",
+      "Cross-sectional",
+      "Fig. 5"
+     ],
+     [
+      "2024",
+      "Grip strength and phase angle replication",
+      "Unseen",
+      "Grip ≥1,340 aged 65 to 79 and ≥3,740 aged 40 to 79, phase angle ≥3,760",
+      "Cross-sectional",
+      "Fig. 6"
+     ]
+    ]
+   ],
+   [
+    "US national survey (NHANES), blood tests only",
+    [
+     [
+      "1999 to 2004",
+      "Death replication in a third era",
+      "Unseen",
+      "≥8,740 aged 40 and older, ≥8,720 analysed for the red-cell axis and ≥7,600 aged 40 to 79 for distance",
+      "≥3,700 and ≥2,640",
+      "Fig. 6"
+     ],
+     [
+      "2005 to 2008",
+      "Red-cell axis replication, subgroup discovery",
+      "Training source, ≥8,480",
+      "≥6,440 aged 40 and older",
+      "≥1,780",
+      "Fig. 6, ED Fig. 7"
+     ],
+     [
+      "2009 to 2018",
+      "Red-cell axis primary cohort, subgroup validation",
+      "Unseen",
+      "≥17,640 aged 40 and older, ≥17,600 analysed",
+      "≥1,940",
+      "Fig. 6, ED Fig. 7"
+     ],
+     [
+      "2009 to 2018",
+      "Distance from health and death",
+      "Unseen",
+      "≥15,940 aged 40 to 79, ≥15,900 analysed",
+      "≥1,220",
+      "Fig. 6"
+     ],
+     [
+      "2011 to 2014",
+      "Grip strength replication in US adults",
+      "Unseen",
+      "≥1,680 aged 65 to 79, ≥1,480 analysed",
+      "Cross-sectional",
+      "Fig. 6"
+     ]
+    ]
+   ],
+   [
+    "Hospital cohorts",
+    [
+     [
+      "INSPIRE",
+      "Hospital death after surgery, test split",
+      "Unseen, scored before",
+      "≥17,660 survivors and ≥80 deaths, released separately",
+      "≥80 in hospital",
+      "Fig. 5"
+     ],
+     [
+      "HiRID",
+      "ICU haemoglobin from seven physiology fields",
+      "Unseen, scored before",
+      null,
+      "Not studied",
+      "Fig. 5"
+     ],
+     [
+      "MIMIC-IV",
+      "Recovery deficit at discharge and one-year death, replication not met",
+      "Training source, ≥33,760",
+      "≥157,100 index admissions, ≥30,040 analysed",
+      "≥4,240 within 365 days",
+      "ED Fig. 6"
+     ],
+     [
+      "eICU",
+      "Recovery-deficit replication, death in hospital after ICU discharge",
+      "Training source, ≥38,040",
+      "Insufficient support, no estimate",
+      "Not estimated",
+      "ED Fig. 6"
+     ],
+     [
+      "MIMIC-III CareVue",
+      "Recovery-deficit replication",
+      "Training source, ≥7,180",
+      null,
+      null,
+      "ED Fig. 6"
+     ]
+    ]
+   ]
+  ]
+ },
+ "sources": [
+  "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
+  "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
+  "PATIENT_ATLAS_SOURCE_POLICY.json",
+  "PATIENT_ATLAS_EYE_REGISTRY.json",
+  "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
+  "PATIENT_ATLAS_OFFICIAL_TEST_RESULT_V1.json",
+  "BRAN_NATMED_PHASE2_2026-10-05/official_test_r7/score/runs/execute_attempt1/aggregate.json",
+  "BRAN_R7_READOUT_CURVE_L1_REPORT_2026-09-28/report.md",
+  "validation_results/BARAS_V6_2_EXPANDED_ENDPOINT_ATLAS_SUPPORT_V1_ATTEMPT1.json",
+  "BARAS_V6_2_EXPANDED_ENDPOINT_EVALUATION_V1.json",
+  "BRAN_ROBUST_CLINICAL_R7_NATIVE_EVALUATE_ATTEMPT1/aggregate.json",
+  "BRAN_ROBUST_CLINICAL_R7_NATIVE_EVALUATE_ATTEMPT1/protocol.json",
+  "BRAN_DEEP_DIVE_NEXT_LEVEL_2026-09-30.md",
+  "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+  "BRAN_OVERNIGHT_2026-10-01/eye_blood_completion/EXECUTE_ATTEMPT1/aggregate.json",
+  "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/aggregate.json",
+  "BRAN_OVERNIGHT_2026-10-01/discovery_retina_taught_axis/EXECUTE_ATTEMPT3/report.md",
+  "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+  "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/report.md",
+  "BRAN_OVERNIGHT_2026-10-01/knhanes_modalities/results/attempt_01/aggregate.json",
+  "BRAN_OVERNIGHT_2026-10-01/knhanes_modalities/results/attempt_01/report.md",
+  "BRAN_OVERNIGHT_2026-10-01/knhanes_modalities/results/attempt_01/protocol.json",
+  "BRAN_NATMED_PHASE2_2026-10-05/knhanes_2024_grip_replication/EXECUTE_ATTEMPT2/aggregate.json",
+  "BRAN_NATMED_PHASE2_2026-10-05/knhanes_2024_grip_replication/EXECUTE_ATTEMPT2/report.md",
+  "BRAN_NATMED_PHASE2_2026-10-05/death_replication_9904/EXECUTE_ATTEMPT1/aggregate.json",
+  "BRAN_NATMED_PHASE2_2026-10-05/death_replication_9904/EXECUTE_ATTEMPT1/report.md",
+  "BRAN_NATMED_PUSH_2026-10-02/fig6_discovery_expansion/EXECUTE_ATTEMPT2/aggregate.json",
+  "BRAN_NATMED_PUSH_2026-10-02/fig6_discovery_expansion/EXECUTE_ATTEMPT2/report.md",
+  "BRAN_NATMED_PUSH_2026-10-02/subgroup_discovery/EXECUTE_ATTEMPT1/aggregate.json",
+  "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+  "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/RESULTS.md",
+  "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/RESULTS.md",
+  "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/aggregate.json",
+  "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/report.md",
+  "BRAN_OVERNIGHT_2026-10-01/discovery_recovery_deficit/outputs/D1R_EXECUTE_ATTEMPT1/protocol.json",
+  "BRAN_MASTER_OUTLINE_2026-09-30_rev2.md",
+  "BRAN_FIGURE_OUTLINE_2026-10-03.md",
+  "BRAN_OVERNIGHT_2026-10-01/RESULTS_LOG.md",
+  "BRAN_FIGURES_2026-10-01/locked/ed_nm_canvas.py",
+  "BRAN_FIGURES_2026-10-01/build_fig3.py",
+  "BRAN_FIGURES_2026-10-01/locked/display_numbers.py"
+ ]
+}

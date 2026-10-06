@@ -1,0 +1,211 @@
+{
+ "schema": "bran-source-data-v1",
+ "figure": "ed_table1",
+ "display": "Extended Data Table 1",
+ "display_short": "ED Table 1",
+ "title": "Cohort exposure and test history for the cohorts of Fig. 5",
+ "revision": "20261006a2",
+ "legend": "**Extended Data Table 1 | Cohort exposure and test history for the cohorts of Fig. 5.** AI-READI is the development cohort, scored out of fold, and eICU is a training source listed to show what encoder exposure means. INSPIRE, HiRID and KNHANES 2022 to 2023 never trained the encoder but were scored before with an earlier checkpoint, so none is untouched validation. KNHANES 2024 was evaluated once as a locked temporal test. Every readout was fitted on the 10,620 KNHANES 2022 to 2023 adults aged 19 to 79 and locked (fit lock 47113a35) before any 2024 row was decoded, and the encoder was not refitted. No external cohort has retinal images, so external rows test the missing-input route and cannot test fusion. Counts with ≥ are released lower bounds rounded down to 20, fold 0 continuation exposure or INSPIRE test-split survivors, and are not additive. KNHANES counts are rounded down to 10 by their release, and the KNHANES 2022 to 2023 count is the fitting set, not the earlier evaluation. With the earlier checkpoint BRAN trailed raw-input readouts in 5, tied in 1 and led in 1 of 7 KNHANES 2022 to 2023 comparisons, and the support of that evaluation is PLACEHOLDER. The HiRID admission count is suppressed by its source and is PLACEHOLDER. Every cell was asserted against a phrase in a named source at build time (Source Data).",
+ "methods_notes": "Methods notes for Extended Data Table 1, revision 20261006a2. Cell sources. Each cell was asserted against a phrase in the named source at build time, and the absence of INSPIRE, HiRID and KNHANES from the encoder exposure receipt E4 is also asserted. Population 'AI-READI, 1,928 adults' from OUT. Available input 'Blood, other clinical and retinal' from OUT. Evaluation '26 conditions under masks, Fig. 5b to 5d' from M2md. Encoder exposure 'Training cohort, ≥1,540 in fold 0 fit' from E4. Test history 'Reused development folds, out of fold' from M2md, MC. Population 'eICU' from E4. Available input 'Clinical only' from E4. Evaluation 'Not evaluated in Fig. 5' from this table. Encoder exposure 'Training source, ≥38,040 in fold 0 fit' from E4, MC. Test history 'Training source, not an external test' from OUT. Population 'INSPIRE, surgery, ≥17,660 survivors' from INSmd. Available input 'Preoperative blood tests, typed age' from INSmd. Evaluation 'Hospital mortality, local logistic readout, Fig. 5f' from INSmd. Encoder exposure 'Excluded from encoder training' from INSmd, E4 absence check. Test history 'Test split scored before, earlier checkpoint' from INSmd, OUT. Population 'HiRID, intensive care, admissions PLACEHOLDER' from H6, OUT. Available input 'Seven non-CBC physiology fields, age unknown' from H5md. Evaluation 'Haemoglobin, direct and local readouts, Fig. 5g' from H5md, H6. Encoder exposure 'Unseen by the encoder' from OUT, E4 absence check. Test history 'Admission split scored before, earlier checkpoint' from H6. Population 'KNHANES 2022 to 2023' from OUT. Available input 'Clinical only, no blood count' from KS. Evaluation 'Fitting set for Fig. 5e, 10,620 adults, and earlier-checkpoint scoring of 10 diagnoses and haemoglobin, support PLACEHOLDER' from K24rep, KNmd, KS. Encoder exposure 'Unseen by the encoder' from OUT, E4 absence check. Test history 'Scored before, earlier checkpoint' from KS. Population 'KNHANES 2024, 5,600 adults' from K24rep. Available input 'Clinical only, no blood count' from K24rep. Evaluation '7 diagnoses* under 5 patterns (3 primary) and haemoglobin, Fig. 5e' from K24rep. Encoder exposure 'Unseen by the encoder' from K24rep, OUT, E4 absence check. Test history 'Readouts locked before decode, evaluated once' from K24rep.\n\nSource keys, with paths relative to the project root folder. OUT BRAN_MASTER_OUTLINE_2026-09-30_rev2.md. E4 BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md. MC BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_R7_EIGHT_HOUR_RESEARCH_ADDENDUM_2026-09-28_v3/CURRENT_MODEL_CARD.md. M2md BRAN_R7_MISSINGNESS_M2_REPORT_2026-09-25/RESULTS.md. INSmd BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/RESULTS.md. H5md BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/RESULTS.md. H6 BRAN_INTEGRATED_PAPER_2026-09-30_V1/retained_evidence/sources/BRAN_HIRID_R7_H6_REPORT_2026-09-25/RESULTS.md. KS BRAN_KNHANES_SCREENING_V1_ATTEMPT1/report_v2/report.md. KNmd BRAN_KNHANES_V5_EXTERNAL_ATTEMPT1/report.md. K24rep BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/report.md. K24agg BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json. K24prot BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/protocol.json. K24cor BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/ATTEMPT2_TECHNICAL_CORRECTION.txt. INS BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json and MS BRAN_MATCHED_SCREENING_V1/aggregate.json are pinned at SHA-256 aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8 and dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a. K24agg is pinned at SHA-256 ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828 and K24prot binds K24cor. The KNHANES 2022 to 2023 count of 10,620 adults aged 19 to 79 is results.populations.train_2022_2023.adults_19_to_79 of K24agg, the fitting set of the Fig. 5e readouts, and the support of the earlier checkpoint evaluation is withheld by its release schema (KNmd) and is PLACEHOLDER. The INSPIRE count is the released lower bound of test-split survivors in INS, which also released at least 80 deaths, not summed. The 1,928 AI-READI adults are paired_people of MS. The HiRID admission count is withheld (H6 and H7 suppression flags, no count in H5) and is PLACEHOLDER. Every count equals the People column drawn in Fig. 5a, asserted against BRAN_FIGURES_2026-10-01/locked/source_data/fig5_source_data.json at build time.\n\nBuilt by BRAN_FIGURES_2026-10-01/locked/build_ed_table1.py through BRAN_FIGURES_2026-10-01/build_fig5_v5.py and BRAN_FIGURES_2026-10-01/build_fig5_v2.py, with the KNHANES rows read through load_k24 of BRAN_FIGURES_2026-10-01/locked/build_fig5.py. The Fig. 5 panel letters in the Evaluation column are asserted against the panels field of BRAN_FIGURES_2026-10-01/locked/fig5.manifest.json at build time.",
+ "panels": {
+  "table": {
+   "title": "Extended Data Table 1. Cohort exposure and test history for the cohorts of Fig. 5",
+   "columns": [
+    "group",
+    "population",
+    "available_input",
+    "evaluation",
+    "encoder_exposure",
+    "test_history",
+    "people_count",
+    "people_count_type",
+    "cell_source_keys",
+    "source",
+    "source_sha256"
+   ],
+   "rows": [
+    [
+     "Development and training sources",
+     "AI-READI, 1,928 adults",
+     "Blood, other clinical and retinal",
+     "26 conditions under masks, Fig. 5b to 5d",
+     "Training cohort, ≥1,540 in fold 0 fit",
+     "Reused development folds, out of fold",
+     1928,
+     "exact, development adults (paired_people of MS)",
+     "E4 | M2md | MC | OUT",
+     "BRAN_MATCHED_SCREENING_V1/aggregate.json",
+     "dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a"
+    ],
+    [
+     "Development and training sources",
+     "eICU",
+     "Clinical only",
+     "Not evaluated in Fig. 5",
+     "Training source, ≥38,040 in fold 0 fit",
+     "Training source, not an external test",
+     null,
+     "not printed in this table",
+     "E4 | MC | OUT",
+     "BRAN_R7_TRAINING_EXPOSURE_E4_2026-09-25/RESULTS.md",
+     "8e9d2b980a81c468ecab4d3ada0a8df302d42bcaa37217df2eaa5b2b08b1fc19"
+    ],
+    [
+     "External cohorts without retinal images",
+     "INSPIRE, surgery, ≥17,660 survivors",
+     "Preoperative blood tests, typed age",
+     "Hospital mortality, local logistic readout, Fig. 5f",
+     "Excluded from encoder training",
+     "Test split scored before, earlier checkpoint",
+     17660,
+     "released lower bound of test-split survivors, rounded down to 20",
+     "INSmd | OUT",
+     "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+     "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+    ],
+    [
+     "External cohorts without retinal images",
+     "HiRID, intensive care, admissions PLACEHOLDER",
+     "Seven non-CBC physiology fields, age unknown",
+     "Haemoglobin, direct and local readouts, Fig. 5g",
+     "Unseen by the encoder",
+     "Admission split scored before, earlier checkpoint",
+     null,
+     "withheld by every HiRID aggregate read, PLACEHOLDER",
+     "H5md | H6 | OUT",
+     "BRAN_HIRID_R7_H5_REPORT_V2_2026-09-25/RESULTS.md",
+     "9b8b797c79ac6470756bf9a6e23b10b3accfb17e8226b16aa2fc2c7b981be12a"
+    ],
+    [
+     "External cohorts without retinal images",
+     "KNHANES 2022 to 2023",
+     "Clinical only, no blood count",
+     "Fitting set for Fig. 5e, 10,620 adults, and earlier-checkpoint scoring of 10 diagnoses and haemoglobin, support PLACEHOLDER",
+     "Unseen by the encoder",
+     "Scored before, earlier checkpoint",
+     10620,
+     "fitting set of the Fig. 5e readouts, rounded down to 10 by release, earlier-checkpoint support PLACEHOLDER",
+     "K24rep | KNmd | KS | OUT",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ],
+    [
+     "External cohorts without retinal images",
+     "KNHANES 2024, 5,600 adults",
+     "Clinical only, no blood count",
+     "7 diagnoses* under 5 patterns (3 primary) and haemoglobin, Fig. 5e",
+     "Unseen by the encoder",
+     "Readouts locked before decode, evaluated once",
+     5600,
+     "adults tested in Fig. 5e, rounded down to 10 by release",
+     "K24rep | OUT",
+     "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+     "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+    ]
+   ],
+   "count_columns": [
+    "people_count"
+   ],
+   "floored_columns": [],
+   "notes": [
+    "* Sinusitis, otitis media and sleep apnoea were deleted from the 2024 KNHANES health questionnaire (phase 9 guide, PDF pages 123 to 125), so KNHANES 2024 was evaluated on 7 of the 10 diagnoses locked in 2022 to 2023.",
+    "Counts with ≥ are released lower bounds rounded down to 20, the fold 0 continuation exposure of AI-READI and eICU and the INSPIRE test-split survivors. Each cell was asserted at build time against the phrases listed in methods_notes. Source paths are relative to the project root folder."
+   ]
+  }
+ },
+ "draw": {
+  "heads": [
+   [
+    "pop",
+    "Population"
+   ],
+   [
+    "inp",
+    "Available input"
+   ],
+   [
+    "ev",
+    "Evaluation"
+   ],
+   [
+    "exp",
+    "Encoder exposure"
+   ],
+   [
+    "hist",
+    "Test history"
+   ]
+  ],
+  "groups": [
+   [
+    "Development and training sources",
+    2
+   ],
+   [
+    "External cohorts without retinal images",
+    4
+   ]
+  ],
+  "rows": [
+   [
+    "AI-READI, 1,928 adults",
+    "Blood, other clinical and retinal",
+    "26 conditions under masks, Fig. 5b to 5d",
+    "Training cohort, ≥1,540 in fold 0 fit",
+    "Reused development folds, out of fold"
+   ],
+   [
+    "eICU",
+    "Clinical only",
+    "Not evaluated in Fig. 5",
+    "Training source, ≥38,040 in fold 0 fit",
+    "Training source, not an external test"
+   ],
+   [
+    "INSPIRE, surgery, ≥17,660 survivors",
+    "Preoperative blood tests, typed age",
+    "Hospital mortality, local logistic readout, Fig. 5f",
+    "Excluded from encoder training",
+    "Test split scored before, earlier checkpoint"
+   ],
+   [
+    "HiRID, intensive care, admissions PLACEHOLDER",
+    "Seven non-CBC physiology fields, age unknown",
+    "Haemoglobin, direct and local readouts, Fig. 5g",
+    "Unseen by the encoder",
+    "Admission split scored before, earlier checkpoint"
+   ],
+   [
+    "KNHANES 2022 to 2023",
+    "Clinical only, no blood count",
+    "Fitting set for Fig. 5e, 10,620 adults, and earlier-checkpoint scoring of 10 diagnoses and haemoglobin, support PLACEHOLDER",
+    "Unseen by the encoder",
+    "Scored before, earlier checkpoint"
+   ],
+   [
+    "KNHANES 2024, 5,600 adults",
+    "Clinical only, no blood count",
+    "7 diagnoses* under 5 patterns (3 primary) and haemoglobin, Fig. 5e",
+    "Unseen by the encoder",
+    "Readouts locked before decode, evaluated once"
+   ]
+  ],
+  "note": "* Sinusitis, otitis media and sleep apnoea were deleted from the 2024 KNHANES health questionnaire (phase 9 guide, PDF pages 123 to 125), so KNHANES 2024 was evaluated on 7 of the 10 diagnoses locked in 2022 to 2023."
+ },
+ "sources": {
+  "K24agg": {
+   "path": "BRAN_OVERNIGHT_2026-10-01/knhanes_2024_external/execute_attempt2/aggregate.json",
+   "sha256": "ed3037a22423b756f5301ea7b5d20e88606ac52b9e1ebd680a7683d5a8284828"
+  },
+  "INS": {
+   "path": "BRAN_R7_INSPIRE_E1_REPORT_2026-09-23/figure_data.json",
+   "sha256": "aed18e88a83d9257baf4335c9075dcb5ec373e3d9e956e3a203cc325ec9ec1b8"
+  },
+  "MS": {
+   "path": "BRAN_MATCHED_SCREENING_V1/aggregate.json",
+   "sha256": "dee3e35af3c91fbf370c0ff7b29134fca25673ca1005859fa2d549649821092a"
+  }
+ },
+ "paths_relative_to": "the project root folder (Foresight)",
+ "disclosure": "Counts are of three kinds, as people_count_type states. AI-READI is exact, counts printed with ≥ are released lower bounds rounded down to a multiple of 20, and KNHANES counts are rounded down to a multiple of 10 by their release. The HiRID admission count is withheld. No cell below 20 and no per-person value is present."
+}

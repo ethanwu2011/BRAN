@@ -1,0 +1,299 @@
+{
+ "schema": "bran-source-data-manifest-v1",
+ "generated": "2026-10-06",
+ "description": "Source Data for the BRAN paper. Each JSON file is the complete input of the drawing code in paper/figures and each workbook holds the same tables with one sheet per panel.",
+ "provenance": "Every row names the aggregate file it was read from and that file's SHA-256. The paths are relative to the private project folder. The aggregates themselves are patient-derived summaries kept under the data use agreements and are not distributed.",
+ "disclosure": "Values are aggregates only. Every declared count and every printed lower bound is at least 20. Counts are floored to a multiple of 20 unless the column says exact, and KNHANES counts are rounded to 10 by their release. No row describes one person.",
+ "files": [
+  {
+   "id": "fig1",
+   "display": "Fig. 1",
+   "kind": "figure",
+   "status": "final",
+   "json": {
+    "path": "fig1_source_data.json",
+    "sha256": "d95d573af3f30952f7a398dd3af36837fd74c64651ccfc8ca2a79bff5eea5375",
+    "bytes": 729360
+   },
+   "xlsx": {
+    "path": "fig1_source_data.xlsx",
+    "sha256": "e483f1a62716b6ba1cfcd1741b63b96c35874896a238634b99c365720942b7c6",
+    "bytes": 11299
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "bdd94d085ba75a1867111c65e4f0491e36a9d3940d63447e2f6d7a76249a2eed",
+    "xlsx_sha256": "71f8c3d5cc7e3cde8a7e4af31797a0fc83fc976669bdd7d24f91557d3f37081b",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": [
+    "draw.icons holds four icons drawn with BioRender as base64 PNG. They are not covered by the MIT license of the code. PLACEHOLDER for confirmation of the BioRender publication license before the repository is made public."
+   ]
+  },
+  {
+   "id": "fig2",
+   "display": "Fig. 2",
+   "kind": "figure",
+   "status": "final",
+   "json": {
+    "path": "fig2_source_data.json",
+    "sha256": "d8c7bb3e3834e7df29e0299d23cf6acf384ff4cbfc34aded9e905f54eeba6546",
+    "bytes": 30887
+   },
+   "xlsx": {
+    "path": "fig2_source_data.xlsx",
+    "sha256": "97535a7d54e10ab94bfed02a5d2d4546d3815ca3d254d179865dbd29df002523",
+    "bytes": 18007
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "901b01680916dce71874e7953cee3f86a2967e9fa9e4bfae14a33c7179d3e46c",
+    "xlsx_sha256": "dd21f2e063d8ac93bcb7cf61c3f1bc375907be1a849b87f89bb8caf2c129f823",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "fig3",
+   "display": "Fig. 3",
+   "kind": "figure",
+   "status": "final",
+   "json": {
+    "path": "fig3_source_data.json",
+    "sha256": "943f5fa7386e6c2f9994d9ea0c7840bbb5266f76600e20e38d2bc1de9787677b",
+    "bytes": 239615
+   },
+   "xlsx": {
+    "path": "fig3_source_data.xlsx",
+    "sha256": "6985514f8d49ed68dfd8f726db0901b641161c3f10fca705a3e52f183a26e73d",
+    "bytes": 47058
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "e4e3fee6167dbc5d5d20abded6143ac35a24dc0b0bce201b7e586d4586653d55",
+    "xlsx_sha256": "d1595bcf978ddbbc0741b26c333e2f06ded627359c31e14e55adaa1384004af4",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "fig4",
+   "display": "Fig. 4",
+   "kind": "figure",
+   "status": "final",
+   "json": {
+    "path": "fig4_source_data.json",
+    "sha256": "9a9ef12f614a8c2d6ba91644851b583b247dbfe432ab3e1971aa5eb052384805",
+    "bytes": 132010
+   },
+   "xlsx": {
+    "path": "fig4_source_data.xlsx",
+    "sha256": "cc4bb7534f6c6532bdd15979992b0a12fdc28c4cde83d8336f6a40016a053acf",
+    "bytes": 29723
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "4802987289438fc9bc0ae59ab0580c20f0815d782c261d96dc51c0f129eab4d7",
+    "xlsx_sha256": "30aad0f83a09518da0489f8238254366297b95ec5e20516c4bd0537fccb3e875",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "fig5",
+   "display": "Fig. 5",
+   "kind": "figure",
+   "status": "final",
+   "json": {
+    "path": "fig5_source_data.json",
+    "sha256": "131b698813530113f0a0dbd659f2a725e7d0a82b4303bee08af24f2b9213de65",
+    "bytes": 107346
+   },
+   "xlsx": {
+    "path": "fig5_source_data.xlsx",
+    "sha256": "ef1fc34262547f21067a41942184f755ea4bce3c4f96f9131899dd66920e121c",
+    "bytes": 27340
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "131b698813530113f0a0dbd659f2a725e7d0a82b4303bee08af24f2b9213de65",
+    "xlsx_sha256": "eab8e11d3b87ca257d211c5a216edb5f68a8e7fb88c4fd98c8e3cec146ba2e6e",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed1",
+   "display": "Extended Data Fig. 1",
+   "kind": "Extended Data figure",
+   "status": "final",
+   "json": {
+    "path": "ed1_source_data.json",
+    "sha256": "9fe902adac949411d123660a1e98815446e0ce59eec1142a7b7030f8cdccbd43",
+    "bytes": 67827
+   },
+   "xlsx": {
+    "path": "ed1_source_data.xlsx",
+    "sha256": "505db4d97805192b179744a011f50c60308d76ddd372acad43d088e9624de5f8",
+    "bytes": 18426
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "968158df7cfc31c047690a2484022dd0359ed11a15a40181161536a22412aa5e",
+    "xlsx_sha256": "33129b70db3686b280f26f3b7ba932a7d965d966b015590ae0161241dca61a21",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed2",
+   "display": "Extended Data Fig. 2",
+   "kind": "Extended Data figure",
+   "status": "final",
+   "json": {
+    "path": "ed2_source_data.json",
+    "sha256": "c141b284ab8c6c1c72d13b7adfd6fa4136c5afe748323dbd96bddbd1eb260c40",
+    "bytes": 43873
+   },
+   "xlsx": {
+    "path": "ed2_source_data.xlsx",
+    "sha256": "fd827858d68d190a04698b4f848b2d6d568f44dedd71dd7692d1048a0c9cd722",
+    "bytes": 14935
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "2364e058e3220b59c471ce29dfd7e23e224be215f1381382a0f2455d8c601322",
+    "xlsx_sha256": "008cf63a4099310e43c0167002d2828ddbe11f944ff09a928a2d1a9aab51d86b",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed3",
+   "display": "Extended Data Fig. 3",
+   "kind": "Extended Data figure",
+   "status": "final",
+   "json": {
+    "path": "ed3_source_data.json",
+    "sha256": "6dfde71b45308faaf8dd74beb2134a89040c183cf6710b98eeba042bdc3812b9",
+    "bytes": 335479
+   },
+   "xlsx": {
+    "path": "ed3_source_data.xlsx",
+    "sha256": "070e6fb2404fe917314e352b3c53f08862564cf409aec35f5fab99a029596e90",
+    "bytes": 57232
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "f316670ef1e5f2b0b65b94caf4e8c24f869cb620de12bb75897c695a0cc09af0",
+    "xlsx_sha256": "4cc017c674c6915c1e67ec9fe82853a8aa86128e7440d29467988d8cba35d6d5",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed3b",
+   "display": "Extended Data Fig. 4",
+   "kind": "Extended Data figure",
+   "status": "final",
+   "json": {
+    "path": "ed3b_source_data.json",
+    "sha256": "6adb884fc8b1799e66d51b1ed8226a2c80cb45063ce405daac91621a02aecc10",
+    "bytes": 89777
+   },
+   "xlsx": {
+    "path": "ed3b_source_data.xlsx",
+    "sha256": "a71a089b5519c0bdd10b49755f6ff0b18a0a2d591bd5c8d822512fd3133c2176",
+    "bytes": 24224
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "782a3393144786d490d5c162c33fcbb5c7f365dfbef87fd20ae1d58fd2ad28a5",
+    "xlsx_sha256": "2e6cf47a380ed64864b0ae28166fa90c47bc31af8647f76f8d51ae8b83fd5a2d",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed4",
+   "display": "Extended Data Fig. 5",
+   "kind": "Extended Data figure",
+   "status": "final",
+   "json": {
+    "path": "ed4_source_data.json",
+    "sha256": "6d6b9950c3628d26f2e96809eeef6b8871084e3b48b44369d77c5dcaa88d7d01",
+    "bytes": 59489
+   },
+   "xlsx": {
+    "path": "ed4_source_data.xlsx",
+    "sha256": "567a7eeb18cabba3270fe30def2757873ddae1dd2cc64431ba927674aec112b4",
+    "bytes": 19945
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "012500c3c9c6f391bec03b281903ec57842ec38afcd5f696ba20728ebfd33bab",
+    "xlsx_sha256": "b1574495f90a475d921182441f4a84180664baf53029e8d0584385ea7578e093",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed_table1",
+   "display": "Extended Data Table 1",
+   "kind": "Extended Data table",
+   "status": "final",
+   "json": {
+    "path": "ed_table1_source_data.json",
+    "sha256": "a28fc61d63697836869651b1775ec4c8bafb27df6c1f82f060b99b3cc16fc47d",
+    "bytes": 13585
+   },
+   "xlsx": {
+    "path": "ed_table1_source_data.xlsx",
+    "sha256": "8d3dd1d6a79ce45055311cc2ab269d51376d20af45e8b43ecbb63b3828ec4c28",
+    "bytes": 8431
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "a28fc61d63697836869651b1775ec4c8bafb27df6c1f82f060b99b3cc16fc47d",
+    "xlsx_sha256": "3435131f9c00e7a92c3b079066cef94dd225a1ebfda6df0162f194945a5f1914",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed_table2",
+   "display": "Extended Data Table 2",
+   "kind": "Extended Data table",
+   "status": "final",
+   "json": {
+    "path": "ed_table2_source_data.json",
+    "sha256": "4d9421c4bda74980617dd4e07b05fa860d77fd12f2e13529716954bb0b142456",
+    "bytes": 73310
+   },
+   "xlsx": {
+    "path": "ed_table2_source_data.xlsx",
+    "sha256": "129732aa1c5b96a3bc63a5179676096c454f7be92b4e8e5788a050bad7d06a59",
+    "bytes": 18005
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "67e2b93d4e9903b2046e51743b0d1b6bf330414df5f2be62237aa0a3218c93e9",
+    "xlsx_sha256": "a33761a2a39f342663718c1cff232c043760524bd9d66a61b5c2ac1f1c19adcd",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": []
+  },
+  {
+   "id": "ed_table3",
+   "display": "Extended Data Table 3",
+   "kind": "Extended Data table",
+   "status": "provisional",
+   "json": {
+    "path": "ed_table3_source_data.json",
+    "sha256": "e08eef1918e41495f3c1b0b5787429e2546dcad9350c6ab2d6b21cd1788af2b6",
+    "bytes": 149898
+   },
+   "xlsx": {
+    "path": "ed_table3_source_data.xlsx",
+    "sha256": "c6ec7de5740c8b50490547e3826e1b4f0c1c42eeea37cdfb35de458ca94487a4",
+    "bytes": 29746
+   },
+   "exported_by_private_builder": {
+    "json_sha256": "9bb666411dde0c5b4aa832bca96571d76044b97ad3c4254445c6f06d3b0b7e5d",
+    "xlsx_sha256": "8bf91486760b4b278a6348aefa1b779ef17b919e2b263cfd480de7ba53dccb01",
+    "change": "absolute paths into the private project folder written relative to that folder, nothing else"
+   },
+   "notes": [
+    "Provisional. Extended Data Table 3 belongs to the Figure 6 work, spans three pages and is not rebuilt by paper/figures."
+   ]
+  }
+ ]
+}
