@@ -107,7 +107,7 @@
     "retinal_dimension_is_documented_but_not_rechecked_against_checkpoint_here": true
   },
   "provenance": [
-    {"path": "bran_clinical_semantics_v1.py", "sha256": "f52d33922f4686d62ab4d1f0b64aead8984d6c48d1b41b788e59bc367979bb48", "role": "CBC names, canonical units, and age semantic adapters", "distribution_status": "reference_not_bundled", "hash_status": "verified_in_original_workspace_only"},
+    {"path": "bran_clinical_semantics_v1.py", "sha256": "f52d33922f4686d62ab4d1f0b64aead8984d6c48d1b41b788e59bc367979bb48", "role": "CBC names, canonical units, and age semantic adapters", "distribution_status": "bundled", "release_path": "research/bran_clinical_semantics_v1.py", "hash_status": "rechecked_against_bundled_copy"},
     {"path": "patient_atlas_clinical_field_contract.py", "sha256": "3a63224a1a4b34197ab44f81b6242c7ce56d7b077fe15eedd355155b51aac32a", "role": "field-contract construction and validation code inspected but not executed", "distribution_status": "reference_not_bundled", "hash_status": "verified_in_original_workspace_only"},
     {"path": "bran_multisource_model_v2.py", "sha256": "db76078a61430aed30cfb1c15690d00a76d3962027a8e5f951bf2b9639d1216b", "role": "V2 shapes, supplied eligibility validation, CBC output width, retinal dynamic width", "distribution_status": "bundled", "release_path": "src/bran_multisource_model_v2.py", "hash_status": "rechecked_against_bundled_copy"},
     {"path": "bran_multisource_age_v2.py", "sha256": "0221006f9ef9b6fbd72edf0b5b2cb331a963706e6c875adf2dab360057a7aa1b", "role": "seven-coordinate typed-age layout and validation", "distribution_status": "bundled", "release_path": "src/bran_multisource_age_v2.py", "hash_status": "rechecked_against_bundled_copy"},
