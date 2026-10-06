@@ -59,4 +59,6 @@ No new file may add such a path. Data roots for new code belong in environment v
 
 ## Availability statement draft
 
+The current drafts and the provider terms behind them are in [data, code and model availability](data_and_model_availability.md). The paragraph below is the earlier 0.2.0 draft.
+
 Code for BRAN is available in the BRAN repository. The repository includes model definitions, a synthetic demonstration, input specifications, the research source snapshot and figure-rendering code. Clinical datasets are obtained from their respective providers subject to access conditions. Patient-derived artifacts are not distributed through GitHub. Access to trained parameters and fitted preprocessing requires a separate determination. PLACEHOLDER for the final version identifier and author-approved access procedure.

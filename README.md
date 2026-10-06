@@ -10,7 +10,7 @@ The included implementation preserves the retained R7 architecture. R7 applies `
 
 ## Quick start
 
-Use Python 3.10 or newer and PyTorch 2.6 or newer. The development checks use Python 3.12 on CPU. GPU hardware is not required for the examples.
+Use PyTorch 2.6 or newer. Continuous integration tests Python 3.11, 3.12 and 3.13 on CPU, and runs the examples against the installed package. The package metadata still allows Python 3.10, which has not been tested. GPU hardware is not required for the examples.
 
 ```sh
 git clone https://github.com/ethanwu2011/BRAN.git
@@ -54,11 +54,11 @@ The [research reproduction guide](docs/research_reproduction.md) maps the origin
 
 Exact local package versions are listed in `requirements-research.txt`. This is an environment inventory rather than a universal lockfile. No fresh clinical experiment was run to prepare this release.
 
-## Data and weights
+## Data, code and model availability
 
 No patient records, images, notes, identifiers, embeddings, predictions, fitted transforms, weights or research-result tables are distributed here. Keep real inputs and outputs in a separate restricted workspace. Git ignore rules and automated scans supplement manual review but do not prove privacy.
 
-Dataset access is obtained from providers. Trained-parameter distribution has not been authorized for this release. Constructing a model with random weights will not reproduce the paper's results. See [data and access](docs/privacy_and_access.md).
+Dataset access is obtained from providers. Trained-parameter distribution has not been authorized for this release. Constructing a model with random weights will not reproduce the paper's results. See [data, code and model availability](docs/data_and_model_availability.md) for the draft availability statements and the provider terms that constrain sharing, and [data and access](docs/privacy_and_access.md) for the repository privacy rules.
 
 The learned state is a research representation. It is not a calibrated posterior, biological compartment, or individual clinical recommendation. Synthetic tests verify software behavior only.
 
