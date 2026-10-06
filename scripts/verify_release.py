@@ -24,9 +24,15 @@ SECRET_PATTERNS = [
     re.compile(r"AKIA[A-Z0-9]{16}"),
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 ]
+# Absolute paths into a personal home folder or an external volume reveal a local directory layout.
+ABSOLUTE_LOCAL_PATH = re.compile(
+    r"(?<![\w.~-])(?:/Users/|/home/|/Volumes/|[A-Za-z]:\\{1,2}Users\\{1,2})[A-Za-z0-9_][^/\\\s\"']*")
+# research/ is a hash-locked historical snapshot. Its absolute paths are reported and documented in
+# docs/privacy_and_access.md, not rejected, because editing those files would break the snapshot hashes.
+HISTORICAL_PREFIX = "research/"
 
 
-def check_files(paths: list[str]) -> list[dict[str, str]]:
+def check_files(paths: list[str], historical: dict[str, int] | None = None) -> list[dict[str, str]]:
     findings = []
     for relative in paths:
         path = ROOT / relative
@@ -46,6 +52,13 @@ def check_files(paths: list[str]) -> list[dict[str, str]]:
             continue
         if any(pattern.search(content) for pattern in SECRET_PATTERNS):
             findings.append({"file": relative, "reason": "credential_pattern"})
+        paths_found = len(ABSOLUTE_LOCAL_PATH.findall(content))
+        if paths_found:
+            if relative.startswith(HISTORICAL_PREFIX):
+                if historical is not None:
+                    historical[relative] = paths_found
+            else:
+                findings.append({"file": relative, "reason": "absolute_local_path"})
     return findings
 
 
@@ -70,9 +83,14 @@ def main() -> int:
     else:
         result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
         paths = [p for p in result.stdout.decode().split("\0") if p]
-    findings = check_files(paths) + check_core_hashes()
+    historical: dict[str, int] = {}
+    findings = check_files(paths, historical) + check_core_hashes()
     print(json.dumps({"files_checked": len(paths), "findings": findings,
-                      "scope": "File types, selected credential patterns and core source hashes only",
+                      "historical_absolute_paths": {
+                          "files": len(historical), "occurrences": sum(historical.values()),
+                          "per_file": dict(sorted(historical.items())),
+                          "status": "documented in docs/privacy_and_access.md, kept by author decision"},
+                      "scope": "File types, selected credential patterns, absolute local paths and core source hashes only",
                       "manual_privacy_review_still_required": True}, indent=2))
     return 1 if findings else 0
 
