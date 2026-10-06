@@ -5,10 +5,12 @@ abstract: >-
   BRAN learns a reusable 192-dimensional patient representation from blood
   measurements, other eligible clinical measurements, typed age and retinal
   features under incomplete observation. This repository holds the retained
-  R7 model code, the hash-locked research source snapshot used for the
-  reported analyses, the input contract, synthetic examples and tests, and
-  the Source Data and code that redraw the paper figures. It holds no
-  patient data and no trained weights.
+  R7 model code, a hash-locked snapshot of the research code of retained R7
+  training and evaluation and of the analyses in its entrypoint map, the
+  input contract, synthetic examples and tests, and the Source Data and
+  drawing code of the finalized paper figures. The code of most later
+  analyses behind the figures is not yet included. It holds no patient data
+  and no trained weights.
 type: software
 version: 0.2.0
 date-released: 2026-10-01

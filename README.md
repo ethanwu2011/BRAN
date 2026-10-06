@@ -10,13 +10,13 @@ This repository contains code and the Source Data of the paper figures, not pati
 | --- | --- |
 | `src/` | Six unchanged architecture modules and the checked inference interface |
 | `schemas/` | The documented field and output contracts |
-| `research/` | Original training and evaluation code with dependency and hash records, mapped in [the research index](docs/research_index.md) |
+| `research/` | Original code of retained R7 training and evaluation and of the other analyses mapped in [the research index](docs/research_index.md), with dependency and hash records. It does not yet hold the code of most analyses behind the figures, as [Source Data and analysis code](docs/source_data_code_coverage.md) shows |
 | `paper/source_data/` | Source Data of the paper figures, one workbook and one JSON file per item, with a hash manifest |
-| `paper/figures/` | Code that redraws every finalized figure from its Source Data and checks the bytes |
+| `paper/figures/` | Drawing code that rebuilds the finalized figures from their Source Data and checks the bytes. 9 of the 12 items rebuild, and Fig. 3 and Extended Data Figs. 3 and 4 are blocked until a new export |
 | `examples/` | Generated-input demonstrations |
 | `tests/` | Synthetic interface, schema, release, Source Data and figure checks |
 | `scripts/verify_release.py` | The file policy check, with core source and Source Data hashes |
-| `tools/` | Research snapshot verification and the research index generator |
+| `tools/` | Research snapshot verification, the research index generator and the map from Source Data to analysis code |
 | `SOURCE_MANIFEST.json` | Source hashes and R7 implementation provenance of release 0.2.0 |
 
 ## Implementation
@@ -46,7 +46,7 @@ Completion removes the target value and observation flag before inferring the st
 
 ## Reproduce the paper figures
 
-Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2 are redrawn from their Source Data with one command. It needs no restricted data.
+One command rebuilds Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2 from their Source Data, without restricted data. Today 9 of these 12 items rebuild. Fig. 3 and Extended Data Figs. 3 and 4 are blocked, because their drawing code stops under the final style module until the Fig. 3 builder exports them again, and the command reports them as blocked.
 
 ```sh
 python3.12 -m venv .venv-figures
@@ -54,17 +54,17 @@ python3.12 -m venv .venv-figures
 make figures-check PYTHON=.venv-figures/bin/python
 ```
 
-The command writes the PNG, PDF and JPEG of every item into a fresh folder and compares their SHA-256 with the reference. Byte identity holds in the reference environment recorded in `paper/figures/REFERENCE_OUTPUTS.json`. Five items still need a new export before release. The [figure guide](paper/README.md) gives the verification record, the reasons and the path from aggregates to figures.
+The command writes the PNG, PDF and JPEG of each item that builds into a fresh folder and compares their SHA-256 with the reference. Byte identity holds only in the reference environment recorded in `paper/figures/REFERENCE_OUTPUTS.json`. That environment includes a Chrome build that updates itself, so on another system, or after Chrome updates, the files build but their bytes can differ. Five items need a new export before release, the three blocked items, and Fig. 5 and Extended Data Table 1, whose rebuilt files differ from their submission files. The [figure guide](paper/README.md) gives the verification record, the reasons and the path from aggregates to figures.
 
 ## Reproducing the research
 
-The [research reproduction guide](docs/research_reproduction.md) sets out four levels, from software checks and figures that anyone can run, to aggregates and analyses that need restricted data. It maps the original entrypoints and their dependencies and distinguishes the training recipe, native evaluation, fixed-readout comparison, completion and clinical analyses. Research runners retain their source and fold checks. Do not disable those checks to make an incompatible workspace run.
+The [research reproduction guide](docs/research_reproduction.md) sets out four levels, from software checks and figures that anyone can run, to aggregates and analyses that need restricted data. The code in `research/` covers retained R7 training and evaluation and the analyses mapped there. Most Source Data rows come from later analyses whose code is not yet in this repository. [Source Data and analysis code](docs/source_data_code_coverage.md) maps every Source Data row to its analysis and marks the missing code as PLACEHOLDER. It maps the original entrypoints and their dependencies and distinguishes the training recipe, native evaluation, fixed-readout comparison, completion and clinical analyses. Research runners retain their source and fold checks. Do not disable those checks to make an incompatible workspace run.
 
 Exact local package versions of the research environment are listed in `requirements-research.txt`. This is an environment inventory rather than a universal lockfile. No fresh clinical experiment was run to prepare this release.
 
 ## Data, code and model availability
 
-No patient records, images, notes, identifiers, embeddings, predictions, fitted transforms or weights are distributed here. The Source Data hold disclosure-checked aggregates only. Keep real inputs and outputs in a separate restricted workspace. Git ignore rules and automated scans supplement manual review but do not prove privacy.
+No patient records, images, notes, identifiers, embeddings, predictions, fitted transforms or weights are distributed here. The Source Data hold disclosure-checked aggregates only. Three open disclosure items in the Source Data of Figs. 2 and 5 and Extended Data Fig. 2 block release until their builders export again, as listed in `paper/source_data/README.md`. Keep real inputs and outputs in a separate restricted workspace. Git ignore rules and automated scans supplement manual review but do not prove privacy.
 
 Dataset access is obtained from providers. Trained-parameter distribution has not been authorized. Constructing a model with random weights will not reproduce the paper's results. See [data, code and model availability](docs/data_and_model_availability.md) for the draft Data availability and Code availability statements, the role of each source, what stays private and why, and the release plan. See [data and access](docs/privacy_and_access.md) for the repository privacy rules.
 
@@ -72,7 +72,7 @@ The learned state is a research representation. It is not a calibrated posterior
 
 ## Release status
 
-This is a research release, not a clinical product. The code is available under the [MIT license](LICENSE), approved by the owner. The four BioRender icons embedded in the Fig. 1 Source Data are not covered by that license, as noted in `paper/source_data/README.md`. Version 1.0.0 will be tagged and archived at Zenodo with a DOI for the paper, following the release plan in the availability page and the [release checklist](docs/release_checklist.md). Changes since 0.2.0 are listed in the [changelog](CHANGELOG.md).
+This is a research release, not a clinical product. The code is available under the [MIT license](LICENSE), approved by the owner. The four BioRender icons embedded in the Fig. 1 Source Data are not covered by that license, as `RIGHTS_STATUS.md` and `paper/source_data/README.md` note. The repository must not be made public until their licence is confirmed, and if it does not allow redistribution, the icons must be removed from the branch history first. Version 1.0.0 will be tagged and archived at Zenodo with a DOI for the paper, following the release plan in the availability page and the [release checklist](docs/release_checklist.md). Changes since 0.2.0 are listed in the [changelog](CHANGELOG.md).
 
 Core source hashes are recorded in `SOURCE_MANIFEST.json`. Architecture files remain unchanged so implementation provenance can be checked independently of the new user-facing interface. The [validation record](docs/validation.md) describes the checks of release 0.2.0.
 

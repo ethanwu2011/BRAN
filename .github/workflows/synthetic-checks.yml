@@ -27,6 +27,8 @@ jobs:
       - run: python -m pip install '.[test,figures]'
       - run: python scripts/verify_release.py
       - run: python tools/research_snapshot.py verify
+      - run: python tools/research_index.py --check
+      - run: python tools/source_data_coverage.py --check
       - run: python -m unittest discover -s tests -v
       - name: Run the examples against the installed package from outside the source tree
         working-directory: ${{ runner.temp }}
@@ -50,10 +52,10 @@ jobs:
         run: python -m pip install --require-hashes -r paper/figures/requirements-figures.txt
       - name: Check Source Data hashes and the release file policy
         run: python scripts/verify_release.py
+      # Open disclosure items (paper/source_data/README.md) block release until their figure builders export again.
+      # They are reported here without failing the job. Any other finding fails it.
       - name: Check Source Data disclosure rules
-        run: python -m paper.figures.disclosure
-      - name: Test the figure layer (byte-identical rebuild tests skip outside the reference environment)
-        run: python -m unittest tests.test_figure_reproduction -v
+        run: python -m paper.figures.disclosure --allow-open
       - name: Provide fonts with Arial metrics
         run: |
           sudo apt-get update
@@ -62,10 +64,62 @@ jobs:
           ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Regular')" "$RUNNER_TEMP/fonts/Arial.ttf"
           ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Bold')" "$RUNNER_TEMP/fonts/Arial Bold.ttf"
           echo "BRAN_FONT_DIR=$RUNNER_TEMP/fonts" >> "$GITHUB_ENV"
-      # Byte identity needs the reference environment in paper/figures/REFERENCE_OUTPUTS.json, which includes the
-      # Arial font files of macOS. On Linux this step shows that every figure still builds from Source Data alone
-      # and reports the byte differences. It does not fail the job, because the reference check is
-      # make figures-check in the reference environment.
-      - name: Rebuild every figure from Source Data in portable mode
-        continue-on-error: true
+      - name: Test the figure layer (byte-identical rebuild tests skip outside the reference environment)
+        run: python -m unittest tests.test_figure_reproduction -v
+      # Byte identity with paper/figures/REFERENCE_OUTPUTS.json holds only in the reference environment recorded
+      # there, which includes the Arial font files of macOS and a Chrome build. On Linux this step requires every item
+      # that the reference does not mark blocked to build from its Source Data alone, and it fails when one does not.
+      # Byte differences from the macOS reference are reported without failing. Blocked items are reported as such.
+      - name: Rebuild every item from Source Data in portable mode
         run: python -m paper.figures.build_all --portable --allow-pending --out "$RUNNER_TEMP/figures"
+  figures-pinned-browser:
+    # Rebuilds every item twice with one pinned Chrome for Testing build and requires the two builds to have equal
+    # SHA-256 for every file, so the drawing is deterministic on Linux. It cannot compare with the macOS reference,
+    # whose fonts differ.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      OMP_NUM_THREADS: "2"
+      PYTHONDONTWRITEBYTECODE: "1"
+      CFT_VERSION: "142.0.7444.175"
+      # PLACEHOLDER until the first run prints the SHA-256 of the archive and it is recorded here.
+      CFT_SHA256: "PLACEHOLDER"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install the pinned figure environment
+        run: python -m pip install --require-hashes -r paper/figures/requirements-figures.txt
+      - name: Provide fonts with Arial metrics
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-liberation fontconfig unzip
+          mkdir -p "$RUNNER_TEMP/fonts"
+          ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Regular')" "$RUNNER_TEMP/fonts/Arial.ttf"
+          ln -s "$(fc-match -f '%{file}' 'Liberation Sans:style=Bold')" "$RUNNER_TEMP/fonts/Arial Bold.ttf"
+          echo "BRAN_FONT_DIR=$RUNNER_TEMP/fonts" >> "$GITHUB_ENV"
+      - name: Install the pinned Chrome for Testing build
+        run: |
+          url="https://storage.googleapis.com/chrome-for-testing-public/${CFT_VERSION}/linux64/chrome-linux64.zip"
+          curl -fsSL -o "$RUNNER_TEMP/chrome-linux64.zip" "$url"
+          got="$(sha256sum "$RUNNER_TEMP/chrome-linux64.zip" | cut -d' ' -f1)"
+          echo "chrome-linux64.zip ${CFT_VERSION} SHA-256 ${got}"
+          if [ "$CFT_SHA256" = "PLACEHOLDER" ]; then
+            echo "::warning::CFT_SHA256 is PLACEHOLDER. Record ${got} in this workflow to pin the archive by hash."
+          elif [ "$got" != "$CFT_SHA256" ]; then
+            echo "::error::the Chrome for Testing archive differs from the pinned SHA-256"
+            exit 1
+          fi
+          unzip -q "$RUNNER_TEMP/chrome-linux64.zip" -d "$RUNNER_TEMP"
+          "$RUNNER_TEMP/chrome-linux64/chrome" --version
+          echo "BROWSER_PATH=$RUNNER_TEMP/chrome-linux64/chrome" >> "$GITHUB_ENV"
+      - name: Rebuild twice and compare the hashes
+        run: |
+          python -m paper.figures.build_all --portable --allow-pending --out "$RUNNER_TEMP/build1"
+          python -m paper.figures.build_all --portable --allow-pending --out "$RUNNER_TEMP/build2"
+          (cd "$RUNNER_TEMP/build1" && sha256sum -- * | sort -k2) > "$RUNNER_TEMP/build1.sha256"
+          (cd "$RUNNER_TEMP/build2" && sha256sum -- * | sort -k2) > "$RUNNER_TEMP/build2.sha256"
+          cat "$RUNNER_TEMP/build1.sha256"
+          diff "$RUNNER_TEMP/build1.sha256" "$RUNNER_TEMP/build2.sha256"

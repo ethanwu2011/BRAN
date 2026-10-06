@@ -112,7 +112,7 @@
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 23,
    "dropped_statements": 36,
-   "public_sha256": "9d83cc00d8f31ffd848a917afb325adaa57cdee471cc7f50847ba6fb2eecea11"
+   "public_sha256": "56acf5f2f04a6ad4812aa0ff9a95408300723bb50178cea44baacd90a5cea1ba"
   },
   "draw_ed_table2.py": {
    "from": "build_ed_table2_merged.py",

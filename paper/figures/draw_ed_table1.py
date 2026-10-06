@@ -120,5 +120,7 @@ def draw(S):
 
 
 def render(payload):
+    # Overlap boxes are measured in the profile font (Arial), the font the table is drawn in.
+    E.text_w = st.text_w
     cv, H = draw(payload)
     return [(TABLE_ID, cv.fig, W, H)]

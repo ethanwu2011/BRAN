@@ -6,7 +6,7 @@ This page holds the draft availability statements for the BRAN manuscript in the
 
 **Data availability.** The datasets analysed in this study are available from their providers to researchers who meet each provider's access conditions, and the authors are not permitted to redistribute them. AI-READI is available through the AI-READI data platform under the AI-READI license (https://aireadi.org). MIMIC-IV version 3.1, MIMIC-III, the eICU Collaborative Research Database version 2.0, HiRID version 1.1.1, the Northwestern ICU database version 0.1.0, INSPIRE and BRSET version 1.0.1 are available through PhysioNet (https://physionet.org) to credentialed users who complete the required training and sign the data use agreement of each project. NHANES public use files are available from the US National Center for Health Statistics (https://www.cdc.gov/nchs/nhanes). KNHANES data are available from the Korea Disease Control and Prevention Agency after registration (https://knhanes.kdca.go.kr). Source data are provided with this paper. PLACEHOLDER for the MIMIC-III and INSPIRE versions, the AI-READI release and the access tier of BRSET, INSPIRE and the Northwestern ICU database, each to be checked on the provider page.
 
-**Code availability.** The BRAN code is available at https://github.com/ethanwu2011/BRAN under the MIT license. It includes the model, the research code used for the reported analyses, the input specification, synthetic examples and tests, and the code that redraws every figure from its Source Data with a single command. The version used for this paper is archived at Zenodo (PLACEHOLDER for the DOI of release v1.0.0). Trained model parameters are not distributed, as explained under Data availability and below.
+**Code availability.** The BRAN code is available at https://github.com/ethanwu2011/BRAN under the MIT license. It includes the model, the research code of BRAN training and evaluation and of the analyses mapped in the repository, the input specification, synthetic examples and tests, and code that redraws the finalized figures from their Source Data. PLACEHOLDER for the code of the remaining analyses behind the figures, which is not yet in the repository (`docs/source_data_code_coverage.md` lists them), and for the figures that cannot yet be redrawn (Fig. 3 and Extended Data Figs. 3 and 4). The version used for this paper is archived at Zenodo (PLACEHOLDER for the DOI of release v1.0.0). Trained model parameters are not distributed, as explained under Data availability and below.
 
 **Model availability.** Trained BRAN parameters and fitted preprocessing were derived in part from credentialed PhysioNet data and from AI-READI data and are not distributed through GitHub, Hugging Face or Zenodo. PLACEHOLDER for the access route, which for parameters trained on PhysioNet data can only be a PhysioNet credentialed project under the same agreement, and which for AI-READI needs a determination under its license.
 
@@ -38,7 +38,7 @@ The import graph of the research code names more sources than the reported analy
 | Private figure builders | Restricted workspace | They read the aggregates by path, and their public drawing part is in `paper/figures` |
 | Trained parameters and fitted transforms | Restricted workspace | PhysioNet asks that models derived from credentialed data be shared only through PhysioNet, and the AI-READI license covers derivatives and open-weight models |
 
-The repository holds the code, synthetic fixtures and the Source Data. The Source Data hold aggregates only. Every declared count and every printed lower bound is at least 20, and `python -m paper.figures.disclosure` checks those rules.
+The repository holds the code, synthetic fixtures and the Source Data. The Source Data hold aggregates only. Every declared count and every printed lower bound is at least 20, and no proportion may be an unreviewed exact fraction of a hidden count. `python -m paper.figures.disclosure` checks those rules. It also lists three open items in the Source Data of Figs. 2 and 5 and Extended Data Fig. 2, which block release until their builders export again (`paper/source_data/README.md`).
 
 ## Provider terms that constrain sharing
 
@@ -53,11 +53,14 @@ Provider pages are https://physionet.org/content/mimiciv/3.1/, https://physionet
 ## Release plan
 
 1. Re-export Fig. 3, Fig. 5, Extended Data Figs. 3 and 4 and Extended Data Table 1 with the final style module, regenerate the public figure layer and record the new reference (see `paper/README.md`).
-2. Resolve the PLACEHOLDERs on this page, the BioRender licence of the four icons in `paper/source_data/fig1_source_data.json`, and the Python 3.10 support question in `pyproject.toml`.
-3. Review and merge the release branch into `main`, then push. Pushing is the author's step.
-4. Set the version to 1.0.0 in `pyproject.toml` and `src/bran_r7_release/__init__.py`, and write a 1.0.0 source manifest, because the facade hash in the sealed 0.2.0 `SOURCE_MANIFEST.json` changes with the version string.
-5. Turn on the Zenodo integration for the GitHub repository, then publish the GitHub release `v1.0.0`. Zenodo archives the tagged tree and mints a version DOI and a concept DOI.
-6. Add the version DOI to `CITATION.cff`, the README and the Code availability statement, and cite the archive in the manuscript.
+2. Close the open disclosure items by exporting Figs. 2 and 5 and Extended Data Fig. 2 again with the changes listed in `paper/source_data/README.md`, until `python -m paper.figures.disclosure` exits 0.
+3. Add the runner code of every analysis that `docs/source_data_code_coverage.md` marks PLACEHOLDER as a new hash-locked snapshot with its entrypoints, after the same code review as `research/`, and widen the Code availability statement only then.
+4. Regenerate the figure reference with a Chrome for Testing build pinned by version and SHA-256 through `BROWSER_PATH`, so that readers can obtain the same browser (see `paper/README.md`).
+5. Resolve the PLACEHOLDERs on this page, the BioRender licence of the four icons in `paper/source_data/fig1_source_data.json`, and the Python 3.10 support question in `pyproject.toml`. If the licence does not allow redistribution, rewrite the branch to remove the icons and redraw Fig. 1 with openly licensed or self-drawn symbols before anything is pushed.
+6. Review and merge the release branch into `main`, then push. Pushing is the author's step.
+7. Set the version to 1.0.0 in `pyproject.toml` and `src/bran_r7_release/__init__.py`, and write a 1.0.0 source manifest, because the facade hash in the sealed 0.2.0 `SOURCE_MANIFEST.json` changes with the version string.
+8. Turn on the Zenodo integration for the GitHub repository, then publish the GitHub release `v1.0.0`. Zenodo archives the tagged tree and mints a version DOI and a concept DOI.
+9. Add the version DOI to `CITATION.cff`, the README and the Code availability statement, and cite the archive in the manuscript.
 
 ## Repository rules
 

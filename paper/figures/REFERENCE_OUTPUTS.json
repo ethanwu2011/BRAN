@@ -26,15 +26,15 @@
  "code": {
   "__init__.py": "7e17d882cf6763ef65ba6805fcd6bc9469b910f2aad146ecfbd063d9a42200ac",
   "bran_plotly_style.py": "069b670fa90342094519962c82d6b3aefc1625220ae490f483bc7c229505611c",
-  "build_all.py": "4401c22b4442132bcf2c414f0e7c9831c4b15f5a5bbc84736ea1c7fd2f265a46",
-  "disclosure.py": "ced074c4c7eff2de27731e55b626ba4667fbffd9d4e69db28c8c1eb6b03ed669",
+  "build_all.py": "e785750dfc5365c80074e1dc40e988e1011599979a414d613a1ec019db5aa341",
+  "disclosure.py": "ca7c70b6a7d45aa312f25be6bc885e840bc884e2b07cdaace9d52e78c01df864",
   "display_numbers.py": "e195eff007846839777aef89eaf913291d9f521c0391b61b23042cd9a1e74446",
   "draw_ed1.py": "d4eb5d423530f7f1353a690ae7103d3c0e2aa82437f66e4720b18452b4dbeb9e",
   "draw_ed2.py": "84c6f0f7f1a2b3a18314833783255acbeba1ffc976b2e816582f6ef348e6aaac",
   "draw_ed3.py": "8e1b15b5d6399c02c92a9cbec63b8ac7d90a354400c382d98ed8bc4144a190a5",
   "draw_ed3b.py": "a3bf64f9367b20ce6b78fbd0756f01d69c10800e2229cfe6b23a906a12a94cee",
   "draw_ed4.py": "26a7aa38ab86e4290b63912ebfbf57bf7d89a46b239b361c3a0d550cdddcb291",
-  "draw_ed_table1.py": "9d83cc00d8f31ffd848a917afb325adaa57cdee471cc7f50847ba6fb2eecea11",
+  "draw_ed_table1.py": "56acf5f2f04a6ad4812aa0ff9a95408300723bb50178cea44baacd90a5cea1ba",
   "draw_ed_table2.py": "acc5ce301ba868b8672d04cadd71ce16a492587301b1c18af39acd10d803fe48",
   "draw_fig1.py": "342397fbeacbe293f09a5d1e6215d478e5022d6f999287e0ea22f9d905f72b1f",
   "draw_fig2.py": "4052ce960149a493f0252a6d8cf552067e91eb7e6e3b7c1a2d02627888ac30c7",
@@ -46,7 +46,7 @@
   "fig3_nm_kit.py": "47b6faf4050eb1e875da068f88ab31697ec8b1881854d37038204ebe7da45e79",
   "fig4_lane_kit.py": "acf4dc7ed23429f5f8d844934ca454dcd36f1afff1075a4a34f4f21463de28cc"
  },
- "source_data_manifest_sha256": "112d9072df59110223c9babb0bb095c4ae9caf202f6adb79130a2a79d9c0c805",
+ "source_data_manifest_sha256": "ebf4b95230812ff202613118d56283255c80edf64192744a9a826c0c6ec452ea",
  "figures": {
   "fig1": {
    "display": "Fig. 1",

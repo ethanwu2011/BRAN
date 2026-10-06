@@ -1,6 +1,6 @@
 # Paper figures and Source Data
 
-This folder rebuilds the figures of the BRAN paper from their Source Data. It covers Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2. Fig. 6, Extended Data Figs. 6 and 7 and Extended Data Table 3 are still in preparation and are not rebuilt here.
+This folder rebuilds the figures of the BRAN paper from their Source Data. It covers Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2. Nine of these 12 items rebuild today, and Fig. 3 and Extended Data Figs. 3 and 4 are blocked until they are exported again (see the verification record). Fig. 6, Extended Data Figs. 6 and 7 and Extended Data Table 3 are still in preparation and are not included.
 
 ## Layout
 
@@ -11,8 +11,8 @@ This folder rebuilds the figures of the BRAN paper from their Source Data. It co
 | `figures/bran_plotly_style.py` | Shared Nature Medicine style, export and Source Data helpers |
 | `figures/display_numbers.py` | Display numbers used in every title and cross-reference |
 | `figures/ed_canvas.py`, `figures/ed_nm_canvas.py`, `figures/fig3_nm_kit.py`, `figures/fig4_lane_kit.py` | Canvas and layout helpers |
-| `figures/build_all.py` | The single command that rebuilds and checks every item |
-| `figures/disclosure.py` | The disclosure check of the Source Data |
+| `figures/build_all.py` | The command that rebuilds and checks the items |
+| `figures/disclosure.py` | The disclosure check of the Source Data, with its reviewed exceptions and the open items that block release |
 | `figures/REFERENCE_OUTPUTS.json` | Reference hashes of every PNG, PDF and JPEG, the reference environment and the code hashes |
 | `figures/SUBMISSION_EXPORTS.json` | Hashes of the files exported for submission |
 | `figures/PROVENANCE.json` | The private builder file behind each public code file |
@@ -22,7 +22,7 @@ This folder rebuilds the figures of the BRAN paper from their Source Data. It co
 
 ## Rebuild the figures
 
-The reference environment is macOS on Apple silicon with Python 3.12.4, Google Chrome 154.0.8037.98 and the Arial and Arial Bold files that ship with macOS. `figures/REFERENCE_OUTPUTS.json` records it, with the fonts identified by content hash.
+The reference environment is macOS on Apple silicon with Python 3.12.4, Google Chrome 154.0.8037.98 and the Arial and Arial Bold files that ship with macOS. `figures/REFERENCE_OUTPUTS.json` records it, with the fonts identified by content hash. Byte identity holds only in this recorded environment.
 
 ```sh
 python3.12 -m venv .venv-figures
@@ -30,9 +30,13 @@ python3.12 -m venv .venv-figures
 make figures-check PYTHON=.venv-figures/bin/python
 ```
 
-`make figures-check` runs `python -m paper.figures.build_all`. It draws every item in its own process from its Source Data JSON alone, writes the 600 dpi PNG, the PDF at final size and, for Extended Data items, the 300 ppi RGB JPEG into a new temporary folder, and compares every file hash with `figures/REFERENCE_OUTPUTS.json`. An audit hook stops the drawing process if it opens any other file in the repository. Use `make figures` to keep the files in `paper/output/figures`, which Git ignores.
+`make figures-check` runs `python -m paper.figures.build_all`. It draws each item in its own process from its Source Data JSON alone, writes the 600 dpi PNG, the PDF at final size and, for Extended Data items, the 300 ppi RGB JPEG into a new temporary folder, and compares every file hash with `figures/REFERENCE_OUTPUTS.json`. An audit hook stops the drawing process if it opens any other file in the repository. Use `make figures` to keep the files in `paper/output/figures`, which Git ignores.
 
-In another environment the items still build, but the bytes can differ, mostly because of other font files or another Chrome version. `make figures-portable` reports those differences without failing. Set `BRAN_FONT_DIR` to a folder that holds `Arial.ttf` and `Arial Bold.ttf` to choose the font files, and `BROWSER_PATH` to choose the Chrome binary.
+An item that the reference marks blocked is reported as not drawn on every run. Any other build failure ends the run with exit code 1, also with `--allow-pending`, and the closing line says that every item matches only when every item was rebuilt.
+
+In another environment the items that are not blocked should still build, but the bytes differ when the font files or the Chrome build differ. `make figures-portable` reports those differences without failing. `BRAN_FONT_DIR` names a folder that holds `Arial.ttf` and `Arial Bold.ttf`. It sets the files used to measure text and recorded in the environment, but Chrome draws the text with the fonts the system provides, so on Linux install fonts with Arial metrics such as Liberation Sans. `BROWSER_PATH` names the Chrome binary when no Chrome downloaded by choreographer is present.
+
+The reference Chrome is the system Google Chrome, which updates itself, so the recorded build is neither kept nor available as a pinned download. When Chrome reports another version, `build_all` exits 3 and the byte-identical rebuild test is skipped. PLACEHOLDER for a new reference made with a Chrome for Testing build pinned by version and SHA-256 through `BROWSER_PATH`, which readers can download. Until then a reader outside the reference environment can check that each item builds from its Source Data and can compare the drawings, but cannot expect equal bytes. On Linux, the continuous integration workflow rebuilds every item that is not blocked twice with Chrome for Testing 142.0.7444.175 and requires the two builds to be byte identical.
 
 More commands follow.
 
@@ -47,10 +51,10 @@ python -m paper.figures.build_all --legends       # rewrite figures/LEGENDS.md f
 
 1. The analyses ran in the private research workspace on the restricted datasets and wrote aggregate files. Those aggregates hold no patient rows, but they are derived from data under the PhysioNet and AI-READI agreements and stay private.
 2. A private builder for each item read every plotted value from pinned aggregate files, checked each value against its file and that file's SHA-256, applied the disclosure rules and wrote the Source Data. Each Source Data row names the aggregate file and its SHA-256.
-3. The public drawing code in `figures/` reads only the Source Data JSON. It is cut verbatim from the private builder and keeps the top-level statements that the drawing entry point reaches. `figures/PROVENANCE.json` gives the builder file and its SHA-256 for each public file.
+3. The public drawing code in `figures/` reads only the Source Data JSON. It is cut verbatim from the private builder and keeps the top-level statements that the drawing entry point reaches, plus a short `render()` adapter. The adapter of Extended Data Table 1 also measures the boxes of its text check in Arial, the font the table is drawn in, which changes the check and not the drawing. `figures/PROVENANCE.json` gives the builder file and its SHA-256 for each public file.
 4. `figures/build_all.py` renders each item and checks the bytes.
 
-A reader can repeat step 4 exactly and inspect every value of step 2 in the Source Data without access to the restricted data.
+Without access to the restricted data, a reader can run step 4 and inspect every value of step 2 in the Source Data. Step 4 gives byte-identical files only in the recorded reference environment. Steps 1 and 2 need the restricted data, and the code of step 1 is in `research/` only for the analyses that [Source Data and analysis code](../docs/source_data_code_coverage.md) marks so.
 
 ## Verification record, 6 October 2026
 
@@ -74,10 +78,10 @@ A reader can repeat step 4 exactly and inspect every value of step 2 in the Sour
 Five items need a new export by their figure builders before release.
 
 - Fig. 3 and Extended Data Figs. 3 and 4 were exported with an earlier version of the style module. Their layout kit requires panel letters of exactly 8.0 pt, while the final style module stores 8.0025 pt, the nearest size that Chrome keeps in a PDF. Their drawing code therefore stops under the final style module. Their submission PDFs were also printed with the earlier page margins, which shrink all text by 2.65%.
-- Fig. 5 was exported with the same earlier style module. Under the final module it builds deterministically, but its text sizes differ by up to 0.05%, so its PNG and PDF differ from the export.
+- Fig. 5 was exported with the same earlier style module, and its submission PDF was also printed with the earlier page margins. Its text there runs from 5.84 to 7.81 pt, so its panel letters print below 8 pt and its smallest text below 6 pt. The rebuild under the final module is deterministic and its PDF text runs from 6.0 to 8.0 pt, so a new export fixes the submission file. Its PNG also differs from the export because the earlier module set text sizes up to 0.05% differently.
 - Extended Data Table 1 reproduces its PNG and JPEG, but its submission PDF was printed with the earlier page margins.
 
-After each new export the public layer is regenerated and `python -m paper.figures.build_all --write-reference` records the new reference. Until then `python -m paper.figures.build_all` ends with exit code 2, and the tests check that every item not reproduced is listed here.
+After each new export the public layer is regenerated and `python -m paper.figures.build_all --write-reference` records the new reference. Until then `python -m paper.figures.build_all` ends with exit code 2. The tests require this table to hold one row per item with the status that `figures/REFERENCE_OUTPUTS.json` records, and the Source Data manifest to mark exactly the blocked items as pending.
 
 ## Nature Medicine format
 
