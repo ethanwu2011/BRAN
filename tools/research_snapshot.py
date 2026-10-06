@@ -37,6 +37,7 @@ SECRET = re.compile(
     r"\bsk-[A-Za-z0-9_-]{20,}|\bgh[pousr]_[A-Za-z0-9]{20,}|"
     r"\bAKIA[0-9A-Z]{16}\b"
 )
+IGNORED_NAMES = frozenset({"__pycache__"})
 PATIENT_KEY_NAMES = (
     "subject_id", "patient_id", "hadm_id", "stay_id", "person_id", "episode_id"
 )
@@ -206,7 +207,9 @@ def verify() -> dict:
     if not RESEARCH.is_dir() or RESEARCH.is_symlink():
         raise ValueError("missing_research_snapshot")
     expected = set(plan["modules"]) | {MANIFEST.name}
-    if {item.name for item in RESEARCH.iterdir()} != expected:
+    # Git ignores __pycache__, and importing a module for inspection creates it, so it is not a snapshot change.
+    present = {item.name for item in RESEARCH.iterdir() if item.name not in IGNORED_NAMES}
+    if present != expected:
         raise ValueError("snapshot_file_set_changed")
     for name, info in plan["modules"].items():
         path = RESEARCH / name

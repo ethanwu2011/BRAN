@@ -20,6 +20,21 @@ class ResearchSnapshotTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(json.loads(result.stdout)["module_count"], 425)
 
+    def test_verifier_ignores_python_bytecode_cache(self):
+        cache = ROOT / "research" / "__pycache__"
+        created = not cache.exists()
+        cache.mkdir(exist_ok=True)
+        marker = cache / "generated_by_test.pyc"
+        try:
+            marker.write_bytes(b"")
+            result = subprocess.run([sys.executable, str(ROOT / "tools" / "research_snapshot.py"), "verify"],
+                                    cwd=ROOT, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+        finally:
+            marker.unlink(missing_ok=True)
+            if created:
+                cache.rmdir()
+
     def test_snapshot_contains_only_bound_parseable_python_modules(self):
         directory = ROOT / "research"
         manifest = json.loads((directory / "snapshot_manifest.json").read_text())
