@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,9 +7,30 @@ name = "bran-r7-source"
 version = "0.2.0"
 description = "BRAN patient representation and reproducibility tools"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
-dependencies = ["torch>=2.6"]
+authors = [{name = "Ethan Wu"}]
+keywords = [
+  "patient representation",
+  "retinal imaging",
+  "complete blood count",
+  "multimodal learning",
+  "missing data",
+  "clinical machine learning",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = ["torch>=2.6", "numpy>=1.26"]
 
 [project.optional-dependencies]
 test = ["numpy>=1.26", "matplotlib>=3.8", "scikit-learn>=1.4"]
@@ -17,6 +38,7 @@ figures = ["matplotlib>=3.8"]
 
 [project.urls]
 Repository = "https://github.com/ethanwu2011/BRAN"
+Issues = "https://github.com/ethanwu2011/BRAN/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
