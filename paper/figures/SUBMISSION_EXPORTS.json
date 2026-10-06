@@ -1,0 +1,123 @@
+{
+ "schema": "bran-submission-exports-v1",
+ "description": "SHA-256 of the PNG, PDF and JPEG files that the private builders exported for submission, read from their manifests on 6 October 2026. build_all compares its rebuilds with them. SVG files are not listed because Kaleido writes random identifiers into them.",
+ "final_style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+ "public_style_module_sha256": "069b670fa90342094519962c82d6b3aefc1625220ae490f483bc7c229505611c",
+ "figures": {
+  "fig1": {
+   "display": "Fig. 1",
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
+   "files": {
+    "fig1.pdf": "8f267a814273ed97ab1a503e1d38178396b72fada3b03f75b16330b3d87af38d",
+    "fig1.png": "21a24de4ffd921e7d5dff8a7696c9825c1acfd5861cbd6c5a3d5aa8eb0b6f325"
+   }
+  },
+  "fig2": {
+   "display": "Fig. 2",
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
+   "files": {
+    "fig2.pdf": "d1d08c468c2c3ae2e17cbd4e1245ebc1c2a4404b13e34ee16c2c21d73608de75",
+    "fig2.png": "fe76758791603411d5b2abbbf755f7255cc1d478c8815ca17845856494f6422c"
+   }
+  },
+  "fig3": {
+   "display": "Fig. 3",
+   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
+   "exported_with_final_style": false,
+   "files": {
+    "fig3.pdf": "ec1b67055874280207d4301cd8c6c3cabb4f7cbe517b9c411e6c402b9fa79e9d",
+    "fig3.png": "a1ec5f0e5774e6c2dc602569f1fa931e351974e500d5bb89b2c13e172c9b93fa"
+   }
+  },
+  "fig4": {
+   "display": "Fig. 4",
+   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+   "exported_with_final_style": false,
+   "files": {
+    "fig4.pdf": "89b9870d9a7ec2a8554e36b8f5baa924fb01afb516e5552f428a436e7464b67d",
+    "fig4.png": "4da0cba333d57fb5c6572f153d28519621251432cf66ca62e9b6cffe9801beee"
+   }
+  },
+  "fig5": {
+   "display": "Fig. 5",
+   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
+   "exported_with_final_style": false,
+   "files": {
+    "fig5.pdf": "598b413a5fb39d397e545e402df18573ac6f4569f393648e0f83bdfc8ba4d29e",
+    "fig5.png": "0b615cbc629084925cb43378f32df3ea466f6c4dd562337bad0db7dbf3396102"
+   }
+  },
+  "ed1": {
+   "display": "Extended Data Fig. 1",
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
+   "files": {
+    "ed1.pdf": "9b855ea6c2fe8f5c1bd0f7b177b29d2fb4a28ab88f718fd9f1466b7178b1eeb2",
+    "ed1.png": "8b0077d23407b2dabd6db93541fe7ba21743414648f78681b78f445b55d87f60",
+    "Wu_EDfig1.jpg": "15372927a03cef91a734485b71147b6f7d83feef1da89f996272f3afd4e0b8c7"
+   }
+  },
+  "ed2": {
+   "display": "Extended Data Fig. 2",
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
+   "files": {
+    "ed2.pdf": "6834405571452c4fd989f89f098a9482850692f45d5e1429ed987619e08f1032",
+    "ed2.png": "d296ef28b366399bf2b21e69e4b0de5b881fa2d18875d8974ef1699bd6d68d82",
+    "Wu_EDfig2.jpg": "f721ec1c0539b6380dbe702ffe7c31fff6f2234b6db8c46c5cd095585acd14ce"
+   }
+  },
+  "ed3": {
+   "display": "Extended Data Fig. 3",
+   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
+   "exported_with_final_style": false,
+   "files": {
+    "ed3.pdf": "9b0b428193d7da2d94f0644b8da6dca1fe7dd44f66a403fb00c4d77a0ee878dc",
+    "ed3.png": "fdb19e5ed7af2f92716d8c7a4652a4cc3eb92520c9f9fed09581eced752fe33a",
+    "EDfig3.jpg": "baf80434918b108c2e6f866169a468558287db093d6cbc3d6747619c8cf1a62e"
+   }
+  },
+  "ed3b": {
+   "display": "Extended Data Fig. 4",
+   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
+   "exported_with_final_style": false,
+   "files": {
+    "ed3b.pdf": "b174219dcd8413410b4e8fcfeae44832aa2ab72c4f71b8b5306433307e4ebabe",
+    "ed3b.png": "6994139bfe910c39d29f924811b4679945aa9d324c1e82e9425673c671a8b85c",
+    "EDfig4.jpg": "46ec2b243b92e8f2d0fbb758a5cbfc6d5ffe46cc333c05e3e760c8db03569a56"
+   }
+  },
+  "ed4": {
+   "display": "Extended Data Fig. 5",
+   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+   "exported_with_final_style": false,
+   "files": {
+    "ed4.pdf": "af3b074d99caad7d7f48fcaca32469116333cad8d42d87949b24fa68ed81fc85",
+    "ed4.png": "0babd67f8b1f88acabb46cf7cbb0b69e1bfcfadae3ffdf00bbef025561351f50",
+    "Wu_EDfig5.jpg": "91c1e66113a47eef207d510ca82be75ff7a45785ce6e4a944274862ef71b20a3"
+   }
+  },
+  "ed_table1": {
+   "display": "Extended Data Table 1",
+   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
+   "exported_with_final_style": false,
+   "files": {
+    "ed_table1.pdf": "a57da76ee3caaed08cd401ee1e27710c2adc048245aaab8bcbb4a1ff6f695088",
+    "ed_table1.png": "0fbca8e46db16ca8baf40303b650512db993c10687d7d5426dbb9112d30198b1",
+    "ed_table1_300ppi.jpg": "28eb7eddaa10d1eb14d2f8a33d4600020bf0bd9403a0bac089ac998b6d2cdea1"
+   }
+  },
+  "ed_table2": {
+   "display": "Extended Data Table 2",
+   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+   "exported_with_final_style": false,
+   "files": {
+    "ed_table2.pdf": "7283baf2a592b8cf5faee8ef091fc58d4741954aef765d071d2b84e54e2dcfe8",
+    "ed_table2.png": "d484be8b66d5ce324042946b8fb35f9b0c00ee854505933108878a5ec4af9e3c",
+    "ed_table2_300ppi.jpg": "f50224bb84225628aee3c3c57df0694f7197d2333bb004bba00c1205c950cb8c"
+   }
+  }
+ }
+}
