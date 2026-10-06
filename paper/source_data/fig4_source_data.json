@@ -2,8 +2,8 @@
  "figure": "fig4",
  "display": "Fig. 4",
  "display_short": "Fig. 4",
- "title": "Fig. 4 | BRAN completes blood counts from the retina, but its referral gain did not replicate.",
- "legend": "**Fig. 4 | BRAN completes blood counts from the retina, but its referral gain did not replicate.** **a**, Schematic of target erasure. **b**, Mean absolute error (MAE) over the training median by masking context, and the whole-panel retinal increment. **c**, Retina and typed age against age only, which was more accurate for MCV and platelets. RETFound-Green, PLACEHOLDER. **d**, Brackets two MAE wide over illustrative adult reference intervals. **e**, Referral for haemoglobin below 12 g/dL (Extended Data Table 2). **f**, Withholding the widest intervals, and 90% interval coverage. **g**, Haemoglobin MAE below 12 g/dL. **h**, Previously accessed official test split, whose blood counts a predecessor model decoded, scored once. †, not the prespecified estimand (Extended Data Table 2b). Points, estimates. Bars, paired bootstrap 95% intervals (1,000 development, 2,000 test draws). Open markers, references (f left, g), native intervals (f), differences with intervals including zero (b, c, h). n, ≥1,880 development people (five-fold cross-validation, ≥160 below 12 g/dL, f left and middle ≥940, f right PLACEHOLDER) and ≥340 test people (≥20 below 12 g/dL). No hypothesis tests were run. The retina raised platelet error (b) and did not raise cases found at 90% specificity (e), and retinal ridge models matched or exceeded BRAN (e, Extended Data Fig. 5). Sex, not held, may underlie the retinal signal. Risk maps were not fully nested. Hb, Hct, RBC, WBC and Plt, haemoglobin, haematocrit, red cells, white cells and platelets. MCV, MCH and MCHC, mean corpuscular volume, haemoglobin and haemoglobin concentration. RDW, red cell distribution width.",
+ "title": "Fig. 4 | BRAN estimates hidden blood count values with retinal input, but the retinal referral gain did not replicate.",
+ "legend": "**Fig. 4 | BRAN estimates hidden blood count values with retinal input, but the retinal referral gain did not replicate.** **a**, Schematic of target erasure. **b**, Mean absolute error (MAE) over the training median by masking context, and the whole-panel retinal increment. **c**, Retina and typed age against age only, which was more accurate for MCV and platelets. RETFound-Green, PLACEHOLDER. **d**, Brackets two MAE wide over illustrative adult reference intervals. **e**, Referral for haemoglobin below 12 g/dL (Extended Data Table 2). **f**, Withholding the widest intervals, and 90% interval coverage. **g**, Haemoglobin MAE below 12 g/dL. **h**, Previously accessed official test split, whose blood counts a predecessor model decoded, scored once. †, not the prespecified estimand (Extended Data Table 2b). Points, estimates. Bars, paired bootstrap 95% intervals (1,000 development, 2,000 test draws). Open markers, references (**f** left, **g**), native intervals (**f**) and differences with intervals including zero (**b**, **c**, **h**). *n*, ≥1,880 development people (five-fold cross-validation, ≥160 below 12 g/dL, **f** left and middle ≥940, **f** right PLACEHOLDER) and ≥340 test people (≥20 below 12 g/dL). No hypothesis tests were run. The retina raised platelet error (**b**) and did not raise cases found at 90% specificity (**e**), and retinal ridge models matched or exceeded BRAN (**e**, Extended Data Fig. 5). Sex, not held, may partly underlie the retinal signal. Risk maps were not fully nested. Abbreviations as in Fig. 1.",
  "panels": {
   "a": {
    "title": "Target erasure, schematic without data. Flags of the aggregates the schematic statements were checked against",
@@ -5498,9 +5498,9 @@
  },
  "builder": {
   "path": "BRAN_FIGURES_2026-10-01/locked/build_fig4.py",
-  "sha256": "10d82441e8225c1f55d621fd7a89ef393a3d9fea9c5f0d22e914a33d90840ecb"
+  "sha256": "99866f4bc79297550a308535048b43ae61b6d203cce7a42ef153d61010033f27"
  },
- "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+ "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
  "profile": "nature-medicine-2026-10-06",
  "methods_notes": {
   "a": "Schematic without data. The frozen-model and erasure statements are checked against the U2 completion utility and Q4 quantile aggregates.",

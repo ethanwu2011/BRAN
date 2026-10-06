@@ -1,6 +1,6 @@
 # Paper figures and Source Data
 
-This folder rebuilds the figures of the BRAN paper from their Source Data. It covers Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2. Nine of these 12 items rebuild today, and Fig. 3 and Extended Data Figs. 3 and 4 are blocked until they are exported again (see the verification record). Fig. 6, Extended Data Figs. 6 and 7 and Extended Data Table 3 are still in preparation and are not included.
+This folder rebuilds the figures of the BRAN paper from their Source Data. It covers Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2, and all 12 items rebuild byte for byte from their Source Data in the reference environment (see the verification record). Fig. 6, Extended Data Figs. 6 and 7 and Extended Data Table 3 are still in preparation and are not included.
 
 ## Layout
 
@@ -58,30 +58,26 @@ Without access to the restricted data, a reader can run step 4 and inspect every
 
 ## Verification record, 6 October 2026
 
-`python -m paper.figures.build_all` was run in a fresh virtual environment installed from `figures/requirements-figures.txt` on macOS 26.5.2 with Python 3.12.4 and Chrome 154.0.8037.98. Every item that builds reproduced the reference hashes of its PNG, PDF and JPEG, and each drawing process opened only its own Source Data file in the repository. The reference build compared each item with the file exported for submission.
+`python -m paper.figures.build_all` was run on macOS 26.5.2 with Python 3.12.4, Chrome 154.0.8037.98 and the packages of `figures/requirements-figures.txt` (all 18 pins at the locked versions except tzdata, which pandas reads only for time zones on platforms without a system zone database). All 12 items were rebuilt from their Source Data alone and reproduced the reference hashes of their PNG, PDF and JPEG, and each drawing process opened only its own Source Data file in the repository. Every file is also byte identical to the file exported for submission.
 
 | Item | Status | Detail |
 | --- | --- | --- |
 | Fig. 1 | Reproduced | PNG and PDF identical to the submission export |
 | Fig. 2 | Reproduced | PNG and PDF identical |
-| Fig. 3 | Blocked | See below |
+| Fig. 3 | Reproduced | PNG and PDF identical |
 | Fig. 4 | Reproduced | PNG and PDF identical |
-| Fig. 5 | Differs from the submission export | See below |
+| Fig. 5 | Reproduced | PNG and PDF identical |
 | Extended Data Fig. 1 | Reproduced | PNG, PDF and JPEG identical |
 | Extended Data Fig. 2 | Reproduced | PNG, PDF and JPEG identical |
-| Extended Data Fig. 3 | Blocked | See below |
-| Extended Data Fig. 4 | Blocked | See below |
+| Extended Data Fig. 3 | Reproduced | PNG, PDF and JPEG identical |
+| Extended Data Fig. 4 | Reproduced | PNG, PDF and JPEG identical |
 | Extended Data Fig. 5 | Reproduced | PNG, PDF and JPEG identical |
-| Extended Data Table 1 | PNG reproduced, PDF differs | PNG and JPEG identical, see below |
+| Extended Data Table 1 | Reproduced | PNG, PDF and JPEG identical |
 | Extended Data Table 2 | Reproduced | PNG, PDF and JPEG identical |
 
-Five items need a new export by their figure builders before release.
+Fig. 3 and Extended Data Figs. 3 and 4 had been exported with an earlier style module whose PDF page margins shrank the drawing to 97.35%, and their layout kit required panel letters of exactly 8.0 pt. The kit now accepts the 0.01 px size that Chrome keeps in a PDF (8.0025 pt), its source-data replay writes the PDF with the same zero-margin writer as the export and compares PDF bytes, and all three items, Figs. 4 and 5, Extended Data Fig. 5 and Extended Data Tables 1 and 2 were exported again under the final module. Every PDF is drawn at scale 1, embeds Arial as TrueType and prints text from 5.0 to 7.0 pt with 8.0 pt panel letters.
 
-- Fig. 3 and Extended Data Figs. 3 and 4 were exported with an earlier version of the style module. Their layout kit requires panel letters of exactly 8.0 pt, while the final style module stores 8.0025 pt, the nearest size that Chrome keeps in a PDF. Their drawing code therefore stops under the final style module. Their submission PDFs were also printed with the earlier page margins, which shrink all text by 2.65%.
-- Fig. 5 was exported with the same earlier style module, and its submission PDF was also printed with the earlier page margins. Its text there runs from 5.84 to 7.81 pt, so its panel letters print below 8 pt and its smallest text below 6 pt. The rebuild under the final module is deterministic and its PDF text runs from 6.0 to 8.0 pt, so a new export fixes the submission file. Its PNG also differs from the export because the earlier module set text sizes up to 0.05% differently.
-- Extended Data Table 1 reproduces its PNG and JPEG, but its submission PDF was printed with the earlier page margins.
-
-After each new export the public layer is regenerated and `python -m paper.figures.build_all --write-reference` records the new reference. Until then `python -m paper.figures.build_all` ends with exit code 2. The tests require this table to hold one row per item with the status that `figures/REFERENCE_OUTPUTS.json` records, and the Source Data manifest to mark exactly the blocked items as pending.
+After any new export the public layer is regenerated and `python -m paper.figures.build_all --write-reference` records the new reference. The tests require this table to hold one row per item with the status that `figures/REFERENCE_OUTPUTS.json` records, and the Source Data manifest to mark exactly the blocked items as pending.
 
 ## Nature Medicine format
 

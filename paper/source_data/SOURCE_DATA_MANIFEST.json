@@ -12,17 +12,17 @@
    "status": "final",
    "json": {
     "path": "fig1_source_data.json",
-    "sha256": "d95d573af3f30952f7a398dd3af36837fd74c64651ccfc8ca2a79bff5eea5375",
-    "bytes": 729360
+    "sha256": "9a68cbdcf849bb8b449d1a86f65aeb166785847e42881ea0662a69978d15b497",
+    "bytes": 729361
    },
    "xlsx": {
     "path": "fig1_source_data.xlsx",
-    "sha256": "e483f1a62716b6ba1cfcd1741b63b96c35874896a238634b99c365720942b7c6",
-    "bytes": 11299
+    "sha256": "54e6bb23cee1c2c497dba8910a4b143adbff0a7fa70c022ca6d1dfd0543b90ee",
+    "bytes": 11302
    },
    "exported_by_private_builder": {
-    "json_sha256": "bdd94d085ba75a1867111c65e4f0491e36a9d3940d63447e2f6d7a76249a2eed",
-    "xlsx_sha256": "71f8c3d5cc7e3cde8a7e4af31797a0fc83fc976669bdd7d24f91557d3f37081b",
+    "json_sha256": "a44469874b297417e9e56500cb58aa73245386b6eef3b70be636b2e5a13ee5bf",
+    "xlsx_sha256": "4a36b9bf3095898539c9a8e0ca9c734014ff462ef668e2820aae148e53b9100d",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": [
@@ -36,17 +36,17 @@
    "status": "final",
    "json": {
     "path": "fig2_source_data.json",
-    "sha256": "d8c7bb3e3834e7df29e0299d23cf6acf384ff4cbfc34aded9e905f54eeba6546",
-    "bytes": 30887
+    "sha256": "5293fb1bff423f6695c72dd903863e5bce3d6cfee4c50b8d849e2bb311deb2f4",
+    "bytes": 30793
    },
    "xlsx": {
     "path": "fig2_source_data.xlsx",
-    "sha256": "97535a7d54e10ab94bfed02a5d2d4546d3815ca3d254d179865dbd29df002523",
-    "bytes": 18007
+    "sha256": "e3b73d95cca4a3731cb25f03a3065e9a6c36b0dd04052f7b0da43dc17247fd9c",
+    "bytes": 17971
    },
    "exported_by_private_builder": {
-    "json_sha256": "901b01680916dce71874e7953cee3f86a2967e9fa9e4bfae14a33c7179d3e46c",
-    "xlsx_sha256": "dd21f2e063d8ac93bcb7cf61c3f1bc375907be1a849b87f89bb8caf2c129f823",
+    "json_sha256": "25da07a24442f25504b23fb166d1ece76aa990d327fbb19280fd1d5ae7ea53f5",
+    "xlsx_sha256": "7b2b69ec5acb82ab55e5283b8bbcb2c38c095fb6e3be483dbec624813b8091fb",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -55,21 +55,20 @@
    "id": "fig3",
    "display": "Fig. 3",
    "kind": "figure",
-   "status": "pending",
-   "status_reason": "The drawing code stops under the final style module (fig3_nm_kit.apply_nm_sizes requires 8.0 pt panel letters and the module stores 8.0025 pt). The Fig. 3 lane must export again.",
+   "status": "final",
    "json": {
     "path": "fig3_source_data.json",
-    "sha256": "943f5fa7386e6c2f9994d9ea0c7840bbb5266f76600e20e38d2bc1de9787677b",
-    "bytes": 239615
+    "sha256": "14615cb92c8867771e722692ac21dcf3aa00bee26bcc441593fafef104139820",
+    "bytes": 239156
    },
    "xlsx": {
     "path": "fig3_source_data.xlsx",
-    "sha256": "6985514f8d49ed68dfd8f726db0901b641161c3f10fca705a3e52f183a26e73d",
-    "bytes": 47058
+    "sha256": "81040a95e37606fe310f36b35aae592d55a1b3d5db8b0d4f160d51d268522f3c",
+    "bytes": 46895
    },
    "exported_by_private_builder": {
-    "json_sha256": "e4e3fee6167dbc5d5d20abded6143ac35a24dc0b0bce201b7e586d4586653d55",
-    "xlsx_sha256": "d1595bcf978ddbbc0741b26c333e2f06ded627359c31e14e55adaa1384004af4",
+    "json_sha256": "6af919adb4e9512aee13890842140f6b6919ed39c5735f3bd2df363748554936",
+    "xlsx_sha256": "960f22f80593168db7a289fd3a535d30533a7a46971a2d3c6febdc67eed2c25e",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -81,17 +80,17 @@
    "status": "final",
    "json": {
     "path": "fig4_source_data.json",
-    "sha256": "88b8742f0fe2e857cc72ca605d967b72d789e3340bf3cbfaa8b564d52113f933",
-    "bytes": 131920
+    "sha256": "2cff8f5e62db3e75b2d33430cede5eb3198db7b95699228775adcb6692e3588b",
+    "bytes": 131840
    },
    "xlsx": {
     "path": "fig4_source_data.xlsx",
-    "sha256": "cc4bb7534f6c6532bdd15979992b0a12fdc28c4cde83d8336f6a40016a053acf",
-    "bytes": 29723
+    "sha256": "f2ba45c41e725e527b8a6c793af58dcde8d3c0709d2634ab4b1441b90957eca4",
+    "bytes": 29660
    },
    "exported_by_private_builder": {
-    "json_sha256": "4802987289438fc9bc0ae59ab0580c20f0815d782c261d96dc51c0f129eab4d7",
-    "xlsx_sha256": "30aad0f83a09518da0489f8238254366297b95ec5e20516c4bd0537fccb3e875",
+    "json_sha256": "50949bd9db55fbc4a36b105fa07afe33510ad8bfb01d87e31cb0ffa2081bdb01",
+    "xlsx_sha256": "4452d1deec49530224c67acb790760fa8a6d436107d306c6645f533a77afd236",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -103,17 +102,17 @@
    "status": "final",
    "json": {
     "path": "fig5_source_data.json",
-    "sha256": "131b698813530113f0a0dbd659f2a725e7d0a82b4303bee08af24f2b9213de65",
-    "bytes": 107346
+    "sha256": "da757f86e697ead5547fa2fbd55e6bd3972c33b2a82ba4148a2abc3f0a17e6e7",
+    "bytes": 106858
    },
    "xlsx": {
     "path": "fig5_source_data.xlsx",
-    "sha256": "ef1fc34262547f21067a41942184f755ea4bce3c4f96f9131899dd66920e121c",
-    "bytes": 27340
+    "sha256": "e9ee57183c23e83ce8b2d11e4f10598e3f34a47fcd6be9da2208634f616ad367",
+    "bytes": 27222
    },
    "exported_by_private_builder": {
-    "json_sha256": "131b698813530113f0a0dbd659f2a725e7d0a82b4303bee08af24f2b9213de65",
-    "xlsx_sha256": "eab8e11d3b87ca257d211c5a216edb5f68a8e7fb88c4fd98c8e3cec146ba2e6e",
+    "json_sha256": "da757f86e697ead5547fa2fbd55e6bd3972c33b2a82ba4148a2abc3f0a17e6e7",
+    "xlsx_sha256": "a04e2ddae64af2267c7ebc8f2a29709627b8944238888f1180d67ca3290111a5",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -125,17 +124,17 @@
    "status": "final",
    "json": {
     "path": "ed1_source_data.json",
-    "sha256": "9fe902adac949411d123660a1e98815446e0ce59eec1142a7b7030f8cdccbd43",
-    "bytes": 67827
+    "sha256": "664cedf96ef775764e2017e394a3bdbcf4c4b35d62928619c71bc38b3f9bf3e6",
+    "bytes": 67746
    },
    "xlsx": {
     "path": "ed1_source_data.xlsx",
-    "sha256": "505db4d97805192b179744a011f50c60308d76ddd372acad43d088e9624de5f8",
-    "bytes": 18426
+    "sha256": "7777e0bfd212adb9f0c2d7fcacc4812bdce6f19a8d63ac35f7a65f130ebf1193",
+    "bytes": 18392
    },
    "exported_by_private_builder": {
-    "json_sha256": "968158df7cfc31c047690a2484022dd0359ed11a15a40181161536a22412aa5e",
-    "xlsx_sha256": "33129b70db3686b280f26f3b7ba932a7d965d966b015590ae0161241dca61a21",
+    "json_sha256": "889ed9bd9e074d92ff422287012c6d8dceaacadd9af89f4dff83d05e77b0ee37",
+    "xlsx_sha256": "dc2bac2196cb3449294b4807e61a5a94c63ea2853181e9c7b2698c0ef8e5b17c",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -147,17 +146,17 @@
    "status": "final",
    "json": {
     "path": "ed2_source_data.json",
-    "sha256": "c141b284ab8c6c1c72d13b7adfd6fa4136c5afe748323dbd96bddbd1eb260c40",
-    "bytes": 43873
+    "sha256": "d029ba265e5e9c8d518dada6560a940aeb57e360de13b6b61198e7f6cd818f58",
+    "bytes": 44617
    },
    "xlsx": {
     "path": "ed2_source_data.xlsx",
-    "sha256": "fd827858d68d190a04698b4f848b2d6d568f44dedd71dd7692d1048a0c9cd722",
-    "bytes": 14935
+    "sha256": "9248d30ef3e300885a88cc828c695295476d0fc9c2cba3b7a7eab5ea16e334f2",
+    "bytes": 15158
    },
    "exported_by_private_builder": {
-    "json_sha256": "2364e058e3220b59c471ce29dfd7e23e224be215f1381382a0f2455d8c601322",
-    "xlsx_sha256": "008cf63a4099310e43c0167002d2828ddbe11f944ff09a928a2d1a9aab51d86b",
+    "json_sha256": "8fd71cbc73d5923e44ed6e0b2199eb65d0e25c9d2f870f5f08b3f9955e8c57e1",
+    "xlsx_sha256": "b9986673a805008488c5c695ae9452033832c4dfda3e757f838faf40c315ddaf",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -166,21 +165,20 @@
    "id": "ed3",
    "display": "Extended Data Fig. 3",
    "kind": "Extended Data figure",
-   "status": "pending",
-   "status_reason": "The drawing code stops under the final style module (fig3_nm_kit.apply_nm_sizes requires 8.0 pt panel letters and the module stores 8.0025 pt). The Fig. 3 lane must export again.",
+   "status": "final",
    "json": {
     "path": "ed3_source_data.json",
-    "sha256": "6dfde71b45308faaf8dd74beb2134a89040c183cf6710b98eeba042bdc3812b9",
-    "bytes": 335479
+    "sha256": "9a3f0567a46155ba142e3d26066ded8ee54c5493b3356f990cef734e9a76a2cb",
+    "bytes": 335087
    },
    "xlsx": {
     "path": "ed3_source_data.xlsx",
-    "sha256": "070e6fb2404fe917314e352b3c53f08862564cf409aec35f5fab99a029596e90",
-    "bytes": 57232
+    "sha256": "86a7f415ac00d8eee6de7dfc4f2a521f75c6d0634eab5373689ee92c9776d7e8",
+    "bytes": 57091
    },
    "exported_by_private_builder": {
-    "json_sha256": "f316670ef1e5f2b0b65b94caf4e8c24f869cb620de12bb75897c695a0cc09af0",
-    "xlsx_sha256": "4cc017c674c6915c1e67ec9fe82853a8aa86128e7440d29467988d8cba35d6d5",
+    "json_sha256": "474515254d8070eb98c58eb8776d6e0593119b9722f170c5a30604299181f3a4",
+    "xlsx_sha256": "d4588f78404934dca50fe6703eb122c07e20f1576d79ddbbb02cdb5b46893729",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -189,21 +187,20 @@
    "id": "ed3b",
    "display": "Extended Data Fig. 4",
    "kind": "Extended Data figure",
-   "status": "pending",
-   "status_reason": "The drawing code stops under the final style module (fig3_nm_kit.apply_nm_sizes requires 8.0 pt panel letters and the module stores 8.0025 pt). The Fig. 3 lane must export again.",
+   "status": "final",
    "json": {
     "path": "ed3b_source_data.json",
-    "sha256": "6adb884fc8b1799e66d51b1ed8226a2c80cb45063ce405daac91621a02aecc10",
-    "bytes": 89777
+    "sha256": "67045a580988e255bacea36762b40f489c5269cb5febc0734002834440f92f19",
+    "bytes": 89590
    },
    "xlsx": {
     "path": "ed3b_source_data.xlsx",
-    "sha256": "a71a089b5519c0bdd10b49755f6ff0b18a0a2d591bd5c8d822512fd3133c2176",
-    "bytes": 24224
+    "sha256": "7d2c0b0686b60464872ca88f0935a8da0035b1a0e7e3d51d6d03b38d7161d130",
+    "bytes": 24143
    },
    "exported_by_private_builder": {
-    "json_sha256": "782a3393144786d490d5c162c33fcbb5c7f365dfbef87fd20ae1d58fd2ad28a5",
-    "xlsx_sha256": "2e6cf47a380ed64864b0ae28166fa90c47bc31af8647f76f8d51ae8b83fd5a2d",
+    "json_sha256": "16a7d19fb2b582b4a36748eeed5448f2abcd9e63af52ac6397f2934abfeb3053",
+    "xlsx_sha256": "dd951096d6c3da87d748145ad20bcb32b4aceba7d62bf55d189c22cbdf2045ce",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -215,17 +212,17 @@
    "status": "final",
    "json": {
     "path": "ed4_source_data.json",
-    "sha256": "cc1fcf54d9672428f162482dcd86d3f1a394a1c40e5843b63780deb9398cb95d",
-    "bytes": 59400
+    "sha256": "a5b5eb8e59ce58ce34c5acd5f630ac7f119fe899cc6ef2b8cae02efc316c140e",
+    "bytes": 59351
    },
    "xlsx": {
     "path": "ed4_source_data.xlsx",
-    "sha256": "567a7eeb18cabba3270fe30def2757873ddae1dd2cc64431ba927674aec112b4",
-    "bytes": 19945
+    "sha256": "8439aa8284dd3c2c272275b080a4e334445111492758efbd90ad98453f81b419",
+    "bytes": 19909
    },
    "exported_by_private_builder": {
-    "json_sha256": "012500c3c9c6f391bec03b281903ec57842ec38afcd5f696ba20728ebfd33bab",
-    "xlsx_sha256": "b1574495f90a475d921182441f4a84180664baf53029e8d0584385ea7578e093",
+    "json_sha256": "efb799f0ec9f5ca816a419e8a298e65c197b54b0f2a0d91b2e8305270dc42b4f",
+    "xlsx_sha256": "9ce11d573808c4027c31848a08a5cf57a1e9a9311efed5a354023b67493553f3",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -242,12 +239,12 @@
    },
    "xlsx": {
     "path": "ed_table1_source_data.xlsx",
-    "sha256": "8d3dd1d6a79ce45055311cc2ab269d51376d20af45e8b43ecbb63b3828ec4c28",
-    "bytes": 8431
+    "sha256": "a06849203d308ded286948db65ae1ca81e9b9deda5eea1fea4bb7a4ea153d3d0",
+    "bytes": 8461
    },
    "exported_by_private_builder": {
     "json_sha256": "a28fc61d63697836869651b1775ec4c8bafb27df6c1f82f060b99b3cc16fc47d",
-    "xlsx_sha256": "3435131f9c00e7a92c3b079066cef94dd225a1ebfda6df0162f194945a5f1914",
+    "xlsx_sha256": "9812201ee87d6f05e29b38b8b174da4092b89242b7713a1af5fc48290255cad7",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []
@@ -259,17 +256,17 @@
    "status": "final",
    "json": {
     "path": "ed_table2_source_data.json",
-    "sha256": "b83b49cba5732bf55b8d42edf290af9f238b31457fca57dd01f29b82a09ca20a",
-    "bytes": 73208
+    "sha256": "2ee24d1abd61127f82ca61d57b4a9364e4b530cd4feff81b5515a30783205f80",
+    "bytes": 73210
    },
    "xlsx": {
     "path": "ed_table2_source_data.xlsx",
-    "sha256": "129732aa1c5b96a3bc63a5179676096c454f7be92b4e8e5788a050bad7d06a59",
-    "bytes": 18005
+    "sha256": "9874eb4ed4083c73ff1cb35189d8b0d2540b22080d78212cb3d891e71bbcbad0",
+    "bytes": 18006
    },
    "exported_by_private_builder": {
-    "json_sha256": "67e2b93d4e9903b2046e51743b0d1b6bf330414df5f2be62237aa0a3218c93e9",
-    "xlsx_sha256": "a33761a2a39f342663718c1cff232c043760524bd9d66a61b5c2ac1f1c19adcd",
+    "json_sha256": "12ad12f67303b7ab828a6428781f7886389712a787c35daa4edb09c903bddd64",
+    "xlsx_sha256": "2604adb5f8fa1d61479cd705980a9b9a4aae75099f65d77e2688a164e6dfdcdf",
     "change": "absolute paths into the private project folder written relative to that folder, and the private rebuild command replaced by python -m paper.figures.build_all --only <id>, nothing else"
    },
    "notes": []

@@ -64,7 +64,7 @@ Exact local package versions of the research environment are listed in `requirem
 
 ## Data, code and model availability
 
-No patient records, images, notes, identifiers, embeddings, predictions, fitted transforms or weights are distributed here. The Source Data hold disclosure-checked aggregates only. Three open disclosure items in the Source Data of Figs. 2 and 5 and Extended Data Fig. 2 block release until their builders export again, as listed in `paper/source_data/README.md`. Keep real inputs and outputs in a separate restricted workspace. Git ignore rules and automated scans supplement manual review but do not prove privacy.
+No patient records, images, notes, identifiers, embeddings, predictions, fitted transforms or weights are distributed here. The Source Data hold disclosure-checked aggregates only. No disclosure item is open (`paper/source_data/README.md`). Keep real inputs and outputs in a separate restricted workspace. Git ignore rules and automated scans supplement manual review but do not prove privacy.
 
 Dataset access is obtained from providers. Trained-parameter distribution has not been authorized. Constructing a model with random weights will not reproduce the paper's results. See [data, code and model availability](docs/data_and_model_availability.md) for the draft Data availability and Code availability statements, the role of each source, what stays private and why, and the release plan. See [data and access](docs/privacy_and_access.md) for the repository privacy rules.
 

@@ -3,7 +3,7 @@
  "display": "Extended Data Table 2",
  "display_short": "ED Table 2",
  "title": "Extended Data Table 2 | Operating points and referral results for haemoglobin below 12 g/dL.",
- "legend": "**Extended Data Table 2 | Operating points and referral results for haemoglobin below 12 g/dL.** **a**, Every cut rule for every setting of Fig. 4e and Extended Data Fig. 5h, whole blood count hidden, with cuts set in the training folds. Referred, found and missed are per 1,000 people evaluated. **b**, Development contrasts and the AI-READI official test split, scored once, a previously accessed paired check because a predecessor model decoded these blood counts. n, ≥1,880 development people (five-fold cross-validation, ≥160 below 12 g/dL) and ≥340 test people (≥20 below 12 g/dL), floored to 20. Bootstrap 95% intervals hold scores, risk maps and cuts fixed. Only net benefit at 0.10 and haemoglobin MAE carry prespecified criteria, judged on an interval bound, and no hypothesis tests were run. The retinal net benefit gain met its criterion in development but not on the test, where it fell in the deployed fold 0 model, while the five-fold haemoglobin criterion was met. At 90% specificity the retina did not raise cases found. AI-READI is a selected, diabetes-enriched population, not a screening population, so PPV, NPV, yield and net benefit depend on its case mix. Risk maps and cuts were not fully nested, and 12 g/dL is not sex specific because sex is not held. Haemoglobin below 11 g/dL is PLACEHOLDER (fewer than 50 in a class). PPV and NPV, positive and negative predictive value. AUROC, area under the receiver operating characteristic curve. MAE, mean absolute error.",
+ "legend": "**Extended Data Table 2 | Operating points and referral results for haemoglobin below 12 g/dL.** **a**, Every cut rule for every setting of Fig. 4e and Extended Data Fig. 5h, whole blood count hidden, with cuts set in the training folds. Referred, found and missed are per 1,000 people evaluated. **b**, Development contrasts and the AI-READI official test split, scored once, a previously accessed paired check because a predecessor model decoded these blood counts. *n*, ≥1,880 development people (five-fold cross-validation, ≥160 below 12 g/dL) and ≥340 test people (≥20 below 12 g/dL), floored to 20. Bootstrap 95% intervals hold scores, risk maps and cuts fixed. Only net benefit at 0.10 and haemoglobin MAE carry prespecified criteria, judged on an interval bound, and no hypothesis tests were run. The retinal net benefit gain met its criterion in development but not on the test, where it fell in the deployed fold 0 model, while the five-fold haemoglobin criterion was met. At 90% specificity the retina did not raise cases found. AI-READI is a selected, diabetes-enriched population, not a screening population, so PPV, NPV, yield and net benefit depend on its case mix. Risk maps and cuts were not fully nested, and 12 g/dL is not sex specific because sex is not held. Haemoglobin below 11 g/dL is PLACEHOLDER (fewer than 50 in a class). PPV and NPV, positive and negative predictive value. AUROC, area under the receiver operating characteristic curve. MAE, mean absolute error.",
  "panels": {
   "a": {
    "title": "Operating points for haemoglobin below 12 g/dL",
@@ -2687,9 +2687,9 @@
  },
  "builder": {
   "path": "BRAN_FIGURES_2026-10-01/locked/build_ed_table2_merged.py",
-  "sha256": "c415d20b3c5810eb78ca50a9f5a7d9f50840db2d6e35c4ce3fd8b10301583667"
+  "sha256": "3d32d759d129164ef428dcf42f3d02676721341ee78bbedff2c4a81f14943a06"
  },
- "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
+ "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
  "profile": "nature-medicine-2026-10-06",
  "methods_notes": {
   "a": "Every operating point shown reached its target. The age-only reference at 90% specificity and at the matched flag rate is suppressed because a cell of the confusion table held fewer than 20 people. Differences between operating points are descriptive.",

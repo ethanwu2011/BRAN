@@ -2,7 +2,7 @@
 
 Public drawing code for the BRAN paper, generated on 6 October 2026 from the private builder
 build_fig2.py
-(SHA-256 b9d88b8d4fb15e70016b30e3d20ac92812a1c10d86a115d82ccb957587663bda).
+(SHA-256 7e9aafef7d54a2c4ae50796ffb9f7384fd4c27ae66ce9da1ab840c7004af3edf).
 
 It holds, verbatim and in their original order, only the top-level statements that the drawing entry point reaches,
 plus render(), which returns [(stem, figure, width px, height px)] for each page. The code that read the pinned
@@ -171,7 +171,7 @@ def rows_of(panel):
 def draw_a(C, p, L, K):
     hy = L["a_head"]
     C.heading(0, hy, "a", K["head"]["a"])
-    C.text(LP1, hy + N_DY, f"n = {p['draw']['n_paired']:,}", xa="right", ya="bottom")
+    C.text(LP1, hy + N_DY, f"n ≥ {p['draw']['n_paired']:,}", xa="right", ya="bottom")
     ky = hy + HEAD_TO_KEY
     kx = C.key_swatch(0, ky, K["shared"], "BRAN shared space" + DAGGER)
     C.key_swatch(kx + 12, ky, K["grey"], "Comparator")

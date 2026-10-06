@@ -23,13 +23,7 @@ Every value is an aggregate. Every declared count and every printed lower bound 
 
 ## Open disclosure items
 
-These items block release. Each needs a new export by the private builder named in `paper/figures/disclosure.py` and a resync. Until then `python -m paper.figures.disclosure` ends with exit code 2.
-
-| Item | File | Problem | Change |
-| --- | --- | --- | --- |
-| `fig2-retrieval-cohort` | Fig. 2 | Panel a prints the retrieval cohort exactly and its proportions are exact fractions of it, while the development cohort is printed exactly elsewhere and differs from it by fewer than 20 people | Print the retrieval cohort as a lower bound floored to 20 and round the panel a proportions to 3 decimals |
-| `fig5-hirid-local-fit` | Fig. 5 | Panel g gives unrounded mean absolute errors of the HiRID local fit, and an exact fraction among them constrains the admission count that every HiRID aggregate withholds | Round the panel g errors and their intervals to 3 decimals |
-| `ed2-count-type` | Extended Data Fig. 2 | Panel b prints exact site, image, device and study-group counts in columns that do not mark them exact, and its About sheet still says counts are floored unless the column says exact | Add a count-type column to panel b, as Fig. 5 and Extended Data Table 1 have, and correct the About sheet |
+None. The three items found on 6 October 2026 were fixed by new exports of their private builders. Fig. 2 now prints the retrieval cohort as a lower bound floored to 20 with its proportions at 3 decimals, Fig. 5 releases the panel g HiRID errors and intervals at 3 decimals, and Extended Data Fig. 2 panel b has a count_type column. `python -m paper.figures.disclosure` exits 0 when no rule fails and no item is open.
 
 ## Internal ids
 

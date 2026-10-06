@@ -4,11 +4,11 @@
  "display": "Fig. 2",
  "display_short": "Fig2",
  "title": "Blood and retina in one embedding",
- "legend": "**Fig. 2 | Retinal and clinical data of the same person share information in one BRAN embedding.**\n**a**, Same-person retrieval between retinal and clinical shared-block states in 1,924 AI-READI development participants (point estimates, no intervals). † Earlier BRAN checkpoint, the retained model is PLACEHOLDER. CCA was not age-adjusted, so the advantage over raw CCA holds only before age adjustment. With age removed MRR was 0.049, above all 256 age-matched shuffles (95th percentile 0.020, one-sided permutation P ≤ 0.004, the smallest attainable). CCA, canonical correlation analysis.\n**b**, Native-head AUROC for 26 self-reported conditions from clinical-only and retinal-only inputs in development participants with all three routes (n withheld by the source). Circle area is the AUROC added by retina (combined minus clinical only), and open circles mark a lower AUROC with the retina. The strip adds group means with paired bootstrap 95% intervals. One-sided paired bootstrap P, Holm-adjusted over 12 group tests (3 shown), was ≤ 0.012 (the smallest attainable) for eye and other conditions and 1.000 for cardiometabolic and vascular conditions, half with labels clinical inputs may define.\n**c**, Retina and age alone against an age-only ridge and the training median (n ≥ 1,880 with a complete blood count). Paired MAE differences with bootstrap 95% intervals. Open circles mark higher error with the eye. A ridge on raw retinal features was more accurate in six of nine fields (Extended Data Fig. 5). Abbreviations as in Fig. 1.\n**d**, Share of the mean absolute logit contribution by state block for 7 conditions (n withheld by the source), without intervals. Shares are not explained variance.",
+ "legend": "**Fig. 2 | Retinal and clinical data of the same person share information in one BRAN embedding.** **a**, Same-person retrieval between retinal and clinical shared-block states in ≥1,920 AI-READI development participants (point estimates). † Earlier checkpoint, retained model PLACEHOLDER. CCA was not age-adjusted, so the lead over raw CCA holds only before age adjustment. With age removed MRR was 0.049, above all 256 age-matched shuffles (95th percentile 0.020, one-sided permutation *P* ≤ 0.004, the smallest attainable). CCA, canonical correlation analysis. **b**, Native-head AUROC for 26 self-reported conditions from clinical-only and retinal-only inputs in development participants with all three routes (*n* withheld by the source). Circle area, AUROC added by the retina (combined minus clinical only). Open circles, lower AUROC with the retina. Strip, condition-group means. One-sided paired bootstrap *P*, Holm-adjusted over 12 group tests (3 shown), was ≤ 0.012 (the smallest attainable) for eye and other conditions and 1.000 for cardiometabolic and vascular conditions, half with labels clinical inputs may define. **c**, Retina and age alone against an age-only ridge and the training median (*n* ≥ 1,880 with a complete blood count), paired MAE differences. Open circles, higher error with the eye. A ridge on raw retinal features was more accurate in six of nine fields (Extended Data Fig. 5). Abbreviations as in Fig. 1. **d**, Share of the mean absolute logit contribution by state block for 7 conditions (*n* withheld by the source), without intervals. Shares are not explained variance. Intervals (**b**, **c**), 95% paired participant bootstrap (1,000 draws).",
  "methods_notes": "Methods notes for Fig. 2 (moved from the legend). a, scores come from an earlier BRAN checkpoint (internal name Patient Atlas V5) in outcome-free internal development. Chance is the fold average of one and five over the pool size. Ranked first 0.035 (chance 0.003), top five 0.122 (chance 0.013), MRR 0.093, raw cross-view ridge CCA with 32 dimensions 0.059. The null re-pairs people only within similar age, and its P is the smallest value that test can return. b, conditions are pooled over five cross-validated models on people with all three routes available. Groups were fixed from questionnaire wording before plotting and are descriptive. The group macro difference is the native combined route minus the native clinical route from the native_vs_fm run (amendment 1), on the same people, with the F1 bootstrap draws (the per-condition intervals in Source Data use the A3 draws), and it equals the mean of the per-condition differences. Its one-sided P is (1 + paired draws at or below zero) / (1 + valid draws), Holm-adjusted over the 12 prespecified group tests, the four native contrasts on three group macros, of which the strip draws three. Six of the 12 cardiometabolic and vascular conditions are excluded from the 20-endpoint macro because clinical inputs may define their labels. Without them the group difference was -0.0070 [-0.0194, +0.0053], descriptive. Per-condition intervals are in Source Data. The strip intervals come from 1,000 participant bootstrap draws and the intervals of c from 1,000 paired participant bootstrap draws within outer folds. c, context iii sees only retinal features and typed age with all 43 clinical values and flags hidden. The age-only reference is a ridge on typed age fitted in outer training folds, so iii minus age-only compares a native head with a fitted readout. Differences are shown as % of the training-median MAE to put nine fields on one scale. Original units are in Source Data. d, each condition logit is rewritten exactly as a constant plus three centred terms, shared-derived, retinal residual and clinical residual. Rows are selected for display, plus the condition with the highest retinal residual share. Shares carry no sign and are not unique information, a causal modality effect or organ localisation.",
  "panels": {
   "a": {
-   "title": "Same-person retrieval in 1,924 AI-READI development participants. Point estimates, no interval was computed.",
+   "title": "Same-person retrieval in at least 1,920 AI-READI development participants (count floored to 20, proportions rounded to 3 decimals). Point estimates, no interval was computed.",
    "columns": [
     "row",
     "key",
@@ -22,7 +22,7 @@
     [
      "Ranked first",
      "top1",
-     0.035343035343035345,
+     0.035,
      "BRAN shared space",
      0,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -31,7 +31,7 @@
     [
      "Chance",
      "chance_top1",
-     0.002598752598752599,
+     0.003,
      "Comparator",
      0,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -40,7 +40,7 @@
     [
      "Ranked in top five",
      "top5",
-     0.12214137214137215,
+     0.122,
      "BRAN shared space",
      1,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -49,7 +49,7 @@
     [
      "Chance",
      "chance_top5",
-     0.012993762993762994,
+     0.013,
      "Comparator",
      1,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -58,7 +58,7 @@
     [
      "Mean reciprocal rank (MRR)",
      "mrr",
-     0.09287903792524324,
+     0.093,
      "BRAN shared space",
      2,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -67,7 +67,7 @@
     [
      "Raw cross-view CCA",
      "cca_mrr",
-     0.05937208593636983,
+     0.059,
      "Comparator",
      2,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -76,7 +76,7 @@
     [
      "Permuted-training CCA",
      "perm_mrr",
-     0.023650191935860307,
+     0.024,
      "Comparator",
      2,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -85,7 +85,7 @@
     [
      "MRR, age removed",
      "mrr_age",
-     0.048675384882535186,
+     0.049,
      "BRAN shared space",
      3,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -94,7 +94,7 @@
     [
      "Shuffle, 95th percentile",
      "null95",
-     0.020273568259076835,
+     0.02,
      "Comparator",
      3,
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
@@ -920,7 +920,7 @@
    ]
   },
   "g_ref": 0.1452,
-  "n_paired": 1924,
+  "n_paired": 1920,
   "n_floor": 1880,
   "block_names": [
    "Shared-derived",

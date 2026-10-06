@@ -38,7 +38,7 @@ The import graph of the research code names more sources than the reported analy
 | Private figure builders | Restricted workspace | They read the aggregates by path, and their public drawing part is in `paper/figures` |
 | Trained parameters and fitted transforms | Restricted workspace | PhysioNet asks that models derived from credentialed data be shared only through PhysioNet, and the AI-READI license covers derivatives and open-weight models |
 
-The repository holds the code, synthetic fixtures and the Source Data. The Source Data hold aggregates only. Every declared count and every printed lower bound is at least 20, and no proportion may be an unreviewed exact fraction of a hidden count. `python -m paper.figures.disclosure` checks those rules. It also lists three open items in the Source Data of Figs. 2 and 5 and Extended Data Fig. 2, which block release until their builders export again (`paper/source_data/README.md`).
+The repository holds the code, synthetic fixtures and the Source Data. The Source Data hold aggregates only. Every declared count and every printed lower bound is at least 20, and no proportion may be an unreviewed exact fraction of a hidden count. `python -m paper.figures.disclosure` checks those rules. No disclosure item is open (`paper/source_data/README.md`).
 
 ## Provider terms that constrain sharing
 

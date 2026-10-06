@@ -2,7 +2,7 @@
 
 Public drawing code for the BRAN paper, generated on 6 October 2026 from the private builder
 build_ed3.py
-(SHA-256 0577cbc6b206755c90111cd514c80238169b8bfc31bf521f4343146e736c2652).
+(SHA-256 d485ff14791518989ceadac0c226a175dd2aa8d008921a50e32330e3b8274c37).
 
 It holds, verbatim and in their original order, only the top-level statements that the drawing entry point reaches,
 plus render(), which returns [(stem, figure, width px, height px)] for each page. The code that read the pinned

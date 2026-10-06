@@ -69,32 +69,7 @@ REVIEWED_RATIOS = [
 # Findings that block release until the figure builder that owns them exports again. Each item names its file, the
 # cells or panel it concerns, the builder that must change and the change. The tests require every item to still be
 # present, so an item is removed here once its export is fixed, and to be listed in paper/source_data/README.md.
-OPEN_ITEMS = {
-    "fig2-retrieval-cohort": {
-        "id": "fig2", "kind": "ratio", "cells": r"panels/a/rows/\d+/value",
-        "owner": "private Fig. 2 builder (build_fig2.py)",
-        "problem": "Panel a prints the retrieval cohort exactly and its proportions are exact fractions of it, while "
-                   "the development cohort is printed exactly elsewhere and differs from it by fewer than 20 people.",
-        "fix": "Print the retrieval cohort as a lower bound floored to 20, round the panel a proportions to 3 "
-               "decimals, export again and resync.",
-    },
-    "fig5-hirid-local-fit": {
-        "id": "fig5", "kind": "ratio", "cells": r"(panels/g/rows/\d+/(mae_g_dl|ci95_low|ci95_high)|draw/g/.+)",
-        "owner": "private Fig. 5 builder (build_fig5.py)",
-        "problem": "Panel g gives unrounded mean absolute errors of the HiRID local fit, and an exact fraction among "
-                   "them constrains the admission count that every HiRID aggregate withholds.",
-        "fix": "Round the panel g errors and their intervals to 3 decimals, export again and resync.",
-    },
-    "ed2-count-type": {
-        "id": "ed2", "kind": "count_type", "panel": "b",
-        "owner": "private Extended Data Fig. 2 builder (build_ed2.py)",
-        "problem": "Panel b prints exact site, image, device and study-group counts in columns that do not mark "
-                   "them exact. Only the panel title says that site and image counts are exact, and the About sheet "
-                   "still says that counts are floored unless the column says exact.",
-        "fix": "Add a count-type column to panel b, as Fig. 5 and Extended Data Table 1 have, correct the About sheet, "
-               "export again and resync.",
-    },
-}
+OPEN_ITEMS: dict[str, dict] = {}   # the three items of 6 October 2026 were fixed by new exports (6 October, b)
 
 
 def _strings(o):

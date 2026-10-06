@@ -27,26 +27,26 @@
   "__init__.py": "7e17d882cf6763ef65ba6805fcd6bc9469b910f2aad146ecfbd063d9a42200ac",
   "bran_plotly_style.py": "069b670fa90342094519962c82d6b3aefc1625220ae490f483bc7c229505611c",
   "build_all.py": "e785750dfc5365c80074e1dc40e988e1011599979a414d613a1ec019db5aa341",
-  "disclosure.py": "ca7c70b6a7d45aa312f25be6bc885e840bc884e2b07cdaace9d52e78c01df864",
+  "disclosure.py": "c03191c337768044cec769e11b162da0501711afd3155800a9b1210fa17b8b6f",
   "display_numbers.py": "e195eff007846839777aef89eaf913291d9f521c0391b61b23042cd9a1e74446",
-  "draw_ed1.py": "d4eb5d423530f7f1353a690ae7103d3c0e2aa82437f66e4720b18452b4dbeb9e",
-  "draw_ed2.py": "84c6f0f7f1a2b3a18314833783255acbeba1ffc976b2e816582f6ef348e6aaac",
-  "draw_ed3.py": "8e1b15b5d6399c02c92a9cbec63b8ac7d90a354400c382d98ed8bc4144a190a5",
-  "draw_ed3b.py": "a3bf64f9367b20ce6b78fbd0756f01d69c10800e2229cfe6b23a906a12a94cee",
-  "draw_ed4.py": "26a7aa38ab86e4290b63912ebfbf57bf7d89a46b239b361c3a0d550cdddcb291",
-  "draw_ed_table1.py": "56acf5f2f04a6ad4812aa0ff9a95408300723bb50178cea44baacd90a5cea1ba",
-  "draw_ed_table2.py": "acc5ce301ba868b8672d04cadd71ce16a492587301b1c18af39acd10d803fe48",
-  "draw_fig1.py": "342397fbeacbe293f09a5d1e6215d478e5022d6f999287e0ea22f9d905f72b1f",
-  "draw_fig2.py": "4052ce960149a493f0252a6d8cf552067e91eb7e6e3b7c1a2d02627888ac30c7",
-  "draw_fig3.py": "ea9055148645a580ebd1a960db6f69a0cc7ae27cb8e72e8eb0d29df12297d4f8",
-  "draw_fig4.py": "120cab0826e68239314d407f8588121fb276939c1945c9b0078334bb5fa3c9b8",
-  "draw_fig5.py": "d78a9660efbeb7adb17432b18c647876860b0e034e2b7ae86c444260ce56ad3d",
+  "draw_ed1.py": "5272fed0baf313448b409088535b19c0d3c8c2eda55964e7dba24fd4e27bac72",
+  "draw_ed2.py": "973f782896aefce86453d059e057f6b2ac43241bfaca4b4d0f7b7fa2a206585d",
+  "draw_ed3.py": "d9ca99f3502bd5b90c7ba3cf26721baa4470eb026b3a4d37e3e8379cfd6b8ba5",
+  "draw_ed3b.py": "8c56de5efd5155c6abe557183a47016d8f3cdb3e30515b282ec6b687156b38c7",
+  "draw_ed4.py": "b00914c4059fba47ee4587ebf6c2d0b6b4247d3f6537fbdfcddee58e277d1555",
+  "draw_ed_table1.py": "6b07f6a5c65c996e57b985bbc36e1c57bc4430b87c95c274ef5de47b14c344e3",
+  "draw_ed_table2.py": "78a502b40b3783ccd6f575ea7ea549439fd51b2b69d2053d3b0770e3027ee2d1",
+  "draw_fig1.py": "2cc5f13a730fcaec9ae7140a9f8c39607d0cf02a93fc171482a259f0fb8d16a9",
+  "draw_fig2.py": "16b7c63dc0c4d2f9b3103d1be5693f170655c95c2ac16120559b335cb2b70cf9",
+  "draw_fig3.py": "7db36bb97faca2b718ffc7ee430d825707cbf0f7f7f53a600651575c077469d7",
+  "draw_fig4.py": "fcabc326b4af91a6a28f0a84ff0aaf0efc53b2e1fd57cc9feea4b6f8f6c1dbf1",
+  "draw_fig5.py": "3bc1ba0867a128060d60ee504435d11803e1cd3c35138243f225915eca8883c4",
   "ed_canvas.py": "a27bd9c5226d0b07af24e4f789400afa1faba499349050a7d0fbf3c6a6dac678",
   "ed_nm_canvas.py": "e57b06f3a8d695dae6ac2cb45f066e5b579d30e7dbf9243892ce6dc94d44d296",
-  "fig3_nm_kit.py": "47b6faf4050eb1e875da068f88ab31697ec8b1881854d37038204ebe7da45e79",
+  "fig3_nm_kit.py": "32649950229894f9f2dc98207f423f201943ce8364a1f16fdb58013c2713e425",
   "fig4_lane_kit.py": "acf4dc7ed23429f5f8d844934ca454dcd36f1afff1075a4a34f4f21463de28cc"
  },
- "source_data_manifest_sha256": "ebf4b95230812ff202613118d56283255c80edf64192744a9a826c0c6ec452ea",
+ "source_data_manifest_sha256": "70e39a3be82ca41752891bfad24a0a3a035726d5217055abdc951dcdd31706cd",
  "figures": {
   "fig1": {
    "display": "Fig. 1",
@@ -85,9 +85,9 @@
       581
      ],
      "png": "Fig2.png",
-     "png_sha256": "fe76758791603411d5b2abbbf755f7255cc1d478c8815ca17845856494f6422c",
+     "png_sha256": "5aca8638a2274d2048c1fb4cfba835280122366523aea23561b1c0858bf1b24a",
      "pdf": "Fig2.pdf",
-     "pdf_sha256": "d1d08c468c2c3ae2e17cbd4e1245ebc1c2a4404b13e34ee16c2c21d73608de75"
+     "pdf_sha256": "2407b7bb4eb461f1d8e1b06989946dffe5a7e7e41a2bb878c5157a8d5ebab949"
     }
    },
    "matches_submission_export": {
@@ -101,9 +101,27 @@
   "fig3": {
    "display": "Fig. 3",
    "source_data": "paper/source_data/fig3_source_data.json",
-   "status": "blocked",
-   "pages": {},
-   "reason": "AssertionError: ('letter', 8.002500000000001)"
+   "status": "reproduced",
+   "pages": {
+    "fig3": {
+     "stem": "fig3",
+     "size_px": [
+      680,
+      612
+     ],
+     "png": "Fig3.png",
+     "png_sha256": "f4fa36a2bbb38b4386946254504d921fbcfdea3ff2626a74f178320f0fd292a9",
+     "pdf": "Fig3.pdf",
+     "pdf_sha256": "daea8d734666da15aed5c67d04430298610afb050dbb877d87dba4ade9f2fe8e"
+    }
+   },
+   "matches_submission_export": {
+    "fig3.png": true,
+    "fig3.pdf": true
+   },
+   "files_opened_in_repository": [
+    "paper/source_data/fig3_source_data.json"
+   ]
   },
   "fig4": {
    "display": "Fig. 4",
@@ -133,7 +151,7 @@
   "fig5": {
    "display": "Fig. 5",
    "source_data": "paper/source_data/fig5_source_data.json",
-   "status": "differs_from_submission_export",
+   "status": "reproduced",
    "pages": {
     "fig5": {
      "stem": "fig5",
@@ -142,14 +160,14 @@
       640
      ],
      "png": "Fig5.png",
-     "png_sha256": "500fdc8a2240c859fe04c38d64b7c7cfce316db4ea84f84da7b2a51d862a94de",
+     "png_sha256": "becf1d73889f98438dd2aa26e70219fc8ba4ea4a590ed739fc7ebcfee24bb6ec",
      "pdf": "Fig5.pdf",
-     "pdf_sha256": "2864d3da43edef6933d15943f85763462512f9b852ab69708679af4997986a4e"
+     "pdf_sha256": "c4027831cf5b3e9c782c226fdb747207154c0907f4ee9ad1eea6a37112cad3c7"
     }
    },
    "matches_submission_export": {
-    "fig5.png": false,
-    "fig5.pdf": false
+    "fig5.png": true,
+    "fig5.pdf": true
    },
    "files_opened_in_repository": [
     "paper/source_data/fig5_source_data.json"
@@ -216,16 +234,60 @@
   "ed3": {
    "display": "Extended Data Fig. 3",
    "source_data": "paper/source_data/ed3_source_data.json",
-   "status": "blocked",
-   "pages": {},
-   "reason": "AssertionError: ('letter', 8.002500000000001)"
+   "status": "reproduced",
+   "pages": {
+    "ed3": {
+     "stem": "ed3",
+     "size_px": [
+      680,
+      630
+     ],
+     "png": "ExtendedDataFig3.png",
+     "png_sha256": "b649658f1d38d568eff9cadcb72807372e77f4d61c600b3df091c5fceb2496e4",
+     "pdf": "ExtendedDataFig3.pdf",
+     "pdf_sha256": "4728f78d6d161854c272e521bd253920052e42abe21f2e301a9f610d51bada4d",
+     "jpeg": "ExtendedDataFig3_300ppi.jpg",
+     "jpeg_sha256": "964908bcada20f0445a145009e6f10183977c492e11379e096b434c8bcf6ad44",
+     "jpeg_method": "box_average"
+    }
+   },
+   "matches_submission_export": {
+    "ed3.png": true,
+    "ed3.pdf": true,
+    "ed3.jpeg": true
+   },
+   "files_opened_in_repository": [
+    "paper/source_data/ed3_source_data.json"
+   ]
   },
   "ed3b": {
    "display": "Extended Data Fig. 4",
    "source_data": "paper/source_data/ed3b_source_data.json",
-   "status": "blocked",
-   "pages": {},
-   "reason": "AssertionError: ('letter', 8.002500000000001)"
+   "status": "reproduced",
+   "pages": {
+    "ed3b": {
+     "stem": "ed3b",
+     "size_px": [
+      680,
+      600
+     ],
+     "png": "ExtendedDataFig4.png",
+     "png_sha256": "de1c28576725c02bf6f68fa87971dfb241a56a29e5e0670de769b6b24eebf851",
+     "pdf": "ExtendedDataFig4.pdf",
+     "pdf_sha256": "b1c40ea74eb390e2586e88236c51622206bcf757d7f089ee10b8b355445d18a5",
+     "jpeg": "ExtendedDataFig4_300ppi.jpg",
+     "jpeg_sha256": "7306c6a1779e3909fa5ca915c9005fc55aa552cc56622b12c30c74e041ad525d",
+     "jpeg_method": "box_average"
+    }
+   },
+   "matches_submission_export": {
+    "ed3b.png": true,
+    "ed3b.pdf": true,
+    "ed3b.jpeg": true
+   },
+   "files_opened_in_repository": [
+    "paper/source_data/ed3b_source_data.json"
+   ]
   },
   "ed4": {
    "display": "Extended Data Fig. 5",
@@ -259,7 +321,7 @@
   "ed_table1": {
    "display": "Extended Data Table 1",
    "source_data": "paper/source_data/ed_table1_source_data.json",
-   "status": "png_reproduced_other_files_differ",
+   "status": "reproduced",
    "pages": {
     "ed_table1": {
      "stem": "ed_table1",
@@ -278,7 +340,7 @@
    },
    "matches_submission_export": {
     "ed_table1.png": true,
-    "ed_table1.pdf": false,
+    "ed_table1.pdf": true,
     "ed_table1.jpeg": true
    },
    "files_opened_in_repository": [

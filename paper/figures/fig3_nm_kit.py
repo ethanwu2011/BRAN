@@ -2,7 +2,7 @@
 
 Public drawing code for the BRAN paper, generated on 6 October 2026 from the private builder
 fig3_nm_kit.py
-(SHA-256 86b2cd78090227ee3d79e5028824c57fe653aef653c61bd6d897013ae4804282).
+(SHA-256 dbdaf9bd4e5957c02b05f2c9e664e940abb3283aa18462cafc6ae6966af5720c).
 
 It holds, verbatim and in their original order, only the top-level statements that the drawing entry point reaches,
 plus render(), which returns [(stem, figure, width px, height px)] for each page. The code that read the pinned
@@ -24,11 +24,12 @@ def apply_nm_sizes() -> None:
     """Opt in to the shared Nature Medicine profile for this process, add the lane's 5.2 pt small size and measure
     text in the profile's font."""
     st.use_nature_medicine()
-    st.SIZES["small_lane"] = SMALL_LANE_PT * st.PT
+    st.SIZES["small_lane"] = st.nm_px(SMALL_LANE_PT)
     E.text_w = st.text_w
     for k, v in st.SIZES.items():
         pt = v / st.PT
-        assert (5.0 <= pt <= 7.0) or (k == "letter" and pt == 8.0), (k, pt)
+        # The profile stores each size at 0.01 px (6 October 2026, b), so the panel letter is 8.0025 pt.
+        assert (5.0 <= pt <= 7.0) or (k == "letter" and abs(pt - st.NM_LETTER_PT) < 0.01 / st.PT + 1e-9), (k, pt)
     assert st.PROFILE["name"] == st.NM_PROFILE and st.FONT == st.NM_FONT
 
 

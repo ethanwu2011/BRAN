@@ -18,23 +18,23 @@
    "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
    "exported_with_final_style": true,
    "files": {
-    "fig2.pdf": "d1d08c468c2c3ae2e17cbd4e1245ebc1c2a4404b13e34ee16c2c21d73608de75",
-    "fig2.png": "fe76758791603411d5b2abbbf755f7255cc1d478c8815ca17845856494f6422c"
+    "fig2.pdf": "2407b7bb4eb461f1d8e1b06989946dffe5a7e7e41a2bb878c5157a8d5ebab949",
+    "fig2.png": "5aca8638a2274d2048c1fb4cfba835280122366523aea23561b1c0858bf1b24a"
    }
   },
   "fig3": {
    "display": "Fig. 3",
-   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
-    "fig3.pdf": "ec1b67055874280207d4301cd8c6c3cabb4f7cbe517b9c411e6c402b9fa79e9d",
-    "fig3.png": "a1ec5f0e5774e6c2dc602569f1fa931e351974e500d5bb89b2c13e172c9b93fa"
+    "fig3.pdf": "daea8d734666da15aed5c67d04430298610afb050dbb877d87dba4ade9f2fe8e",
+    "fig3.png": "f4fa36a2bbb38b4386946254504d921fbcfdea3ff2626a74f178320f0fd292a9"
    }
   },
   "fig4": {
    "display": "Fig. 4",
-   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
     "fig4.pdf": "89b9870d9a7ec2a8554e36b8f5baa924fb01afb516e5552f428a436e7464b67d",
     "fig4.png": "4da0cba333d57fb5c6572f153d28519621251432cf66ca62e9b6cffe9801beee"
@@ -42,11 +42,11 @@
   },
   "fig5": {
    "display": "Fig. 5",
-   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
-    "fig5.pdf": "598b413a5fb39d397e545e402df18573ac6f4569f393648e0f83bdfc8ba4d29e",
-    "fig5.png": "0b615cbc629084925cb43378f32df3ea466f6c4dd562337bad0db7dbf3396102"
+    "fig5.pdf": "c4027831cf5b3e9c782c226fdb747207154c0907f4ee9ad1eea6a37112cad3c7",
+    "fig5.png": "becf1d73889f98438dd2aa26e70219fc8ba4ea4a590ed739fc7ebcfee24bb6ec"
    }
   },
   "ed1": {
@@ -71,28 +71,28 @@
   },
   "ed3": {
    "display": "Extended Data Fig. 3",
-   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
-    "ed3.pdf": "9b0b428193d7da2d94f0644b8da6dca1fe7dd44f66a403fb00c4d77a0ee878dc",
-    "ed3.png": "fdb19e5ed7af2f92716d8c7a4652a4cc3eb92520c9f9fed09581eced752fe33a",
-    "EDfig3.jpg": "baf80434918b108c2e6f866169a468558287db093d6cbc3d6747619c8cf1a62e"
+    "ed3.pdf": "4728f78d6d161854c272e521bd253920052e42abe21f2e301a9f610d51bada4d",
+    "ed3.png": "b649658f1d38d568eff9cadcb72807372e77f4d61c600b3df091c5fceb2496e4",
+    "EDfig3.jpg": "964908bcada20f0445a145009e6f10183977c492e11379e096b434c8bcf6ad44"
    }
   },
   "ed3b": {
    "display": "Extended Data Fig. 4",
-   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
-    "ed3b.pdf": "b174219dcd8413410b4e8fcfeae44832aa2ab72c4f71b8b5306433307e4ebabe",
-    "ed3b.png": "6994139bfe910c39d29f924811b4679945aa9d324c1e82e9425673c671a8b85c",
-    "EDfig4.jpg": "46ec2b243b92e8f2d0fbb758a5cbfc6d5ffe46cc333c05e3e760c8db03569a56"
+    "ed3b.pdf": "b1c40ea74eb390e2586e88236c51622206bcf757d7f089ee10b8b355445d18a5",
+    "ed3b.png": "de1c28576725c02bf6f68fa87971dfb241a56a29e5e0670de769b6b24eebf851",
+    "EDfig4.jpg": "7306c6a1779e3909fa5ca915c9005fc55aa552cc56622b12c30c74e041ad525d"
    }
   },
   "ed4": {
    "display": "Extended Data Fig. 5",
-   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
     "ed4.pdf": "af3b074d99caad7d7f48fcaca32469116333cad8d42d87949b24fa68ed81fc85",
     "ed4.png": "0babd67f8b1f88acabb46cf7cbb0b69e1bfcfadae3ffdf00bbef025561351f50",
@@ -101,18 +101,18 @@
   },
   "ed_table1": {
    "display": "Extended Data Table 1",
-   "style_module_sha256": "c0f4faa8cf0712932709ab6c0cc12ebbd4c87b2929ce6c8d16adcb561d60497c",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
-    "ed_table1.pdf": "a57da76ee3caaed08cd401ee1e27710c2adc048245aaab8bcbb4a1ff6f695088",
+    "ed_table1.pdf": "bcb3ae0b755506ba5ff069292a5a8a0f225445bb40d05ffb27597fbc5415d0a8",
     "ed_table1.png": "0fbca8e46db16ca8baf40303b650512db993c10687d7d5426dbb9112d30198b1",
     "ed_table1_300ppi.jpg": "28eb7eddaa10d1eb14d2f8a33d4600020bf0bd9403a0bac089ac998b6d2cdea1"
    }
   },
   "ed_table2": {
    "display": "Extended Data Table 2",
-   "style_module_sha256": "4794489f8b0d197cc382df46aa457a03783bdaccbee10086cfc95fa4af538869",
-   "exported_with_final_style": false,
+   "style_module_sha256": "af26fcf3b5ca18c269829a1bb5db3dd552ef785e138ceed442b6b832510ab626",
+   "exported_with_final_style": true,
    "files": {
     "ed_table2.pdf": "7283baf2a592b8cf5faee8ef091fc58d4741954aef765d071d2b84e54e2dcfe8",
     "ed_table2.png": "d484be8b66d5ce324042946b8fb35f9b0c00ee854505933108878a5ec4af9e3c",

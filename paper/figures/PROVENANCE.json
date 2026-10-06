@@ -28,103 +28,103 @@
   },
   "draw_fig1.py": {
    "from": "build_fig1.py",
-   "lane_sha256": "f55063418c8fb3fd1c032f893183d121fa15437fdbdb4cb54918458b940c1daa",
+   "lane_sha256": "cbd6543e570aa313c63ac4392d20502a916d35a91639d5c8ec947a867a6cab07",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 38,
    "dropped_statements": 42,
-   "public_sha256": "342397fbeacbe293f09a5d1e6215d478e5022d6f999287e0ea22f9d905f72b1f"
+   "public_sha256": "2cc5f13a730fcaec9ae7140a9f8c39607d0cf02a93fc171482a259f0fb8d16a9"
   },
   "draw_fig2.py": {
    "from": "build_fig2.py",
-   "lane_sha256": "b9d88b8d4fb15e70016b30e3d20ac92812a1c10d86a115d82ccb957587663bda",
+   "lane_sha256": "7e9aafef7d54a2c4ae50796ffb9f7384fd4c27ae66ce9da1ab840c7004af3edf",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 38,
-   "dropped_statements": 36,
-   "public_sha256": "4052ce960149a493f0252a6d8cf552067e91eb7e6e3b7c1a2d02627888ac30c7"
+   "dropped_statements": 37,
+   "public_sha256": "16b7c63dc0c4d2f9b3103d1be5693f170655c95c2ac16120559b335cb2b70cf9"
   },
   "draw_fig3.py": {
    "from": "build_fig3.py",
-   "lane_sha256": "01b2c49d1613259cd1e1baa52028fe8949b5347d80119ef7fd7efc47148d5a42",
+   "lane_sha256": "5417f9816de4fd8257eec707c2f0e3d76c8188e105dd2ce73ca349bc6e1e81cb",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 100,
    "dropped_statements": 43,
-   "public_sha256": "ea9055148645a580ebd1a960db6f69a0cc7ae27cb8e72e8eb0d29df12297d4f8"
+   "public_sha256": "7db36bb97faca2b718ffc7ee430d825707cbf0f7f7f53a600651575c077469d7"
   },
   "draw_fig4.py": {
    "from": "build_fig4.py",
-   "lane_sha256": "10d82441e8225c1f55d621fd7a89ef393a3d9fea9c5f0d22e914a33d90840ecb",
+   "lane_sha256": "99866f4bc79297550a308535048b43ae61b6d203cce7a42ef153d61010033f27",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 106,
    "dropped_statements": 33,
-   "public_sha256": "120cab0826e68239314d407f8588121fb276939c1945c9b0078334bb5fa3c9b8"
+   "public_sha256": "fcabc326b4af91a6a28f0a84ff0aaf0efc53b2e1fd57cc9feea4b6f8f6c1dbf1"
   },
   "draw_fig5.py": {
    "from": "build_fig5.py",
-   "lane_sha256": "70631e41a7041a2744eeb2c073affceb586dc90b150c39299690a7a82afa321c",
+   "lane_sha256": "2f0d30c2e7de95e97b64d50c76c46f665e46822474ec16335c16b2795cfb5176",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 66,
    "dropped_statements": 86,
-   "public_sha256": "d78a9660efbeb7adb17432b18c647876860b0e034e2b7ae86c444260ce56ad3d"
+   "public_sha256": "3bc1ba0867a128060d60ee504435d11803e1cd3c35138243f225915eca8883c4"
   },
   "draw_ed1.py": {
    "from": "build_ed1.py",
-   "lane_sha256": "c18be74234bb7f935eb8333e970f3c9eaba2c7447eab1f5f50d170f9f244209b",
+   "lane_sha256": "7889bfca30ef5b9ed006307ca46255d43a74c098487ec61a7b9f29fb9b13e254",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 19,
    "dropped_statements": 55,
-   "public_sha256": "d4eb5d423530f7f1353a690ae7103d3c0e2aa82437f66e4720b18452b4dbeb9e"
+   "public_sha256": "5272fed0baf313448b409088535b19c0d3c8c2eda55964e7dba24fd4e27bac72"
   },
   "draw_ed2.py": {
    "from": "build_ed2.py",
-   "lane_sha256": "1afd0e2a3762ab8aa64ecbf24eac2b3ebb17e96b6bdb45dc0f1632363271a575",
+   "lane_sha256": "3536458358e5faa4819135a83f59d71188ec9973a7ee35096a3b17596528bd28",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 30,
    "dropped_statements": 55,
-   "public_sha256": "84c6f0f7f1a2b3a18314833783255acbeba1ffc976b2e816582f6ef348e6aaac"
+   "public_sha256": "973f782896aefce86453d059e057f6b2ac43241bfaca4b4d0f7b7fa2a206585d"
   },
   "draw_ed3.py": {
    "from": "build_ed3.py",
-   "lane_sha256": "0577cbc6b206755c90111cd514c80238169b8bfc31bf521f4343146e736c2652",
+   "lane_sha256": "d485ff14791518989ceadac0c226a175dd2aa8d008921a50e32330e3b8274c37",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 73,
    "dropped_statements": 30,
-   "public_sha256": "8e1b15b5d6399c02c92a9cbec63b8ac7d90a354400c382d98ed8bc4144a190a5"
+   "public_sha256": "d9ca99f3502bd5b90c7ba3cf26721baa4470eb026b3a4d37e3e8379cfd6b8ba5"
   },
   "draw_ed3b.py": {
    "from": "build_ed3b.py",
-   "lane_sha256": "929212fa7cde7f342c5aa76f1afecf8557f34e52e39d07bd1d6afe9f1217c2da",
+   "lane_sha256": "38500125c2c9bd1823a4dbc30e64b62084bd220643ae231d02f4bb97432f5519",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 72,
    "dropped_statements": 38,
-   "public_sha256": "a3bf64f9367b20ce6b78fbd0756f01d69c10800e2229cfe6b23a906a12a94cee"
+   "public_sha256": "8c56de5efd5155c6abe557183a47016d8f3cdb3e30515b282ec6b687156b38c7"
   },
   "draw_ed4.py": {
    "from": "build_ed4.py",
-   "lane_sha256": "6a89be9b044b15f2d428dc04354a7dd35e601af7ae5a25430db60e87fdc1e00b",
+   "lane_sha256": "40dfc7211ef3dd0d4067dc7bffd3f77c6475d03984a9a07daf61b680e3b52732",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 64,
    "dropped_statements": 21,
-   "public_sha256": "26a7aa38ab86e4290b63912ebfbf57bf7d89a46b239b361c3a0d550cdddcb291"
+   "public_sha256": "b00914c4059fba47ee4587ebf6c2d0b6b4247d3f6537fbdfcddee58e277d1555"
   },
   "draw_ed_table1.py": {
    "from": "build_ed_table1.py",
-   "lane_sha256": "8b2a9e889f35416c3def3e2f2a7de5b2ab23ca67568889d7832b4eb60c1b39ad",
+   "lane_sha256": "dc1089af0573cfc827c9b09477a57f72a940b7815ab6d1d267ac33b67fc3d925",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 23,
    "dropped_statements": 36,
-   "public_sha256": "56acf5f2f04a6ad4812aa0ff9a95408300723bb50178cea44baacd90a5cea1ba"
+   "public_sha256": "6b07f6a5c65c996e57b985bbc36e1c57bc4430b87c95c274ef5de47b14c344e3"
   },
   "draw_ed_table2.py": {
    "from": "build_ed_table2_merged.py",
-   "lane_sha256": "c415d20b3c5810eb78ca50a9f5a7d9f50840db2d6e35c4ce3fd8b10301583667",
+   "lane_sha256": "3d32d759d129164ef428dcf42f3d02676721341ee78bbedff2c4a81f14943a06",
    "method": "AST closure of the drawing entry point plus render()",
    "kept_statements": 12,
    "dropped_statements": 26,
-   "public_sha256": "acc5ce301ba868b8672d04cadd71ce16a492587301b1c18af39acd10d803fe48"
+   "public_sha256": "78a502b40b3783ccd6f575ea7ea549439fd51b2b69d2053d3b0770e3027ee2d1"
   },
   "fig3_nm_kit.py": {
    "from": "fig3_nm_kit.py",
-   "lane_sha256": "86b2cd78090227ee3d79e5028824c57fe653aef653c61bd6d897013ae4804282",
+   "lane_sha256": "dbdaf9bd4e5957c02b05f2c9e664e940abb3283aa18462cafc6ae6966af5720c",
    "method": "AST closure of the attributes the drawing code uses",
    "roots": [
     "NM_H_MAX",
@@ -137,7 +137,7 @@
    ],
    "kept_statements": 11,
    "dropped_statements": 44,
-   "public_sha256": "47b6faf4050eb1e875da068f88ab31697ec8b1881854d37038204ebe7da45e79"
+   "public_sha256": "32649950229894f9f2dc98207f423f201943ce8364a1f16fdb58013c2713e425"
   },
   "fig4_lane_kit.py": {
    "from": "fig4_lane_kit.py",

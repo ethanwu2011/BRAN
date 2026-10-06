@@ -4,7 +4,7 @@
  "display": "Extended Data Fig. 2",
  "display_short": "EDFig2",
  "title": "Participant flow and cohort characteristics",
- "legend": "**Extended Data Fig. 2 | Participant flow and cohort characteristics.**\n**a**, AI-READI. The 1,928 development adults are reused throughout and scored out of fold. The 352-person official test was scored once by the predecessor model in August 2026, whose paired primary end point was not met, and once by BRAN on 5 October 2026 as a previously accessed check (Extended Data Fig. 1).\n**b**, Development beside the whole local release, which also holds the official test. Study group is held only for the release, age has no summary aggregate, and sex, race and ethnicity need controlled access, so these cells are PLACEHOLDER. The encoder has no sex, race, ethnicity or medication input. UAB, University of Alabama at Birmingham. UCSD, University of California San Diego. UW, University of Washington.\n**c**, Prevalence of 26 self-reported conditions among development adults with an explicit answer, with floored counts of yes and of answers. Each condition had at least 50 people with and 50 without it before any model was scored. MCI, mild cognitive impairment.\n**d**, External cohorts, one row per analysis, with the figure showing it. Encoder says whether a cohort trained the encoder (training source, people in the final fit) or never did (unseen), and scored before marks cohorts an earlier BRAN checkpoint had also scored. No external cohort has retinal photographs, so every external row tests the clinical-only route. The MIMIC-IV replication rule was not met, eICU had insufficient support, and the MIMIC-III CareVue and HiRID counts are PLACEHOLDER. ED, Extended Data.\nCounts with ≥ are lower bounds rounded down to 20, KNHANES survey counts are rounded down to 10, and other counts are exact.",
+ "legend": "**Extended Data Fig. 2 | Participant flow and cohort characteristics.** **a**, AI-READI. The 1,928 development adults are reused throughout and scored out of fold. The 352-person official test was scored once by the predecessor model (August 2026, paired primary end point not met) and once by BRAN (5 October 2026, a previously accessed check, Extended Data Fig. 1). **b**, Development beside the whole local release, which includes the official test. Study group is held only for the release, age has no summary aggregate and sex, race and ethnicity need controlled access, so these cells are PLACEHOLDER. The encoder has no sex, race, ethnicity or medication input. UAB, UCSD and UW, University of Alabama at Birmingham, University of California San Diego and University of Washington. **c**, Prevalence of 26 self-reported conditions among development adults with an explicit answer, with floored counts of yes and of answers. Each condition had at least 50 people with and 50 without it before any model was scored. MCI, mild cognitive impairment. **d**, External cohorts (Extended Data Table 1), one row per analysis, with the figure showing it. Encoder gives training-source exposure (people in the final fit) or unseen, and scored before marks cohorts an earlier checkpoint also scored. With no retinal photographs, every external row tests the clinical-only route. The MIMIC-IV replication rule was not met, eICU had insufficient support, and MIMIC-III CareVue and HiRID counts are PLACEHOLDER. ED, Extended Data. Counts with ≥ are floored to 20 (KNHANES survey counts to 10), and others are exact.",
  "methods_notes": "Methods notes for Extended Data Fig. 2 (moved from the legend). a, each fold holds out 385 or 386 people and every readout of a fold is fitted on the remaining 1,542 or 1,543, and the five fold models do not share a coordinate frame. The red-cell axis was learned in the at least 380 held-out people of fold 0 with both routes. The predecessor had decoded the official-test blood counts and ten condition source fields. b, images were counted by camera for development only. Study group is the AI-READI recruitment stratum, and the cohort is enriched for type 2 diabetes. c, missing answers are left out of the denominator. Prediabetes is labelled only where type 2 diabetes is labelled absent (at least 1,200 answers). The most common conditions were elevated A1C (51.1%), high cholesterol (50.0%), high blood pressure (49.6%) and the least common MCI (3.1%). The gate also needed at least 10 people with and 10 without each condition per outer fold. d, NHANES 2005 to 2008 (at least 8,480 people in the fold 0 fit), MIMIC-IV (33,760), eICU (38,040), MIMIC-III (7,180) and NWICU (17,860) are the five clinical-only training sources. KNHANES samples different people each year. The NHANES 2011 to 2014 grip cohort lies inside the 2009 to 2018 cycles. For NHANES 1999 to 2004 deaths are given for the red-cell and then the distance analysis. The ED Fig. 7 subgroups use NHANES 2005 to 2008 (discovery, at least 1,520 adults with all 19 laboratory values in range and 1,260 with diabetes) and 2009 to 2018 (validation, at least 4,460 and 4,060). INSPIRE releases survivors and deaths separately. MIMIC-IV follows one index admission per person, from at least 157,100 people to 30,040 survivors of a stay of at least 72 hours, 4,240 of whom died within 365 days. The replication needed eICU or MIMIC-III CareVue to show the same direction with a 95% interval excluding zero.",
  "panels": {
   "a": {
@@ -68,8 +68,12 @@
     "characteristic",
     "development",
     "local_release",
+    "count_type",
     "source",
     "source_sha256"
+   ],
+   "notes": [
+    "count_type gives the kind of count in each row (disclosure review of 6 October 2026, b). Site, image, device and study-group counts are exact counts of the local AI-READI release and its development subset, and people with colour fundus photographs are lower bounds rounded down to 20."
    ],
    "rows": [
     [
@@ -77,6 +81,7 @@
      "UAB",
      "686 (35.6%)",
      "800 (35.1%)",
+     "exact",
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
      "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
     ],
@@ -85,6 +90,7 @@
      "UCSD",
      "578 (30.0%)",
      "682 (29.9%)",
+     "exact",
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
      "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
     ],
@@ -93,6 +99,7 @@
      "UW",
      "664 (34.4%)",
      "798 (35.0%)",
+     "exact",
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
      "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
     ],
@@ -101,6 +108,7 @@
      "People",
      "≥1,920",
      "≥2,260",
+     "lower bound rounded down to 20",
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
      "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
     ],
@@ -109,6 +117,7 @@
      "Images",
      "42,558",
      "50,315",
+     "exact",
      "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
      "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
     ],
@@ -117,6 +126,7 @@
      "Eidon (iCare), images",
      "15,234 (35.8%)",
      "Not counted",
+     "exact",
      "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
      "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
     ],
@@ -125,6 +135,7 @@
      "Aurora (Optomed), images",
      "8,275 (19.4%)",
      "Not counted",
+     "exact",
      "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
      "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
     ],
@@ -133,6 +144,7 @@
      "Maestro2 (Topcon), images",
      "7,687 (18.1%)",
      "Not counted",
+     "exact",
      "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
      "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
     ],
@@ -141,6 +153,7 @@
      "Triton (Topcon), images",
      "11,362 (26.7%)",
      "Not counted",
+     "exact",
      "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
      "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
     ],
@@ -149,6 +162,7 @@
      "Healthy",
      "PLACEHOLDER",
      "776 (34.0%)",
+     "exact",
      "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
      "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
     ],
@@ -157,6 +171,7 @@
      "Prediabetes, lifestyle controlled",
      "PLACEHOLDER",
      "560 (24.6%)",
+     "exact",
      "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
      "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
     ],
@@ -165,6 +180,7 @@
      "Oral or non-insulin medication",
      "PLACEHOLDER",
      "686 (30.1%)",
+     "exact",
      "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
      "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
     ],
@@ -173,6 +189,7 @@
      "Insulin dependent",
      "PLACEHOLDER",
      "258 (11.3%)",
+     "exact",
      "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
      "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
     ],
@@ -181,6 +198,7 @@
      "Age",
      "PLACEHOLDER",
      "PLACEHOLDER",
+     "no count, PLACEHOLDER",
      "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
      "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
     ],
@@ -189,6 +207,7 @@
      "Sex, race and ethnicity",
      "PLACEHOLDER",
      "PLACEHOLDER",
+     "no count, PLACEHOLDER",
      "BRAN_MASTER_OUTLINE_2026-09-30_rev2.md",
      "ba33ff74e491f09fd4d3c0d1ff18500916d4c134a4f1dd6a373a7faeb5aa0e88"
     ]
@@ -732,6 +751,7 @@
     "UAB",
     "686 (35.6%)",
     "800 (35.1%)",
+    "exact",
     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
    ],
@@ -740,6 +760,7 @@
     "UCSD",
     "578 (30.0%)",
     "682 (29.9%)",
+    "exact",
     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
    ],
@@ -748,6 +769,7 @@
     "UW",
     "664 (34.4%)",
     "798 (35.0%)",
+    "exact",
     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
    ],
@@ -756,6 +778,7 @@
     "People",
     "≥1,920",
     "≥2,260",
+    "lower bound rounded down to 20",
     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
    ],
@@ -764,6 +787,7 @@
     "Images",
     "42,558",
     "50,315",
+    "exact",
     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
    ],
@@ -772,6 +796,7 @@
     "Eidon (iCare), images",
     "15,234 (35.8%)",
     "Not counted",
+    "exact",
     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
    ],
@@ -780,6 +805,7 @@
     "Aurora (Optomed), images",
     "8,275 (19.4%)",
     "Not counted",
+    "exact",
     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
    ],
@@ -788,6 +814,7 @@
     "Maestro2 (Topcon), images",
     "7,687 (18.1%)",
     "Not counted",
+    "exact",
     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
    ],
@@ -796,6 +823,7 @@
     "Triton (Topcon), images",
     "11,362 (26.7%)",
     "Not counted",
+    "exact",
     "PATIENT_ATLAS_EXPLORATORY_COHORT_SUMMARY.json",
     "f4aa23f7bf790a8913bb6ac0e54cfe03b95e27cf4cbe58f6ac6a9cdf30c7f308"
    ],
@@ -804,6 +832,7 @@
     "Healthy",
     "PLACEHOLDER",
     "776 (34.0%)",
+    "exact",
     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
    ],
@@ -812,6 +841,7 @@
     "Prediabetes, lifestyle controlled",
     "PLACEHOLDER",
     "560 (24.6%)",
+    "exact",
     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
    ],
@@ -820,6 +850,7 @@
     "Oral or non-insulin medication",
     "PLACEHOLDER",
     "686 (30.1%)",
+    "exact",
     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
    ],
@@ -828,6 +859,7 @@
     "Insulin dependent",
     "PLACEHOLDER",
     "258 (11.3%)",
+    "exact",
     "PATIENT_ATLAS_RAW_SOURCE_AUDIT.json",
     "107b5d619b41612887707c7b6948ec0fa53cab76013745d21d061cfe45fb9a2f"
    ],
@@ -836,6 +868,7 @@
     "Age",
     "PLACEHOLDER",
     "PLACEHOLDER",
+    "no count, PLACEHOLDER",
     "PATIENT_ATLAS_V5_CROSSMODAL_UTILITY_ATTEMPT2.json",
     "94e46967f1b12a2dc2d669791162dab80531e79bff6a5410826084d8663184d3"
    ],
@@ -844,6 +877,7 @@
     "Sex, race and ethnicity",
     "PLACEHOLDER",
     "PLACEHOLDER",
+    "no count, PLACEHOLDER",
     "BRAN_MASTER_OUTLINE_2026-09-30_rev2.md",
     "ba33ff74e491f09fd4d3c0d1ff18500916d4c134a4f1dd6a373a7faeb5aa0e88"
    ]
