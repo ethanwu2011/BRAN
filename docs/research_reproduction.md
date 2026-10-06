@@ -17,7 +17,7 @@ The byte check authenticates this snapshot against the reviewed source hashes. I
 
 ## Entry points and dependency map
 
-The manifest gives every edge. The following counts include each entrypoint and its transitive static local Python imports. Shared modules appear in more than one count.
+The manifest gives every edge. The generated [research index](research_index.md) maps each module to the analyses that reach it, its role and its other versions, and explains the legacy name prefixes. The following counts include each entrypoint and its transitive static local Python imports. Shared modules appear in more than one count.
 
 | Analysis | Historical entrypoint | Local modules |
 | --- | --- | --- |
