@@ -6,8 +6,9 @@ abstract: >-
   measurements, other eligible clinical measurements, typed age and retinal
   features under incomplete observation. This repository holds the retained
   R7 model code, the hash-locked research source snapshot used for the
-  reported analyses, the input contract, synthetic examples and tests. It
-  holds no patient data and no trained weights.
+  reported analyses, the input contract, synthetic examples and tests, and
+  the Source Data and code that redraw the paper figures. It holds no
+  patient data and no trained weights.
 type: software
 version: 0.2.0
 date-released: 2026-10-01
@@ -24,3 +25,4 @@ keywords:
 repository-code: "https://github.com/ethanwu2011/BRAN"
 url: "https://github.com/ethanwu2011/BRAN"
 license: MIT
+# After Zenodo archives release v1.0.0, add its DOI here as doi and under identifiers.

@@ -4,6 +4,29 @@ This directory preserves the original Python source for retained R7 training and
 
 The source archive contains 425 Python modules and 5,580,403 source bytes. `research/snapshot_manifest.json` records each original code hash, byte size, local import edge, and entrypoint dependency set. `tools/reviewed_sources.txt` is the explicit hash allowlist. The collector parses source with Python `ast` and never imports a research runner. The original code has not been edited to remove historical paths or authentication gates.
 
+## Levels of reproduction
+
+| Level | What a reader needs | What it shows |
+| --- | --- | --- |
+| Software | This repository | The model code runs, synthetic tests pass and the research snapshot matches its reviewed hashes |
+| Figures | This repository and the pinned figure environment | Every finalized figure is redrawn byte for byte from its Source Data, and every plotted value can be read in the Source Data |
+| Aggregates | Restricted data access and the private workspace | Each Source Data value equals the value in a pinned aggregate file with a recorded SHA-256 |
+| Analyses | Restricted data access, the original environment and private artifacts | The aggregates are recomputed from the datasets with the code in `research/` |
+
+## Reproduce the figures from Source Data
+
+The figure level needs no restricted data. From the repository root run
+
+```sh
+python3.12 -m venv .venv-figures
+.venv-figures/bin/python -m pip install --require-hashes -r paper/figures/requirements-figures.txt
+make figures-check PYTHON=.venv-figures/bin/python
+```
+
+The command draws Figs. 1 to 5, Extended Data Figs. 1 to 5 and Extended Data Tables 1 and 2 from `paper/source_data` alone and compares the PNG, PDF and JPEG hashes with the reference. [The figure guide](../paper/README.md) explains the steps from aggregates to figures, the reference environment, the verification record and the items that still need a new export.
+
+The step from aggregates to Source Data ran in the private workspace. Each private builder read every plotted value from a pinned aggregate file, checked the value and the file's SHA-256, applied the disclosure rules and wrote the Source Data. Every Source Data row names its aggregate file and SHA-256, so the authors can show the origin of any value on request. The aggregates stay private because they are derived from data under the PhysioNet and AI-READI agreements.
+
 ## Verify the code snapshot
 
 Run these commands from the release root. They inspect code only.
